@@ -1,10 +1,10 @@
 <template>
   <div
-    class="rounder-full flex items-center justify-center py-1 px-5 text-base"
+    class="flex w-fit items-center justify-center rounded-full py-1 px-5 text-base"
     :class="{
       'bg-red-jazzNpop text-white': redCategory,
-      'bg-orange-400 text-white': orangeCategory,
-      'bg-blue-400 text-white': blueCategory,
+      'bg-yellow-400 text-black': orangeCategory,
+      'bg-blue-400 text-black': blueCategory,
       'bg-gray-900 text-orange-400': blackCategory,
     }"
   >

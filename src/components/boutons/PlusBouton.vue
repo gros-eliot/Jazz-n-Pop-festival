@@ -1,9 +1,9 @@
 <template>
   <button
-    class="flex flex-row items-center justify-center gap-3 rounded-full px-8 py-3 md:px-14 md:py-5 lg:px-10 lg:py-5"
+    class="flex flex-row items-center justify-center gap-3 rounded-full px-5 py-5 md:px-14 md:py-5 lg:px-10 lg:py-5"
     :class="{
       'bg-red-jazzNpop fill-white stroke-white text-white': redVersion,
-      'bg-orange-400 fill-white stroke-white text-white': orangeVersion,
+      'bg-yellow-400 fill-black stroke-black text-black': orangeVersion,
       'bg-white fill-black stroke-black text-black': whiteVersion,
     }"
   >
@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import { MenuAlt3Icon, ArrowRightIcon, ClockIcon } from "@heroicons/vue/outline";
-import { XIcon, PlusIcon, UsersIcon } from "@heroicons/vue/solid";
+import { XIcon, PlusIcon, MenuAlt3Icon, ArrowRightIcon, ClockIcon } from "@heroicons/vue/outline";
 
 export default {
   components: {

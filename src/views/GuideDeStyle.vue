@@ -112,7 +112,7 @@
   <!--Composants (PETITS COMPOSANTS) -->
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (petits composants)</h1>
 
-  <div class="h-full bg-gray-400 py-4">
+  <div class="flex h-full flex-col gap-10 bg-gray-400 py-4">
     <!--Boutons-->
     <div class="grid grid-cols-2 justify-items-center">
       <!--Boutons : Flèche (3 couleurs)-->
@@ -139,8 +139,15 @@
     </div>
 
     <!--Catégories des card-->
-    <div class="gap3 flex flex-col">
-      <CategorieName :blackCategory="true" />
+    <div class="flex flex-col gap-3">
+      <CategorieName :blackCategory="true" NameCategory="Catégorie" />
+      <CategorieName :blueCategory="true" NameCategory="Catégorie" />
+      <CategorieName :redCategory="true" NameCategory="Catégorie" />
+      <CategorieName :orangeCategory="true" NameCategory="Catégorie" />
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <div class=""></div>
     </div>
   </div>
   <!--Pictos & images -->
