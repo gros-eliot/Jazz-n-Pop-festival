@@ -2,11 +2,14 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/App.vue",
   ],
   theme: {
     extend: {
       "colors": {
-        // Ici vos couleurs exportées de Figma
+        "red": {
+          "jazzNpop": "#FF0000",
+        },
       },
       "fontFamily": {
         // Ici vos familles de polices exportées de Figma
