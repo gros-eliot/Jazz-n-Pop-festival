@@ -167,6 +167,11 @@
   </div>
   <!--Pictos & images -->
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Pictos & images</h1>
+  <div class="flex p-3">
+    <Disque class="h-20 w-20" />
+    <Saxophone class="h-20 w-20" />
+  </div>
+
   <div class="grid grid-cols-2">
     <img src="" alt="" />
   </div>
@@ -187,6 +192,9 @@ import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
 
 import HeaderView from "../components/layouts/HeaderView.vue";
 import FooterView from "../components/layouts/FooterView.vue";
+
+import Disque from "../components/pictos/Disque.vue";
+import Saxophone from "../components/pictos/Saxophone.vue";
 
 // Composants : boutons
 import ArrowBouton from "../components/boutons/ArrowBouton.vue";
@@ -219,6 +227,9 @@ export default {
     TextBouton,
 
     CategorieName,
+
+    Disque,
+    Saxophone,
   },
 };
 </script>
