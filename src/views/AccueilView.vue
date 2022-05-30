@@ -11,8 +11,9 @@
     </div>
   </div>
 
-  <div class="bg-hero1 h-5/6 w-full text-white md:h-4/6">
+  <div class="flex h-5/6 w-full flex-col items-center justify-center bg-hero1 p-3 text-white md:h-4/6">
     <h1 class="font-abril-fatface text-6xl lg:text-7xl">Concerts</h1>
+    <h2>Retrouvez ici les différents concerts disponibles cet été, au Jazz’n’Pop Festival.</h2>
   </div>
 </template>
 
