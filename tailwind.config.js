@@ -12,8 +12,8 @@ module.exports = {
         },
       },
       "fontFamily": {
-        // Ici vos familles de polices exportées de Figma
-        // Ne pas oublier de les charger dans '/index.html' !
+        "abril-fatface": ["'Abril Fatface'", "sansserif"], // POUR LES TITRES 
+        "raleway": ["Raleway", "sansserif"]
       },
     },
 
