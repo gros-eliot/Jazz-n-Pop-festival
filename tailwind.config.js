@@ -16,7 +16,9 @@ module.exports = {
         "raleway": ["Raleway", "sansserif"]
       },
       backgroundImage: {
-        'concert1': "url('src/assets/concerts/concert1.jpg')",
+        'concert1': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert1.jpg')",
+        'concert2': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert2.jpg')",
+        'concert3': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert3.jpg')",
         'acj1': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/melody_gardot.jpg');",
         'acj2': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/asaf_avidan.jpg');",
         'acj3': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/daida.jpg');",
@@ -32,6 +34,7 @@ module.exports = {
         'acp5': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/pop/james_blunt.jpg');",
         'acp6': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/pop/kungs.jpg');",
         'acp7': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/pop/woodkid.jpg');",
+        
   
       },
     },

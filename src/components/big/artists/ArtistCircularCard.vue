@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-fit flex-col justify-start gap-1">
+  <div class="flex w-fit flex-col items-center justify-start gap-1">
     <div class="h-28 w-28 rounded-full border-8 border-gray-300 lg:h-40 lg:w-40">
       <img
         :src="'../../../' + artisteImageSrc"

@@ -177,6 +177,17 @@
     <!--Artiste : card circulaire-->
 
     <ArtistCircularCard artisteNom="Asaf Avidan" artisteImageSrc="src/assets/artistes/jazz/asaf_avidan.jpg" />
+
+    <!--Concert : large card-->
+
+    <ConcertCard class="bg-concert1" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
+    <ConcertCard class="bg-concert2" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
+    <ConcertCard class="bg-concert3" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
+
+    <!--Horaire-->
+    <DateCard datecardTitre="Concert n°1" datecardDate1="11/07/2022" datecardDate2="12/07/2022" />
+    <!--Map card-->
+    <GoogleMapCard />
   </div>
 
   <!--Pictos & images -->
@@ -235,6 +246,12 @@ import ArtistCardPop from "../components/big/artists/ArtistCardPop.vue";
 import ArtistLittleCard from "../components/big/artists/ArtistLittleCard.vue";
 import ArtistCircularCard from "../components/big/artists/ArtistCircularCard.vue";
 
+//Gros artistes
+import ConcertCard from "../components/big/concert/ConcertCard.vue";
+
+import DateCard from "../components/big/DateCard.vue";
+import GoogleMapCard from "../components/big/GoogleMapCard.vue";
+
 //Export des composants
 export default {
   components: {
@@ -267,6 +284,11 @@ export default {
     ArtistCardPop,
     ArtistLittleCard,
     ArtistCircularCard,
+
+    ConcertCard,
+
+    DateCard,
+    GoogleMapCard,
   },
 };
 </script>
