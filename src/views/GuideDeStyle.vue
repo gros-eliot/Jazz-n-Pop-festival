@@ -164,11 +164,12 @@
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (gros composants)</h1>
   <div class="flex h-full flex-col gap-10 bg-gray-400 py-4">
     <!-- Artiste : large card-->
-    <div class="mr-auto ml-auto h-[30rem] w-72 rounded-3xl bg-concert1 bg-cover bg-center">
-      <div class="absolute flex items-center justify-center"><PlusBouton :orangeVersion="true" /></div>
-      <!--FOND DE LA CARD-->
-      <div class="z-10 h-full w-full rounded-3xl bg-gradient-to-b from-transparent to-black"></div>
+    <div class="grid grid-cols-1 justify-items-center gap-3 lg:grid-cols-2">
+      <ArtistCardJazz artisteNom="Melody Gardot" artisteDate="10/07/2022" class="bg-acj1 bg-center" />
+      <ArtistCardPop artisteNom="Alan Walker" artisteDate="10/07/2022" class="bg-acp1 bg-center" />
     </div>
+    <!-- Artiste : petite card-->
+    <ArtistLittleCard artisteNom="Coldplay" artisteDate="11/07/2022" />
   </div>
 
   <!--Pictos & images -->
@@ -178,7 +179,7 @@
     <Saxophone class="h-20 w-20" />
   </div>
 
-  <div class="grid- grid grid-cols-3">
+  <div class="grid grid-cols-3">
     <!--Exemples d'images-->
 
     <img src="../assets/concerts/concert1.jpg" alt="Concert de jazz" class="w-full" />
@@ -220,6 +221,13 @@ import TextBouton from "../components/boutons/TextBouton.vue";
 //Composants: catégories
 
 import CategorieName from "../components/categories/CategorieName.vue";
+
+//Gros composants
+import ArtistCardJazz from "../components/big/artists/ArtistCardJazz.vue";
+import ArtistCardPop from "../components/big/artists/ArtistCardPop.vue";
+import ArtistLittleCard from "../components/big/artists/ArtistLittleCard.vue";
+
+//Export des composants
 export default {
   components: {
     MenuAlt3Icon,
@@ -246,6 +254,10 @@ export default {
 
     Disque,
     Saxophone,
+
+    ArtistCardJazz,
+    ArtistCardPop,
+    ArtistLittleCard,
   },
 };
 </script>
