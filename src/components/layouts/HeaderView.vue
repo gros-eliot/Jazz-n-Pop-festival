@@ -43,7 +43,7 @@
 
             <!--CONTAINER LISTE DES PAGES-->
 
-            <nav class="mt-44 flex justify-center">
+            <nav class="flex justify-center">
               <ul class="relative z-40 flex flex-col gap-10 p-10 text-2xl lg:flex-row lg:gap-8" @click="menuOuvert = !menuOuvert">
                 <li>
                   <RouterLink to="/" class="flex flex-row items-center gap-3"> Programmes <ClockIcon class="h-8 w-8" /> </RouterLink>

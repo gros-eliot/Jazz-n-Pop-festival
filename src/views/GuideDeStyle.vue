@@ -108,6 +108,31 @@
     <FooterView class="my-10" />
     <!--FOOTER-->
   </div>
+
+  <!--Composants (PETITS COMPOSANTS) -->
+  <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (petits composants)</h1>
+
+  <div class="h-full bg-gray-400 py-4">
+    <!--Premier bouton : Flèche (3 couleurs)-->
+    <div class="grid grid-cols-3 justify-items-center">
+      <div class="flex w-fit flex-col gap-3">
+        <ArrowBouton :orangeVersion="true" contenuTextBouton="Suivre" />
+        <ArrowBouton :whiteVersion="true" contenuTextBouton="Suivre" />
+        <ArrowBouton :redVersion="true" contenuTextBouton="Suivre" />
+      </div>
+      <div class="flex w-fit flex-col gap-3">
+        <PlusBouton :orangeVersion="true" contenuTextBouton="Suivre" />
+        <PlusBouton :whiteVersion="true" contenuTextBouton="Suivre" />
+        <PlusBouton :redVersion="true" contenuTextBouton="Suivre" />
+      </div>
+      <div class="flex w-fit flex-col gap-3">
+        <TextBouton :orangeVersion="true" contenuTextBouton="Te" />
+        <TextBouton :whiteVersion="true" contenuTextBouton="Te" />
+        <TextBouton :redVersion="true" contenuTextBouton="Te" />
+      </div>
+    </div>
+  </div>
+  <!--Pictos & images -->
 </template>
 
 <script>
@@ -126,6 +151,11 @@ import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
 import HeaderView from "../components/layouts/HeaderView.vue";
 import FooterView from "../components/layouts/FooterView.vue";
 
+// Composants : boutons
+import ArrowBouton from "../components/boutons/ArrowBouton.vue";
+import PlusBouton from "../components/boutons/PlusBouton.vue";
+import TextBouton from "../components/boutons/TextBouton.vue";
+
 export default {
   components: {
     MenuAlt3Icon,
@@ -143,6 +173,10 @@ export default {
 
     HeaderView,
     FooterView,
+
+    ArrowBouton,
+    PlusBouton,
+    TextBouton,
   },
 };
 </script>
