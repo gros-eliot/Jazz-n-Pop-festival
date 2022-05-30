@@ -166,6 +166,10 @@
     <!-- Artiste : large card-->
   </div>
   <!--Pictos & images -->
+  <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Pictos & images</h1>
+  <div class="grid grid-cols-2">
+    <img src="" alt="" />
+  </div>
 </template>
 
 <script>
