@@ -11,15 +11,46 @@
     </div>
   </div>
 
-  <div class="flex h-5/6 w-full flex-col items-center justify-center bg-hero1 p-3 text-white md:h-4/6">
-    <h1 class="font-abril-fatface text-6xl lg:text-7xl">Concerts</h1>
-    <h2>Retrouvez ici les différents concerts disponibles cet été, au Jazz’n’Pop Festival.</h2>
+  <!--Pages artistes et concerts-->
+  <PagePresentation
+    class="bg-hero1"
+    otherpageTitle="Concerts"
+    otherpageDesc="Retrouvez ici les différents concerts disponibles cet été, au Jazz’n’Pop Festival."
+    otherpageLink=""
+  />
+  <PagePresentation
+    class="bg-hero2"
+    otherpageTitle="Artistes"
+    otherpageDesc="Découvrez les figures musicales présentes au festival."
+    otherpageLink=""
+  />
+
+  <!--Page : le festival (à propos)-->
+  <div class="mx-3 my-5 flex flex-col items-center justify-center">
+    <h1 class="text-center font-abril-fatface text-4xl lg:text-5xl">Le Jazz’n’Pop Festival, c'est...</h1>
+    <div class="my-5 flex flex-col items-center justify-center md:flex-row md:gap-10">
+      <div class="flex flex-col items-center justify-center gap-1 p-3">
+        <h2 class="text-3xl font-bold text-yellow-400">7000</h2>
+        <p>places disponibles</p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-1 p-3">
+        <h2 class="text-3xl font-bold text-yellow-400">De 15 à 25€</h2>
+        <p>selon les tarifs</p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-1 p-3">
+        <h2 class="text-3xl font-bold text-yellow-400">2 semaines</h2>
+        <p>à partir de juillet 2022</p>
+      </div>
+    </div>
+    <text-bouton :redVersion="true" contenuTextBouton="En savoir plus" />
   </div>
 </template>
 
 <script>
 import Monochrome from "../components/icons/JazzNPop_logos/big/Monochrome.vue";
+import TextBouton from "../components/boutons/TextBouton.vue";
+import PagePresentation from "../components/home/PagePresentation.vue";
 export default {
-  components: { Monochrome },
+  components: { Monochrome, TextBouton, PagePresentation },
 };
 </script>
