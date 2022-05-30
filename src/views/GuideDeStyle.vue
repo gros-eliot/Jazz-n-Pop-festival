@@ -65,10 +65,54 @@
       <p class="text-xs">Raleway, light</p>
     </div>
   </div>
+
+  <!--Icones et logos-->
+  <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Icônes et logos</h1>
+
+  <div class="h-full bg-gray-400 py-4">
+    <!--Icônes -->
+    <div class="grid grid-cols-4 justify-items-center">
+      <MenuAlt3Icon class="h-10 w-10" />
+      <XIcon class="h-10 w-10" />
+      <PlusIcon class="h-10 w-10" />
+      <ArrowRightIcon class="h-10 w-10" />
+      <ClockIcon class="h-10 w-10" />
+      <UsersIcon class="h-10 w-10" />
+      <PartyIcon class="h-10 w-10" />
+    </div>
+    <!--Logo : grand format -->
+    <div class="my-5 flex flex-col items-center justify-center gap-5">
+      <LogoBigMonochrome />
+      <LogoBigBichrome />
+    </div>
+    <!--Logo : moyen format -->
+    <div class="my-5 flex flex-col items-center justify-center gap-5">
+      <LogoMediumMonochrome />
+      <LogoMediumBichrome />
+    </div>
+    <!--Logo : petit format -->
+    <div class="my-5 flex flex-col items-center justify-center gap-5">
+      <LogoSmall />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import { MenuAlt3Icon, ArrowRightIcon, ClockIcon } from "@heroicons/vue/outline";
+import { XIcon, PlusIcon, UsersIcon } from "@heroicons/vue/solid";
+import PartyIcon from "../components/icons/PartyIcon.vue";
+
+export default {
+  components: {
+    MenuAlt3Icon,
+    XIcon,
+    PlusIcon,
+    ArrowRightIcon,
+    ClockIcon,
+    UsersIcon,
+    PartyIcon,
+  },
+};
 </script>
 
 <style></style>
