@@ -102,6 +102,14 @@ import { MenuAlt3Icon, ArrowRightIcon, ClockIcon } from "@heroicons/vue/outline"
 import { XIcon, PlusIcon, UsersIcon } from "@heroicons/vue/solid";
 import PartyIcon from "../components/icons/PartyIcon.vue";
 
+import LogoBigMonochrome from "../components/icons/JazzNPop_logos/big/Monochrome.vue";
+import LogoBigBichrome from "../components/icons/JazzNPop_logos/big/Bichrome.vue";
+
+import LogoMediumMonochrome from "../components/icons/JazzNPop_logos/medium/Monochrome.vue";
+import LogoMediumBichrome from "../components/icons/JazzNPop_logos/medium/Bichrome.vue";
+
+import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
+
 export default {
   components: {
     MenuAlt3Icon,
@@ -111,6 +119,11 @@ export default {
     ClockIcon,
     UsersIcon,
     PartyIcon,
+    LogoBigMonochrome,
+    LogoBigBichrome,
+    LogoMediumMonochrome,
+    LogoMediumBichrome,
+    LogoSmall,
   },
 };
 </script>
