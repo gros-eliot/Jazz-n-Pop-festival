@@ -95,6 +95,15 @@
       <LogoSmall />
     </div>
   </div>
+
+  <!-- Layouts principaux : header/footer/menu -->
+
+  <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Layouts</h1>
+  <div>
+    <!--HEADER-->
+    <HeaderView class="my-10" />
+    <!--HEADER-->
+  </div>
 </template>
 
 <script>
