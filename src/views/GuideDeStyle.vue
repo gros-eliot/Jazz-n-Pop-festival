@@ -187,7 +187,7 @@
     <!--Horaire-->
     <DateCard datecardTitre="Concert n°1" datecardDate1="11/07/2022" datecardDate2="12/07/2022" />
     <!--Map card-->
-    <GoogleMapCard />
+    <GoogleMapCard mapcardTitle="Places d'Armes, Belfort (90)" />
   </div>
 
   <!--Pictos & images -->
