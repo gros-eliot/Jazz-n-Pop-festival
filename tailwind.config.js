@@ -16,9 +16,13 @@ module.exports = {
         "raleway": ["Raleway", "sansserif"]
       },
       backgroundImage: {
+        'hero1': "rgba(0, 0, 0, 0.50),url('src/assets/concerts/concert2.jpg')",
+        'hero2': "rgba(0, 0, 0, 0.50),url('src/assets/artistes/pop/coldplay.jpg')",
+
         'concert1': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert1.jpg')",
         'concert2': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert2.jpg')",
         'concert3': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('src/assets/concerts/concert3.jpg')",
+       
         'acj1': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/melody_gardot.jpg');",
         'acj2': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/asaf_avidan.jpg');",
         'acj3': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/jazz/daida.jpg');",
