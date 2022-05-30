@@ -1,8 +1,6 @@
 <template>
-  <main>
-    <h1 class="text-2xl">Bonjour</h1>
-    <RouterLink to="/style-guide" class="font-bold underline">Aller au guide de style</RouterLink>
-  </main>
+  <!--HERO-->
+  <div class="h-screen w-full bg-[linear-gradient(180deg,_#FF0000_0%,_#FFC147_100%)]"></div>
 </template>
 
 <script>

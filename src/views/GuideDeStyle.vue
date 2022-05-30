@@ -188,7 +188,14 @@
     <DateCard datecardTitre="Concert n°1" datecardDate1="11/07/2022" datecardDate2="12/07/2022" />
     <!--Map card-->
     <GoogleMapCard mapcardTitle="Places d'Armes, Belfort (90)" />
+    <!--Tableau des tarifs-->
+    <TarifsCard />
   </div>
+
+  <!---->
+  <!---->
+  <!---->
+  <!---->
 
   <!--Pictos & images -->
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Pictos & images</h1>
@@ -251,6 +258,7 @@ import ConcertCard from "../components/big/concert/ConcertCard.vue";
 
 import DateCard from "../components/big/DateCard.vue";
 import GoogleMapCard from "../components/big/GoogleMapCard.vue";
+import TarifsCard from "../components/big/TarifsCard.vue";
 
 //Export des composants
 export default {
@@ -289,6 +297,7 @@ export default {
 
     DateCard,
     GoogleMapCard,
+    TarifsCard,
   },
 };
 </script>
