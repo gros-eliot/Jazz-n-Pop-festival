@@ -15,6 +15,10 @@ module.exports = {
         "abril-fatface": ["'Abril Fatface'", "sansserif"], // POUR LES TITRES 
         "raleway": ["Raleway", "sansserif"]
       },
+      backgroundImage: {
+        'concert1': "url('src/assets/concerts/concert1.jpg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      }
     },
 
   },

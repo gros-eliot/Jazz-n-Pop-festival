@@ -164,7 +164,13 @@
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (gros composants)</h1>
   <div class="flex h-full flex-col gap-10 bg-gray-400 py-4">
     <!-- Artiste : large card-->
+    <div class="mr-auto ml-auto h-[30rem] w-72 rounded-3xl bg-concert1 bg-cover bg-center">
+      <div class="absolute flex items-center justify-center"><PlusBouton :orangeVersion="true" /></div>
+      <!--FOND DE LA CARD-->
+      <div class="z-10 h-full w-full rounded-3xl bg-gradient-to-b from-transparent to-black"></div>
+    </div>
   </div>
+
   <!--Pictos & images -->
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Pictos & images</h1>
   <div class="flex p-3">
@@ -172,8 +178,18 @@
     <Saxophone class="h-20 w-20" />
   </div>
 
-  <div class="grid grid-cols-2">
-    <img src="" alt="" />
+  <div class="grid- grid grid-cols-3">
+    <!--Exemples d'images-->
+
+    <img src="../assets/concerts/concert1.jpg" alt="Concert de jazz" class="w-full" />
+    <img src="../assets/concerts/concert2.jpg" alt="Concert de pop" class="w-full" />
+    <img src="../assets/concerts/concert3.jpg" alt="Concert spécial" class="w-full" />
+    <!--
+    <img src="../assets/festival/festival1.jpg" alt="Photos du lieu du festival" class="w-full" />
+    <img src="../assets/festival/festival2.jpg" alt="Photos du lieu du festival" class="w-full" />
+    <img src="../assets/festival/festival3.jpg" alt="Photos du lieu du festival" class="w-full" />
+    <img src="../assets/festival/festival4.jpg" alt="Photos du lieu du festival" class="w-full" />
+    -->
   </div>
 </template>
 
