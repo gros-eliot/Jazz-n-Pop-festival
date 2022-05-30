@@ -4,6 +4,7 @@
     <FilmIcon class="h-5 w-5 fill-blue-300 stroke-blue-600" />
     <nav>
       <RouterLink to="/" class="text-blue-600 underline">Accueil</RouterLink>
+      <RouterLink to="/style-guide" class="text-blue-600 underline">Guide de style</RouterLink>
     </nav>
   </header>
 
