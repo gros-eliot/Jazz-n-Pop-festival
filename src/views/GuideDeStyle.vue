@@ -103,6 +103,10 @@
     <!--HEADER-->
     <HeaderView class="my-10" />
     <!--HEADER-->
+
+    <!--FOOTER-->
+    <FooterView class="my-10" />
+    <!--FOOTER-->
   </div>
 </template>
 
@@ -120,6 +124,7 @@ import LogoMediumBichrome from "../components/icons/JazzNPop_logos/medium/Bichro
 import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
 
 import HeaderView from "../components/layouts/HeaderView.vue";
+import FooterView from "../components/layouts/FooterView.vue";
 
 export default {
   components: {
@@ -137,6 +142,7 @@ export default {
     LogoSmall,
 
     HeaderView,
+    FooterView,
   },
 };
 </script>
