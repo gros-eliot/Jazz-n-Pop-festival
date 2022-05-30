@@ -113,23 +113,34 @@
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (petits composants)</h1>
 
   <div class="h-full bg-gray-400 py-4">
-    <!--Premier bouton : Flèche (3 couleurs)-->
-    <div class="grid grid-cols-3 justify-items-center">
+    <!--Boutons-->
+    <div class="grid grid-cols-2 justify-items-center">
+      <!--Boutons : Flèche (3 couleurs)-->
       <div class="flex w-fit flex-col gap-3">
         <ArrowBouton :orangeVersion="true" contenuTextBouton="Suivre" />
         <ArrowBouton :whiteVersion="true" contenuTextBouton="Suivre" />
         <ArrowBouton :redVersion="true" contenuTextBouton="Suivre" />
       </div>
+      <!--Boutons : Plus (3 couleurs)-->
       <div class="flex w-fit flex-col gap-3">
         <PlusBouton :orangeVersion="true" contenuTextBouton="Suivre" />
         <PlusBouton :whiteVersion="true" contenuTextBouton="Suivre" />
         <PlusBouton :redVersion="true" contenuTextBouton="Suivre" />
       </div>
-      <div class="flex w-fit flex-col gap-3">
-        <TextBouton :orangeVersion="true" contenuTextBouton="Te" />
-        <TextBouton :whiteVersion="true" contenuTextBouton="Te" />
-        <TextBouton :redVersion="true" contenuTextBouton="Te" />
-      </div>
+    </div>
+    <!--Boutons : Texte uniquement (3 couleurs)-->
+    <div class="flex flex-col gap-3">
+      <TextBouton :orangeVersion="true" contenuTextBouton="En savoir plus" />
+      <TextBouton :whiteVersion="true" contenuTextBouton="En savoir plus" />
+      <TextBouton :redVersion="true" contenuTextBouton="En savoir plus" />
+      <TextBouton :blueVersion="true" contenuTextBouton="En savoir plus" />
+      <TextBouton :grayVersion="true" contenuTextBouton="En savoir plus" />
+      <TextBouton :blackVersion="true" contenuTextBouton="En savoir plus" />
+    </div>
+
+    <!--Catégories des card-->
+    <div class="gap3 flex flex-col">
+      <CategorieName :blackCategory="true" />
     </div>
   </div>
   <!--Pictos & images -->
@@ -156,6 +167,9 @@ import ArrowBouton from "../components/boutons/ArrowBouton.vue";
 import PlusBouton from "../components/boutons/PlusBouton.vue";
 import TextBouton from "../components/boutons/TextBouton.vue";
 
+//Composants: catégories
+
+import CategorieName from "../components/categories/CategorieName.vue";
 export default {
   components: {
     MenuAlt3Icon,
@@ -177,6 +191,8 @@ export default {
     ArrowBouton,
     PlusBouton,
     TextBouton,
+
+    CategorieName,
   },
 };
 </script>

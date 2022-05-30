@@ -1,9 +1,12 @@
 <template>
   <button
-    class="flex items-center justify-center gap-3 rounded-full px-8 py-3 md:px-14 md:py-5 lg:px-10 lg:py-5"
+    class="flex w-fit items-center justify-center gap-3 rounded-full px-12 py-4 md:px-16 md:py-5 lg:px-24 lg:py-5"
     :class="{
       'bg-red-jazzNpop fill-white stroke-white text-white': redVersion,
       'bg-orange-400 fill-white stroke-white text-white': orangeVersion,
+      'bg-blue-400 fill-white stroke-white text-white': blueVersion,
+      'bg-gray-700 fill-white stroke-white text-white': grayVersion,
+      'bg-gray-900 fill-white stroke-white text-white': blackVersion,
       'bg-white fill-black stroke-black text-black': whiteVersion,
     }"
   >
@@ -23,6 +26,18 @@ export default {
       default: false,
     },
     whiteVersion: {
+      type: Boolean,
+      default: false,
+    },
+    blueVersion: {
+      type: Boolean,
+      default: false,
+    },
+    grayVersion: {
+      type: Boolean,
+      default: false,
+    },
+    blackVersion: {
       type: Boolean,
       default: false,
     },
