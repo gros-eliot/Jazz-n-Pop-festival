@@ -119,6 +119,8 @@ import LogoMediumBichrome from "../components/icons/JazzNPop_logos/medium/Bichro
 
 import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
 
+import HeaderView from "../components/layouts/HeaderView.vue";
+
 export default {
   components: {
     MenuAlt3Icon,
@@ -133,6 +135,8 @@ export default {
     LogoMediumMonochrome,
     LogoMediumBichrome,
     LogoSmall,
+
+    HeaderView,
   },
 };
 </script>

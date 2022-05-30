@@ -1,20 +1,20 @@
 <template>
-  <header>
-    <icon-logo />
-    <FilmIcon class="h-5 w-5 fill-blue-300 stroke-blue-600" />
-    <nav>
-      <RouterLink to="/" class="text-blue-600 underline">Accueil</RouterLink>
-      <RouterLink to="/style-guide" class="text-blue-600 underline">Guide de style</RouterLink>
-    </nav>
+  <header class="p-3">
+    <HeaderView class="fixed inset-x-0 top-0 z-[8] w-full"></HeaderView>
   </header>
 
-  <RouterView />
+  <main class="mt-[3.3rem] lg:mt-[5rem]">
+    <RouterView />
+  </main>
+
+  <footer></footer>
 </template>
 
 <script>
 import IconLogo from "./components/icons/IconLogo.vue";
+import HeaderView from "./components/layouts/HeaderView.vue";
 import { FilmIcon } from "@heroicons/vue/outline";
 export default {
-  components: { IconLogo, FilmIcon },
+  components: { IconLogo, FilmIcon, HeaderView },
 };
 </script>
