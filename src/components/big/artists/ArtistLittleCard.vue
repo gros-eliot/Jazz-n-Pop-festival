@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-2xl items-center justify-between p-2">
+  <div class="flex max-w-xl items-center justify-between p-2">
     <div>
       <h3 class="text-3xl font-bold">{{ artisteNom }}</h3>
 
@@ -14,22 +14,20 @@
 
 <script>
 import PlusBouton from "../../boutons/PlusBouton.vue";
+
 export default {
-
-components: {
-    PlusBouton
+  components: {
+    PlusBouton,
+  },
+  props: {
+    artisteNom: {
+      type: String,
+      required: true,
     },
-    props:{
-        artisteNom:{
-            type=String,
-            required=true
-            },
-        artisteDate:{
-            type=String,
-            required=true
-            },
-        },
-    };
+    artisteDate: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
-
-<style></style>

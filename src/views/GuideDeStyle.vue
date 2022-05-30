@@ -169,7 +169,14 @@
       <ArtistCardPop artisteNom="Alan Walker" artisteDate="10/07/2022" class="bg-acp1 bg-center" />
     </div>
     <!-- Artiste : petite card-->
-    <ArtistLittleCard artisteNom="Coldplay" artisteDate="11/07/2022" />
+    <div class="md:grid-cols-2 lg:grid">
+      <ArtistLittleCard artisteNom="Trio Viret" artisteDate="11/07/2022" />
+      <ArtistLittleCard artisteNom="Coldplay" artisteDate="11/07/2022" />
+    </div>
+
+    <!--Artiste : card circulaire-->
+
+    <ArtistCircularCard artisteNom="Asaf Avidan" artisteImageSrc="src/assets/artistes/jazz/asaf_avidan.jpg" />
   </div>
 
   <!--Pictos & images -->
@@ -226,6 +233,7 @@ import CategorieName from "../components/categories/CategorieName.vue";
 import ArtistCardJazz from "../components/big/artists/ArtistCardJazz.vue";
 import ArtistCardPop from "../components/big/artists/ArtistCardPop.vue";
 import ArtistLittleCard from "../components/big/artists/ArtistLittleCard.vue";
+import ArtistCircularCard from "../components/big/artists/ArtistCircularCard.vue";
 
 //Export des composants
 export default {
@@ -258,6 +266,7 @@ export default {
     ArtistCardJazz,
     ArtistCardPop,
     ArtistLittleCard,
+    ArtistCircularCard,
   },
 };
 </script>
