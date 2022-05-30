@@ -146,9 +146,24 @@
       <CategorieName :orangeCategory="true" NameCategory="Catégorie" />
     </div>
 
-    <div class="flex flex-col gap-3">
-      <div class=""></div>
-    </div>
+    <!--Composants des formulaires-->
+
+    <form class="flex flex-col gap-3">
+      <input
+        type="text"
+        class="p focus:none w-10/12 rounded-xl border-2 border-red-jazzNpop bg-white p-2 text-base focus-visible:ring-4 focus-visible:ring-gray-900"
+        placeholder="Nom de l'input"
+      />
+      <div>
+        <input type="checkbox" id="checkboxRed1" />
+        <label for="checkboxRed1" aria-describedby="label">Red</label>
+      </div>
+    </form>
+  </div>
+  <!--Composants (GROS COMPOSANTS) -->
+  <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (gros composants)</h1>
+  <div class="flex h-full flex-col gap-10 bg-gray-400 py-4">
+    <!-- Artiste : large card-->
   </div>
   <!--Pictos & images -->
 </template>

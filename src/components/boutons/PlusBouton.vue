@@ -13,16 +13,11 @@
 </template>
 
 <script>
-import { XIcon, PlusIcon, MenuAlt3Icon, ArrowRightIcon, ClockIcon } from "@heroicons/vue/outline";
+import { PlusIcon } from "@heroicons/vue/outline";
 
 export default {
   components: {
-    MenuAlt3Icon,
-    XIcon,
     PlusIcon,
-    ArrowRightIcon,
-    ClockIcon,
-    UsersIcon,
   },
   props: {
     redVersion: {
