@@ -27,7 +27,9 @@
         Le festival se trouve à la Place d’Armes, dans la ville de Belfort (90000). Proche de différentes frontières (Suisse, Allemagne...),
         le festival peut accueillir un grand nombre de visiteurs.
       </p>
-      <TextBouton :redVersion="true" contenuTextBouton="En savoir plus" class="ml-auto mr-auto" />
+      <RouterLink to="/contact">
+        <TextBouton :redVersion="true" contenuTextBouton="En savoir plus" class="ml-auto mr-auto" />
+      </RouterLink>
     </div>
     <!--Places -->
     <div class="my-10 flex flex-col gap-5">
@@ -65,7 +67,9 @@
       <li>- le 21 juillet 2022</li>
     </ul>
     <p class="jazznpop-text">Où de nombreuses personnalités seront présentes pour vous faire passer un moment inoubliable.</p>
-    <TextBouton :whiteVersion="true" contenuTextBouton="Voir les concerts" class="ml-auto mr-auto" />
+    <RouterLink to="/concerts">
+      <TextBouton :whiteVersion="true" contenuTextBouton="Voir les concerts" class="ml-auto mr-auto" />
+    </RouterLink>
   </div>
 
   <div class="my-10 flex flex-col gap-5 p-page">

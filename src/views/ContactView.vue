@@ -19,14 +19,18 @@ Belfort (90)"
     <div class="my-10 flex flex-col gap-5 lg:flex-row lg:justify-around">
       <div class="flex flex-col gap-0">
         <p class="jazznpop-text font-bold">Service après-vente (SAV)</p>
-        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline">03 00 00 00 00</a></p>
-        <p class="jazznpop-text">Mail : <a href="mailto:jazznpop.fest@adresse.mail" class="underline">jazznpop.fest@adresse.mail</a></p>
+        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline dark:text-yellow-400">03 00 00 00 00</a></p>
+        <p class="jazznpop-text">
+          Mail : <a href="mailto:jazznpop.fest@adresse.mail" class="underline dark:text-yellow-400">jazznpop.fest@adresse.mail</a>
+        </p>
       </div>
       <div class="flex flex-col gap-0">
         <p class="jazznpop-text font-bold">Équipe de communication</p>
         <p class="jazznpop-text">Pierre Timothé</p>
-        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline">03 00 00 00 00</a></p>
-        <p class="jazznpop-text">Mail : <a href="mailto:pierre.timothé@adresse.mail" class="underline">pierre.timothé@adresse.mail</a></p>
+        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline dark:text-yellow-400">03 00 00 00 00</a></p>
+        <p class="jazznpop-text">
+          Mail : <a href="mailto:pierre.timothé@adresse.mail" class="underline dark:text-yellow-400">pierre.timothé@adresse.mail</a>
+        </p>
       </div>
     </div>
 
@@ -42,7 +46,7 @@ Belfort (90)"
           <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Nom*" required />
           <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Prénom*" required />
           <input
-            type="text"
+            type="email"
             class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50"
             placeholder="Adresse e-mail*"
             required
