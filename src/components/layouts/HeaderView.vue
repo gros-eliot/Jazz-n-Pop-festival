@@ -46,19 +46,19 @@
             <nav class="flex justify-center">
               <ul class="relative z-40 flex flex-col gap-10 p-10 text-2xl lg:flex-row lg:gap-8">
                 <li @click="menuOuvert = !menuOuvert">
-                  <RouterLink to="/" class="flex flex-row items-center gap-3">
+                  <RouterLink to="/concerts" class="flex flex-row items-center gap-3">
                     Programmes <ClockIcon class="h-8 w-8" /> <span class="sr-only">Icône horloge</span>
                   </RouterLink>
                 </li>
 
                 <li @click="menuOuvert = !menuOuvert">
-                  <RouterLink to="/" class="flex flex-row items-center gap-3">
+                  <RouterLink to="/artistes" class="flex flex-row items-center gap-3">
                     Artistes <UsersIcon class="h-8 w-8" /> <span class="sr-only">Icône utilisateurs</span>
                   </RouterLink>
                 </li>
 
                 <li @click="menuOuvert = !menuOuvert">
-                  <RouterLink to="/" class="flex flex-row items-center gap-3">
+                  <RouterLink to="/about" class="flex flex-row items-center gap-3">
                     Festival <PartyIcon class="h-8 w-8 fill-yellow-400" /> <span class="sr-only">Icône fêtes</span>
                   </RouterLink>
                 </li>
@@ -70,11 +70,15 @@
 
       <!--LISTE DES LIENS (sans bouton)-->
       <nav class="mx-5 hidden flex-row gap-5 fill-white text-white lg:flex">
-        <RouterLink to="/" class="flex flex-row items-center justify-center gap-1"> <ClockIcon class="h-8 w-8" />Programmes </RouterLink>
+        <RouterLink to="/concerts" class="flex flex-row items-center justify-center gap-1">
+          <ClockIcon class="h-8 w-8" />Programmes
+        </RouterLink>
 
-        <RouterLink to="/" class="flex flex-row items-center justify-center gap-1"> <UsersIcon class="h-8 w-8" />Artistes </RouterLink>
+        <RouterLink to="/artistes" class="flex flex-row items-center justify-center gap-1">
+          <UsersIcon class="h-8 w-8" />Artistes
+        </RouterLink>
 
-        <RouterLink to="/" class="flex flex-row items-center justify-center gap-1">
+        <RouterLink to="/about" class="flex flex-row items-center justify-center gap-1">
           <PartyIcon class="h-8 w-8 fill-white" />Festival
         </RouterLink>
       </nav>
