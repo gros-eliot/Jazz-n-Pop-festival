@@ -17,7 +17,7 @@
         <RouterLink to="/contact">Contact</RouterLink>
       </li>
       <li>
-        <RouterLink to="/">Mentions légales</RouterLink>
+        <RouterLink to="/mentions_legales">Mentions légales</RouterLink>
       </li>
     </ul>
     <div class="w-[90%] px-4 text-center text-base font-light text-white">
