@@ -9,7 +9,9 @@
       <p class="jazznpop-card-caption">{{ concertDate }}</p>
     </div>
     <div class="flex flex-row justify-end">
-      <ArrowBouton :whiteVersion="true" contenuTextBouton="Voir" />
+      <RouterLink :to="'/' + concertLink">
+        <ArrowBouton :whiteVersion="true" contenuTextBouton="Voir" />
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -35,6 +37,10 @@ export default {
       required: true,
     },
     concertDate: {
+      type: String,
+      required: true,
+    },
+    concertLink: {
       type: String,
       required: true,
     },

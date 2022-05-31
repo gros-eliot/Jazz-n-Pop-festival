@@ -5,7 +5,12 @@
       <h2 class="jazznpop-h2">Les concerts disponibles</h2>
       <!--Une div par concert-->
       <div class="my-10">
-        <concert-card concertNom="Jazzy Stage" concertDate="7 juillet 2022 et 8 juillet 2022 - 20h à 2h" class="bg-concert1"></concert-card>
+        <concert-card
+          concertNom="Jazzy Stage"
+          concertDate="7 juillet 2022 et 8 juillet 2022 - 20h à 2h"
+          concertLink="concert_view"
+          class="bg-concert1"
+        ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
           <ArtistCircularCard artisteNom="Daïda" artisteImageSrc="src/assets/artistes/jazz/daida.jpg" />
           <RouterLink to="artiste_view">
@@ -19,6 +24,7 @@
         <concert-card
           concertNom="Pop of dreams"
           concertDate="9 juillet 2022 et 10 juillet 2022 - 22h à 3h"
+          concertLink=""
           class="bg-concert2"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
@@ -33,6 +39,7 @@
         <concert-card
           concertNom="Jazz’n’pop special concert"
           concertDate="14 juillet 2022 et 15 juillet 2022 - 20h à 3h"
+          concertLink=""
           class="bg-concert3"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
