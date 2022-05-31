@@ -1,5 +1,5 @@
 <template>
-  <div class="grid max-w-6xl grid-cols-2 gap-3 p-3 text-center md:grid-cols-1">
+  <div class="grid max-w-6xl grid-cols-2 gap-3 p-3 text-center text-gray-900 md:grid-cols-1">
     <div class="grid grid-cols-1 justify-items-center bg-yellow-400 p-2 md:grid-cols-5 md:p-5">
       <h3 class="jazznpop-text font-bold">Conditions</h3>
       <hr class="block py-1 md:hidden" />

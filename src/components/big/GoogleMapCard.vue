@@ -1,5 +1,6 @@
 <template>
   <div class="ml-auto mr-auto flex h-[20rem] w-11/12 max-w-2xl rounded-xl bg-[url('src/assets/pictos/map.jpg')] bg-cover bg-center">
+    <span class="sr-only">Carte google map</span>
     <div class="flex w-full items-end">
       <div
         class="flex w-full flex-row items-center justify-between gap-1 rounded-b-xl bg-gray-900 p-5 text-yellow-400 dark:bg-white dark:text-gray-900"

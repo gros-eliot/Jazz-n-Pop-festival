@@ -1,6 +1,6 @@
 <template>
   <!--HEADER-->
-  <div class="bg-red-jazzNpop p-3 dark:bg-red-900 lg:p-1">
+  <div class="bg-red-jazzNpop p-3 dark:bg-red-jazzNpopDark lg:p-1">
     <div class="flex justify-between">
       <!--Logo du site (header)-->
       <div class="lg:mx-5">
@@ -10,6 +10,7 @@
           </div>
           <div class="hidden lg:block">
             <LogoMediumMonochrome class="h-24 w-24 fill-white" />
+            <span class="sr-only">Logo du festival Jazz'n'Pop</span>
           </div>
         </RouterLink>
       </div>

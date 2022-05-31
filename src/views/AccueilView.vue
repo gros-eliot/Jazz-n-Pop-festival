@@ -2,7 +2,7 @@
   <!--HERO-->
   <div class="z-[1] -mt-[3.3rem]">
     <div
-      class="flex h-screen w-full flex-col items-center justify-center bg-[linear-gradient(180deg,_#FF0000_0%,_#FBBF24_100%)] text-white dark:bg-[linear-gradient(180deg,_#7F1D1D_30%,_#000000_100%)] md:h-5/6 md:p-6"
+      class="flex h-screen w-full flex-col items-center justify-center bg-[linear-gradient(180deg,_#FF0000_0%,_#FBBF24_100%)] text-white dark:bg-[linear-gradient(180deg,_#45282A_30%,_#000000_100%)] md:h-5/6 md:p-6"
     >
       <Monochrome class="h-[25rem] w-full max-w-md fill-white p-4" />
       <h1 class="sr-only">Jazz'n'Pop festival</h1>
@@ -26,7 +26,9 @@
   />
 
   <!--Page : le festival (à propos)-->
-  <Disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-5" aria-hidden="true" /><span class="sr-only">Image de disque</span>
+  <Disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-5 dark:fill-white dark:opacity-10" aria-hidden="true" /><span class="sr-only"
+    >Image de disque</span
+  >
 
   <div class="m-5 flex flex-col items-center justify-center">
     <h1 class="text-center font-abril-fatface text-4xl lg:text-5xl">Le Jazz’n’Pop Festival, c'est...</h1>
@@ -49,9 +51,10 @@
     </RouterLink>
   </div>
 
-  <Saxophone class="absolute right-10 z-[-1] -mt-48 h-64 w-64 rotate-12 opacity-5" aria-hidden="true" /><span class="sr-only"
-    >Image de saxophone</span
-  >
+  <Saxophone
+    class="absolute right-10 z-[-1] -mt-48 h-64 w-64 rotate-12 opacity-5 dark:fill-white dark:opacity-10"
+    aria-hidden="true"
+  /><span class="sr-only">Image de saxophone</span>
 </template>
 
 <script>
