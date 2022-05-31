@@ -39,10 +39,10 @@ module.exports = {
         'acp6': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/pop/kungs.jpg');",
         'acp7': "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url('src/assets/artistes/pop/woodkid.jpg');",
       },
-      /* MARGES PREDEFINIES POUR LES PAGES (autre que celle d'accueil)
-      margin: {
-        'page': "5"
-      }*/
+      /* MARGES PREDEFINIES POUR LES PAGES (autre que celle d'accueil)*/
+      padding: {
+        'page': "1.25rem"
+      },
     },
 
   },

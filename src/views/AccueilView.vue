@@ -28,7 +28,7 @@
   <!--Page : le festival (à propos)-->
   <Disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-5" /><span class="sr-only">Image de disque</span>
 
-  <div class="mx-5 my-5 flex flex-col items-center justify-center">
+  <div class="m-5 flex flex-col items-center justify-center">
     <h1 class="text-center font-abril-fatface text-4xl lg:text-5xl">Le Jazz’n’Pop Festival, c'est...</h1>
     <div class="my-5 flex flex-col items-center justify-center md:flex-row md:gap-10">
       <div class="flex flex-col items-center justify-center gap-1 p-3">

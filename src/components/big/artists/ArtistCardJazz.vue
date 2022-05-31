@@ -5,7 +5,10 @@
 
       <h3 class="jazznpop-card-title text-white">{{ artisteNom }}</h3>
 
-      <p class="jazznpop-card-caption text-white">{{ artisteDate }}</p>
+      <div class="flex flex-col gap-0">
+        <p class="jazznpop-card-caption text-white">Prochain concert :</p>
+        <p class="jazznpop-card-caption text-white">{{ artisteDate }}</p>
+      </div>
 
       <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
     </div>
