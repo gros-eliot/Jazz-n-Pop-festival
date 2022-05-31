@@ -5,7 +5,7 @@
       <Monochrome class="h-[25rem] w-full max-w-md fill-white px-4" />
       <div class="flex flex-col items-center md:mt-12">
         <div class="-mt-10 flex flex-col gap-10">
-          <h1 class="jazznpop-h1 text-center">C'est quoi&nbsp?</h1>
+          <h1 class="jazznpop-h1 text-center">C'est quoi&nbsp;?</h1>
           <p class="jazznpop-text md:p-5">
             Retrouvez différentes informations à propos du Jazz’n’Pop Festival, que ce soit à travers ses tarifs, ses salles, ses places, et
             d’autres encore !
