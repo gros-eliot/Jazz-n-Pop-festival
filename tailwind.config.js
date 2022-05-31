@@ -42,7 +42,8 @@ module.exports = {
       },
       /* MARGES PREDEFINIES POUR LES PAGES (autre que celle d'accueil)*/
       padding: {
-        'page': "1.25rem"
+        'page': "1.25rem;",
+        'ordinateur': "0rem 20rem 0rem 0rem;",
       },
     },
 

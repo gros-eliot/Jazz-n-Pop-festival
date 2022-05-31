@@ -7,6 +7,7 @@
           href="https://www.google.com/maps/place/Mairie+de+Belfort/@47.6379236,6.8606643,17z/data=!3m1!4b1!4m5!3m4!1s0x47923b5f4ba75a69:0x1c99bbb93747b3ac!8m2!3d47.63792!4d6.862853"
         >
           <ArrowBouton :orangeVersion="true" contenuTextBouton="Visiter" />
+          <span class="sr-only">Voir sur Google Map</span>
         </a>
       </div>
     </div>
