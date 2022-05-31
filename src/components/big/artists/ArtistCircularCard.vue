@@ -4,7 +4,7 @@
       <img
         :src="'../../../' + artisteImageSrc"
         alt="Source de l'image"
-        class="h-full w-full rounded-full border-2 border-gray-900 object-cover"
+        class="h-full w-full rounded-full border-2 border-gray-900 object-cover dark:border-white"
       />
     </div>
     <div>

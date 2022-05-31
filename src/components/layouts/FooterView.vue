@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col items-center gap-10 bg-red-jazzNpop p-3">
     <LogoBigBichrome class="mt-5 ml-auto mr-auto" />
+    <span class="sr-only">Logo du festival</span>
+
     <ul class="flex w-[50%] flex-col justify-center gap-10 text-lg font-bold text-white md:items-center lg:w-[100%] lg:flex-row lg:text-xl">
       <li>
         <RouterLink to="/">Programmes</RouterLink>

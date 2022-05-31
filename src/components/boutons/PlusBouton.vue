@@ -9,6 +9,7 @@
   >
     <p class="jazznpop-bouton hidden lg:block">{{ contenuTextBouton }}</p>
     <PlusIcon class="h-7 w-7" />
+    <span class="sr-only">En savoir plus (icône)</span>
   </button>
 </template>
 

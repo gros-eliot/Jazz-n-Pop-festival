@@ -11,6 +11,7 @@
       </div>
       <RouterLink :to="'/' + artisteLink">
         <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+        <span class="sr-only">En savoir plus</span>
       </RouterLink>
     </div>
   </div>

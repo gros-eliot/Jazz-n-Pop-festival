@@ -10,6 +10,7 @@
         <p class="jazznpop-text font-bold">{{ datecardDate2 }}</p>
       </div>
       <ArrowRightIcon class="h-10 w-10 stroke-white" />
+      <span class="sr-only">Voir sur Google Maps</span>
     </div>
   </div>
 </template>

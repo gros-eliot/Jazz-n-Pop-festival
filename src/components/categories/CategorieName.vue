@@ -5,7 +5,7 @@
       'bg-red-jazzNpop text-white': redCategory,
       'bg-yellow-400 text-black': orangeCategory,
       'bg-blue-400 text-black': blueCategory,
-      'bg-gray-900 text-orange-400': blackCategory,
+      'bg-gray-900 text-orange-400 dark:bg-white': blackCategory,
     }"
   >
     <p class="text-center">{{ NameCategory }}</p>

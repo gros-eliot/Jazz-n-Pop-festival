@@ -46,16 +46,20 @@
             <nav class="flex justify-center">
               <ul class="relative z-40 flex flex-col gap-10 p-10 text-2xl lg:flex-row lg:gap-8">
                 <li @click="menuOuvert = !menuOuvert">
-                  <RouterLink to="/" class="flex flex-row items-center gap-3"> Programmes <ClockIcon class="h-8 w-8" /> </RouterLink>
-                </li>
-
-                <li @click="menuOuvert = !menuOuvert">
-                  <RouterLink to="/" class="flex flex-row items-center gap-3"> Artistes <UsersIcon class="h-8 w-8" /> </RouterLink>
+                  <RouterLink to="/" class="flex flex-row items-center gap-3">
+                    Programmes <ClockIcon class="h-8 w-8" /> <span class="sr-only">Icône horloge</span>
+                  </RouterLink>
                 </li>
 
                 <li @click="menuOuvert = !menuOuvert">
                   <RouterLink to="/" class="flex flex-row items-center gap-3">
-                    Festival <PartyIcon class="h-8 w-8 fill-yellow-400" />
+                    Artistes <UsersIcon class="h-8 w-8" /> <span class="sr-only">Icône utilisateurs</span>
+                  </RouterLink>
+                </li>
+
+                <li @click="menuOuvert = !menuOuvert">
+                  <RouterLink to="/" class="flex flex-row items-center gap-3">
+                    Festival <PartyIcon class="h-8 w-8 fill-yellow-400" /> <span class="sr-only">Icône fêtes</span>
                   </RouterLink>
                 </li>
               </ul>

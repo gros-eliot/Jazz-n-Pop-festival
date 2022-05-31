@@ -9,6 +9,7 @@
   >
     <p class="jazznpop-bouton hidden lg:block">{{ contenuTextBouton }}</p>
     <ArrowRightIcon class="h-7 w-7" />
+    <span class="sr-only">Redirection (icône)</span>
   </button>
 </template>
 
