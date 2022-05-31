@@ -9,7 +9,7 @@ module.exports = {
       "colors": {
         "red": {
           "jazzNpop": "#FF0000",
-          "jazzNpopDark": "#45282A",
+          "jazzNpopDark": "#491261",
         },
       },
       "fontFamily": {

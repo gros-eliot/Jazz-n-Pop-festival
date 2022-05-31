@@ -23,14 +23,14 @@
     <!-- Festival : Hébergement (coordonnées) -->
     <h2 class="jazznpop-h2">Hébergement web</h2>
     <div class="my-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2 lg:border-r lg:border-r-gray-900 lg:dark:border-r-white">
         <p class="jazznpop-text font-bold">Hébergeur</p>
         <p class="jazznpop-text">Nom de l'hébergeur</p>
-        <p class="jazznpop-text">Site : <a href="/" class="underline dark:text-yellow-400">https://hebergement.web/</a></p>
-        <p class="jazznpop-text">Contact : <a href="/" class="underline dark:text-yellow-400">https://hebergement.web/contact</a></p>
+        <p class="jazznpop-text">Site : <a href="/" class="underline dark:text-yellow-400">https://hebergement.fr/</a></p>
+        <p class="jazznpop-text">Contact : <a href="/" class="underline dark:text-yellow-400">https://hebergement.fr/contact</a></p>
       </div>
 
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2 lg:border-r lg:border-r-gray-900 lg:dark:border-r-white">
         <p class="jazznpop-text font-bold">Intégration et maquettage</p>
         <p class="jazznpop-text">Eliot Gros MMI1</p>
         <p class="jazznpop-text">MMI de Montbéliard</p>
@@ -40,7 +40,7 @@
         </p>
       </div>
 
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2">
         <p class="jazznpop-text font-bold">Mentions légales sur la réalisation du site</p>
         <p class="jazznpop-text">
           Projet réalisé dans le cadre d’un exercice pédagogique au département
@@ -52,19 +52,19 @@
     <!-- Festival : Droit d'auteurs (coordonnées) -->
     <h2 class="jazznpop-h2">Droits d'auteurs</h2>
     <div class="my-10 grid grid-cols-1 gap-5 lg:grid-cols-3">
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2 lg:border-r lg:border-r-gray-900 lg:dark:border-r-white">
         <p class="jazznpop-text font-bold">Images libre de droit</p>
         <p class="jazznpop-text">Certaines photos utilisées sur site sont libres de droits, et permettent une visualisation du festival.</p>
       </div>
 
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2 lg:border-r lg:border-r-gray-900 lg:dark:border-r-white">
         <p class="jazznpop-text font-bold">Photographies</p>
         <p class="jazznpop-text">Les photographies du festival sont sous l’étreinte du droit d’auteur.</p>
         <p class="jazznpop-text mt-5">Photographe : Nicolas Dup.</p>
         <p class="jazznpop-text">Tel : <a href="tel:0600000000" class="underline dark:text-yellow-400">06 00 00 00 00</a></p>
       </div>
 
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-0 p-2">
         <p class="jazznpop-text font-bold">Images des artistes</p>
         <p class="jazznpop-text">
           Les images représentant les artistes au concert ne sont pas libres de droit. Leur utilisation est uniquement pour la réalisation
