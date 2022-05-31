@@ -2,7 +2,7 @@
   <div class="p-page">
     <h1 class="jazznpop-h1 text-center">Nous contacter</h1>
     <!-- Festival : map -->
-    <div class="my-5 flex flex-col gap-5">
+    <div class="my-10 flex flex-col gap-5">
       <h2 class="jazznpop-h2">Où pouvons-nous trouver le festival ?</h2>
       <p class="jazznpop-text lg:p-ordinateur">
         Le festival se trouve à la Place d’Armes, dans la ville de Belfort (90000). Proche de différentes frontières (Suisse, Allemagne...),
@@ -15,35 +15,50 @@ Belfort (90)"
     </div>
 
     <!-- Festival : Contacter (coordonnées) -->
-    <div class="my-5 flex flex-col gap-5">
-      <h2 class="jazznpop-h2">Contacter l’équipe du festival</h2>
+    <h2 class="jazznpop-h2">Contacter l’équipe du festival</h2>
+    <div class="my-10 flex flex-col gap-5 lg:flex-row lg:justify-around">
       <div class="flex flex-col gap-0">
-        <p class="jazznpop-text font-bold lg:p-ordinateur">Service après-vente (SAV)</p>
-        <p class="jazznpop-text lg:p-ordinateur">Tel : <a href="tel:0300000000">03 00 00 00 00</a></p>
-        <p class="jazznpop-text lg:p-ordinateur">
-          Mail : <a href="mailto:jazznpop.fest@adresse.mail" class="underline">jazznpop.fest@adresse.mail</a>
-        </p>
+        <p class="jazznpop-text font-bold">Service après-vente (SAV)</p>
+        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline">03 00 00 00 00</a></p>
+        <p class="jazznpop-text">Mail : <a href="mailto:jazznpop.fest@adresse.mail" class="underline">jazznpop.fest@adresse.mail</a></p>
       </div>
       <div class="flex flex-col gap-0">
-        <p class="jazznpop-text font-bold lg:p-ordinateur">Équipe de communication</p>
-        <p class="jazznpop-text lg:p-ordinateur">Pierre Timothé</p>
-        <p class="jazznpop-text lg:p-ordinateur">Tel : <a href="tel:0300000000">03 00 00 00 00</a></p>
-        <p class="jazznpop-text lg:p-ordinateur">
-          Mail : <a href="mailto:pierre.timothé@adresse.mail" class="underline">pierre.timothé@adresse.mail</a>
-        </p>
+        <p class="jazznpop-text font-bold">Équipe de communication</p>
+        <p class="jazznpop-text">Pierre Timothé</p>
+        <p class="jazznpop-text">Tel : <a href="tel:0300000000" class="underline">03 00 00 00 00</a></p>
+        <p class="jazznpop-text">Mail : <a href="mailto:pierre.timothé@adresse.mail" class="underline">pierre.timothé@adresse.mail</a></p>
       </div>
     </div>
 
     <!-- Festival : formulaire -->
-    <div class="my-5 flex flex-col gap-5">
+    <div class="my-10 flex flex-col gap-5">
       <h2 class="jazznpop-h2">Écrivez-nous...</h2>
       <div class="flex flex-col gap-0">
         <p class="jazznpop-text lg:p-ordinateur">
           Utilisez ce formulaire pour demander un remboursement ou nous faire parvenir votre moindre question, remarque, ou commentaire à
           propos du Jazz’n’Pop Festival.
         </p>
-        <form>
-          <input type="text" />
+        <form class="my-10 flex flex-col gap-5">
+          <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Nom*" required />
+          <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Prénom*" required />
+          <input
+            type="text"
+            class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50"
+            placeholder="Adresse e-mail*"
+            required
+          />
+          <textarea class="jazznpop-input h-32 dark:bg-black dark:bg-opacity-50" placeholder="Message" />
+
+          <div class="flex flex-row items-center gap-2">
+            <input type="checkbox" id="checkboxRed1" required />
+            <label for="checkboxRed1" aria-describedby="label" class="jazznpop-text"
+              >J’accepte d’être possiblement recontacté par mail par l’équipe de communication du Jazz’n’Pop Festival.*</label
+            >
+          </div>
+
+          <p class="jazznpop-text">(*obligatoire)</p>
+
+          <text-bouton type="submit" :redVersion="true" contenuTextBouton="Envoyer" class="ml-auto mr-auto"></text-bouton>
         </form>
       </div>
     </div>
@@ -52,8 +67,9 @@ Belfort (90)"
 
 <script>
 import GoogleMapCard from "../components/big/GoogleMapCard.vue";
+import TextBouton from "../components/boutons/TextBouton.vue";
 export default {
-  components: { GoogleMapCard },
+  components: { GoogleMapCard, TextBouton },
 };
 </script>
 

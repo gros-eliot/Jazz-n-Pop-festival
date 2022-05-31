@@ -12,7 +12,7 @@
           </p>
         </div>
         <a href="#scroll" class="block md:hidden">
-          <text-bouton :orangeVersion="true" contenuTextBouton="Naviguer" class="my-5"></text-bouton>
+          <text-bouton :orangeVersion="true" contenuTextBouton="Naviguer" class="my-10"></text-bouton>
         </a>
       </div>
     </div>
@@ -20,7 +20,7 @@
   <!--CONTENU -->
   <div id="scroll" class="p-page">
     <!--Generalites -->
-    <div class="my-5 flex flex-col gap-5">
+    <div class="my-10 flex flex-col gap-5">
       <h2 class="jazznpop-h2">Les choses à savoir sur le festival</h2>
       <h3 class="jazznpop-text font-bold">Localisation</h3>
       <p class="jazznpop-text lg:p-ordinateur">
@@ -30,7 +30,7 @@
       <TextBouton :redVersion="true" contenuTextBouton="En savoir plus" class="ml-auto mr-auto" />
     </div>
     <!--Places -->
-    <div class="my-5 flex flex-col gap-5">
+    <div class="my-10 flex flex-col gap-5">
       <h3 class="jazznpop-text font-bold">Places disponibles</h3>
       <p class="jazznpop-text lg:p-ordinateur">
         Au Jazz’n’Pop Festival, vous pourrez venir nombreux. En effet, notre festival possède un total de <strong>7000 places</strong>, dont
@@ -38,7 +38,7 @@
       </p>
     </div>
     <!--Scènes -->
-    <div class="my-5 flex flex-col gap-5">
+    <div class="my-10 flex flex-col gap-5">
       <h3 class="jazznpop-text font-bold">Les scènes du festival</h3>
       <p class="jazznpop-text lg:p-ordinateur">
         Le Jazz’n’Pop Festival possède au total 3 scènes. Nous possédons 2 salles de concert, et une scène sur la place extérieure.
@@ -52,7 +52,7 @@
     </div>
   </div>
   <!--Dates -->
-  <div class="my-5 flex flex-col gap-5 bg-yellow-400 p-page">
+  <div class="my-10 flex flex-col gap-5 bg-yellow-400 p-page py-16">
     <h2 class="jazznpop-h2">Les dates du festival</h2>
     <p class="jazznpop-text">
       Le festival commencera cet été, et durera du<strong> jeudi 7 juillet au jeudi 21 juillet</strong> (2 semaines), avec une pause entre
@@ -68,7 +68,7 @@
     <TextBouton :whiteVersion="true" contenuTextBouton="Voir les concerts" class="ml-auto mr-auto" />
   </div>
 
-  <div class="my-5 flex flex-col gap-5 p-page">
+  <div class="my-10 flex flex-col gap-5 p-page">
     <h2 class="jazznpop-h2">Les tarifs</h2>
     <p class="jazznpop-text">Les tarifs d’accès aux concerts peuvent changer selon certaines conditions.</p>
     <tarifs-card></tarifs-card>
