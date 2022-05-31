@@ -26,6 +26,8 @@
   />
 
   <!--Page : le festival (à propos)-->
+  <disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-10"></disque>
+
   <div class="mx-3 my-5 flex flex-col items-center justify-center">
     <h1 class="text-center font-abril-fatface text-4xl lg:text-5xl">Le Jazz’n’Pop Festival, c'est...</h1>
     <div class="my-5 flex flex-col items-center justify-center md:flex-row md:gap-10">
@@ -44,13 +46,17 @@
     </div>
     <text-bouton :redVersion="true" contenuTextBouton="En savoir plus" />
   </div>
+
+  <Saxophone class="absolute right-10 z-[-1] -mt-48 h-64 w-64 rotate-12 opacity-10" />
 </template>
 
 <script>
 import Monochrome from "../components/icons/JazzNPop_logos/big/Monochrome.vue";
 import TextBouton from "../components/boutons/TextBouton.vue";
 import PagePresentation from "../components/home/PagePresentation.vue";
+import Disque from "../components/pictos/Disque.vue";
+import Saxophone from "../components/pictos/Saxophone.vue";
 export default {
-  components: { Monochrome, TextBouton, PagePresentation },
+  components: { Monochrome, TextBouton, PagePresentation, Disque, Saxophone },
 };
 </script>
