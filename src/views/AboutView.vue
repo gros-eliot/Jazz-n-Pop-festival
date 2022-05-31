@@ -75,7 +75,9 @@
   <div class="my-10 flex flex-col gap-5 p-page">
     <h2 class="jazznpop-h2">Les tarifs</h2>
     <p class="jazznpop-text">Les tarifs d’accès aux concerts peuvent changer selon certaines conditions.</p>
-    <tarifs-card></tarifs-card>
+    <div class="flex w-full justify-center">
+      <tarifs-card class="w-full"></tarifs-card>
+    </div>
     <p class="jazznpop-text">Les pass ci-dessus permettent un accès à plusieurs concerts.</p>
     <p class="jazznpop-text"><strong>Leur durée est valable sur une durée de 3 jours.</strong></p>
     <p class="jazznpop-text">
