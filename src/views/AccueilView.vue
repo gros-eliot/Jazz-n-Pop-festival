@@ -16,7 +16,7 @@
     class="bg-hero1"
     otherpageTitle="Concerts"
     otherpageDesc="Retrouvez ici les différents concerts disponibles cet été, au Jazz’n’Pop Festival."
-    otherpageLink=""
+    otherpageLink="concerts"
   />
   <PagePresentation
     class="bg-hero2"
