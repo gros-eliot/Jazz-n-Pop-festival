@@ -5,16 +5,16 @@
 
     <ul class="flex w-[50%] flex-col justify-center gap-10 text-lg font-bold text-white md:items-center lg:w-[100%] lg:flex-row lg:text-xl">
       <li>
-        <RouterLink to="/">Programmes</RouterLink>
+        <RouterLink to="/concerts">Programmes</RouterLink>
       </li>
       <li>
-        <RouterLink to="/">Artistes</RouterLink>
+        <RouterLink to="/artistes">Artistes</RouterLink>
       </li>
       <li>
-        <RouterLink to="/">Festival</RouterLink>
+        <RouterLink to="/about">Festival</RouterLink>
       </li>
       <li>
-        <RouterLink to="/">Contact</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
       </li>
       <li>
         <RouterLink to="/">Mentions légales</RouterLink>
