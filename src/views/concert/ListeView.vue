@@ -9,7 +9,7 @@
           concertNom="Jazzy Stage"
           concertDate="7 juillet 2022 et 8 juillet 2022 - 20h à 2h"
           concertLink="concert_view"
-          class="bg-concert1"
+          class="bg-concert1 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
           <ArtistCircularCard artisteNom="Daïda" artisteImageSrc="src/assets/artistes/jazz/daida.jpg" />
@@ -25,7 +25,7 @@
           concertNom="Pop of dreams"
           concertDate="9 juillet 2022 et 10 juillet 2022 - 22h à 3h"
           concertLink=""
-          class="bg-concert2"
+          class="bg-concert2 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
           <ArtistCircularCard artisteNom="Coldplay" artisteImageSrc="src/assets/artistes/pop/coldplay.jpg" />
@@ -40,7 +40,7 @@
           concertNom="Jazz’n’pop special concert"
           concertDate="14 juillet 2022 et 15 juillet 2022 - 20h à 3h"
           concertLink=""
-          class="bg-concert3"
+          class="bg-concert3 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
           <ArtistCircularCard artisteNom="James Blunt" artisteImageSrc="src/assets/artistes/pop/james_blunt.webp" />
