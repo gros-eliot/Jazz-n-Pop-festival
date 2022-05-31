@@ -8,7 +8,7 @@
       />
     </div>
     <div>
-      <h3 class="text-center text-2xl font-light">{{ artisteNom }}</h3>
+      <h3 class="jazznpop-card-caption text-center">{{ artisteNom }}</h3>
     </div>
   </div>
 </template>

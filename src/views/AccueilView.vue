@@ -33,15 +33,15 @@
     <div class="my-5 flex flex-col items-center justify-center md:flex-row md:gap-10">
       <div class="flex flex-col items-center justify-center gap-1 p-3">
         <h2 class="text-3xl font-bold text-yellow-400">7000</h2>
-        <p>places disponibles</p>
+        <p class="jazznpop-text">places disponibles</p>
       </div>
       <div class="flex flex-col items-center justify-center gap-1 p-3">
         <h2 class="text-3xl font-bold text-yellow-400">De 15 à 25€</h2>
-        <p>selon les tarifs</p>
+        <p class="jazznpop-text">selon les tarifs</p>
       </div>
       <div class="flex flex-col items-center justify-center gap-1 p-3">
         <h2 class="text-3xl font-bold text-yellow-400">2 semaines</h2>
-        <p>à partir de juillet 2022</p>
+        <p class="jazznpop-text">à partir de juillet 2022</p>
       </div>
     </div>
     <text-bouton :redVersion="true" contenuTextBouton="En savoir plus" />

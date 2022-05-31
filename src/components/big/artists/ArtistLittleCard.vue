@@ -1,10 +1,10 @@
 <template>
   <div class="flex max-w-xl items-center justify-between p-2">
     <div>
-      <h3 class="text-3xl font-bold">{{ artisteNom }}</h3>
+      <h3 class="jazznpop-card-title">{{ artisteNom }}</h3>
 
-      <p class="text-2xl font-light">Prochain concert :</p>
-      <p class="text-2xl font-light">{{ artisteDate }}</p>
+      <p class="jazznpop-card-caption">Prochain concert :</p>
+      <p class="jazznpop-card-caption">{{ artisteDate }}</p>
     </div>
     <div>
       <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" />

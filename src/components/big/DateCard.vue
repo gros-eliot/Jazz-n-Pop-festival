@@ -6,8 +6,8 @@
     </div>
     <div class="flex flex-row items-center gap-2">
       <div class="flex flex-col items-center">
-        <p class="text-base font-bold md:text-lg lg:text-xl">{{ datecardDate1 }}</p>
-        <p class="text-base font-bold md:text-lg lg:text-xl">{{ datecardDate2 }}</p>
+        <p class="jazznpop-text font-bold">{{ datecardDate1 }}</p>
+        <p class="jazznpop-text font-bold">{{ datecardDate2 }}</p>
       </div>
       <ArrowRightIcon class="h-10 w-10 stroke-white" />
     </div>

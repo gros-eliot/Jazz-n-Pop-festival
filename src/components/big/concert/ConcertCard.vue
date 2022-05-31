@@ -4,9 +4,9 @@
       <CategorieName :blueCategory="false" :blackCategory="true" :redCategory="false" :orangeCategory="false" NameCategory="Concert" />
     </div>
     <div class="flex flex-col gap-2 text-white">
-      <h3 class="text-3xl font-bold">{{ concertNom }}</h3>
+      <h3 class="jazznpop-card-title">{{ concertNom }}</h3>
 
-      <p class="text-2xl font-light">{{ concertDate }}</p>
+      <p class="jazznpop-card-caption">{{ concertDate }}</p>
     </div>
     <div class="flex flex-row justify-end">
       <ArrowBouton :whiteVersion="true" contenuTextBouton="Voir" />

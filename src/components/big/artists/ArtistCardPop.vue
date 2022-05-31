@@ -3,9 +3,9 @@
     <div class="flex w-full flex-col gap-3">
       <CategorieName :redCategory="true" NameCategory="Pop" class="ml-auto mr-auto" />
 
-      <h3 class="text-3xl font-bold text-white">{{ artisteNom }}</h3>
+      <h3 class="jazznpop-card-title text-white">{{ artisteNom }}</h3>
 
-      <p class="text-2xl font-light text-white">{{ artisteDate }}</p>
+      <p class="jazznpop-card-caption text-white">{{ artisteDate }}</p>
 
       <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
     </div>
