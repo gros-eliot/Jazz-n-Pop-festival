@@ -9,7 +9,9 @@
         <p class="jazznpop-card-caption text-white">Prochain concert :</p>
         <p class="jazznpop-card-caption text-white">{{ artisteDate }}</p>
       </div>
-      <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+      <RouterLink :to="'/' + artisteLink">
+        <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -28,6 +30,10 @@ export default {
       required: true,
     },
     artisteDate: {
+      type: String,
+      required: true,
+    },
+    artisteLink: {
       type: String,
       required: true,
     },

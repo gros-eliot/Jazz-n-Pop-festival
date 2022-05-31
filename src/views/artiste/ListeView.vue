@@ -4,12 +4,27 @@
     <div class="my-10">
       <h2 class="jazznpop-h2">Nos figures internationales</h2>
       <div class="md: m-5 grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2">
-        <artist-card-jazz class="bg-acj1" artisteDate="7 juillet 2022" artisteNom="Melody Gardot"></artist-card-jazz>
-        <artist-card-pop class="bg-acp4" artisteDate="9 juillet 2022" artisteNom="Coldplay"></artist-card-pop>
-        <artist-card-jazz class="bg-acj5 bg-center" artisteDate="10 juillet 2022" artisteNom="Peter Cincotti"></artist-card-jazz>
-        <artist-card-pop class="bg-acp5 bg-center" artisteDate="14 juillet 2022" artisteNom="James Blunt"></artist-card-pop>
-        <artist-card-jazz class="bg-acj4 bg-center" artisteDate="7 juillet 2022" artisteNom="Jean-Michel Blais"></artist-card-jazz>
-        <artist-card-pop class="bg-acp6 bg-center" artisteDate="9 juillet 2022" artisteNom="Kungs"></artist-card-pop>
+        <artist-card-jazz
+          class="bg-acj1"
+          artisteDate="7 juillet 2022"
+          artisteNom="Melody Gardot"
+          artisteLink="artiste_view"
+        ></artist-card-jazz>
+        <artist-card-pop class="bg-acp4" artisteDate="9 juillet 2022" artisteNom="Coldplay" artisteLink=""></artist-card-pop>
+        <artist-card-jazz
+          class="bg-acj5 bg-center"
+          artisteDate="10 juillet 2022"
+          artisteNom="Peter Cincotti"
+          artisteLink=""
+        ></artist-card-jazz>
+        <artist-card-pop class="bg-acp5 bg-center" artisteDate="14 juillet 2022" artisteNom="James Blunt" artisteLink=""></artist-card-pop>
+        <artist-card-jazz
+          class="bg-acj4 bg-center"
+          artisteDate="7 juillet 2022"
+          artisteNom="Jean-Michel Blais"
+          artisteLink=""
+        ></artist-card-jazz>
+        <artist-card-pop class="bg-acp6 bg-center" artisteDate="9 juillet 2022" artisteNom="Kungs" artisteLink=""></artist-card-pop>
       </div>
     </div>
     <div class="my-10">
