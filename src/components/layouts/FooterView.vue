@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center gap-10 bg-red-jazzNpop p-3">
+  <div class="flex flex-col items-center gap-10 bg-red-jazzNpop p-3 dark:bg-red-900">
     <LogoBigBichrome class="mt-5 ml-auto mr-auto" />
     <span class="sr-only">Logo du festival</span>
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="ml-auto mr-auto flex w-5/6 flex-col gap-5 rounded-3xl bg-cover p-5">
+  <div class="ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover p-5">
     <div class="flex flex-row justify-end gap-5">
-      <CategorieName :blueCategory="false" :blackCategory="true" :redCategory="false" :orangeCategory="false" NameCategory="Concert" />
+      <CategorieName :blueCategory="true" :blackCategory="false" :redCategory="false" :orangeCategory="false" NameCategory="Concert" />
     </div>
     <div class="flex flex-col gap-2 text-white">
       <h3 class="jazznpop-card-title">{{ concertNom }}</h3>

@@ -8,7 +8,7 @@
       <img
         :src="artisteImageSrc"
         alt="Source de l'image"
-        class="h-full w-full rounded-full border-2 border-gray-900 object-cover dark:border-white"
+        class="h-full w-full rounded-full border-2 border-gray-900 object-cover object-center dark:border-white"
       />
     </div>
     <div>

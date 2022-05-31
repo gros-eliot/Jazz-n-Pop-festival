@@ -1,6 +1,6 @@
 <template>
   <!--HEADER-->
-  <div class="bg-red-jazzNpop p-3 lg:p-1">
+  <div class="bg-red-jazzNpop p-3 dark:bg-red-900 lg:p-1">
     <div class="flex justify-between">
       <!--Logo du site (header)-->
       <div class="lg:mx-5">

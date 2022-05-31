@@ -2,7 +2,7 @@
   <!--HERO-->
   <div class="z-[1] -mt-[3.3rem]">
     <div
-      class="flex h-screen w-full flex-col items-center justify-center bg-[linear-gradient(180deg,_#FF0000_0%,_#FBBF24_100%)] text-white md:h-5/6 md:p-6"
+      class="flex h-screen w-full flex-col items-center justify-center bg-[linear-gradient(180deg,_#FF0000_0%,_#FBBF24_100%)] text-white dark:bg-[linear-gradient(180deg,_#7F1D1D_20%,_#000000_100%)] md:h-5/6 md:p-6"
     >
       <Monochrome class="h-[25rem] w-full max-w-md fill-white p-4" />
       <h1 class="sr-only">Jazz'n'Pop festival</h1>
