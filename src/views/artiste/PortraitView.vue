@@ -39,14 +39,24 @@
         <date-card datecardTitre="Jazz’n’pop special concert" datecardDate1="14/07/22" datecardDate2="15/07/22"></date-card>
       </div>
     </div>
+    <div class="my-10">
+      <h2 class="jazznpop-h2">Voir aussi</h2>
+      <div class="mt-10 flex flex-col items-center justify-center gap-5 md:flex-row md:justify-around md:gap-1">
+        <artist-circular-card artisteNom="Peter Cincotti" artisteImageSrc="src/assets/artistes/jazz/peter_cincotti.jpg">
+        </artist-circular-card>
+        <artist-circular-card artisteNom="Jean-Michel Blais" artisteImageSrc="src/assets/artistes/jazz/jean_michel_blais.jpg">
+        </artist-circular-card>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import DateCard from "../../components/big/DateCard.vue";
 import CategorieName from "../../components/categories/CategorieName.vue";
+import ArtistCircularCard from "../../components/big/artists/ArtistCircularCard.vue";
 export default {
-  components: { CategorieName, DateCard },
+  components: { CategorieName, DateCard, ArtistCircularCard },
 };
 </script>
 
