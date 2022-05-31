@@ -10,7 +10,7 @@
       'bg-white fill-black stroke-black text-black': whiteVersion,
     }"
   >
-    <p class="text-2xl font-bold">{{ contenuTextBouton }}</p>
+    <p class="jazznpop-bouton">{{ contenuTextBouton }}</p>
   </button>
 </template>
 

@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import IconLogo from "./components/icons/IconLogo.vue";
 import HeaderView from "./components/layouts/HeaderView.vue";
 import FooterView from "./components/layouts/FooterView.vue";
-import { FilmIcon } from "@heroicons/vue/outline";
 export default {
-  components: { IconLogo, FilmIcon, HeaderView, FooterView },
+  components: { HeaderView, FooterView },
 };
 </script>

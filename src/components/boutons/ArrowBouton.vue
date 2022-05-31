@@ -7,7 +7,7 @@
       'bg-white fill-black stroke-black text-black': whiteVersion,
     }"
   >
-    <p class="hidden text-2xl font-bold lg:block">{{ contenuTextBouton }}</p>
+    <p class="jazznpop-bouton hidden lg:block">{{ contenuTextBouton }}</p>
     <ArrowRightIcon class="h-7 w-7" />
   </button>
 </template>

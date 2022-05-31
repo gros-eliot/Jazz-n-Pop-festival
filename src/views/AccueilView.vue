@@ -22,13 +22,13 @@
     class="bg-hero2"
     otherpageTitle="Artistes"
     otherpageDesc="Découvrez les figures musicales présentes au festival."
-    otherpageLink=""
+    otherpageLink="artistes"
   />
 
   <!--Page : le festival (à propos)-->
-  <disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-10"></disque>
+  <Disque class="absolute -left-10 z-[-1] h-52 w-52 opacity-5" /><span class="sr-only">Image de disque</span>
 
-  <div class="mx-3 my-5 flex flex-col items-center justify-center">
+  <div class="mx-5 my-5 flex flex-col items-center justify-center">
     <h1 class="text-center font-abril-fatface text-4xl lg:text-5xl">Le Jazz’n’Pop Festival, c'est...</h1>
     <div class="my-5 flex flex-col items-center justify-center md:flex-row md:gap-10">
       <div class="flex flex-col items-center justify-center gap-1 p-3">
@@ -47,7 +47,7 @@
     <text-bouton :redVersion="true" contenuTextBouton="En savoir plus" />
   </div>
 
-  <Saxophone class="absolute right-10 z-[-1] -mt-48 h-64 w-64 rotate-12 opacity-10" />
+  <Saxophone class="absolute right-10 z-[-1] -mt-48 h-64 w-64 rotate-12 opacity-5" /><span class="sr-only">Image de saxophone</span>
 </template>
 
 <script>

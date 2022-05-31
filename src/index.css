@@ -4,3 +4,23 @@
 
 /* Mettre ici les styles "globaux" */
 
+@layer components {
+    .jazznpop-h1 {
+        @apply font-abril-fatface text-6xl lg:text-7xl;
+    }
+    .jazznpop-h2 {
+        @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+    }
+    .jazznpop-text {
+        @apply text-base md:text-lg lg:text-xl;
+    }
+    .jazznpop-bouton {
+        @apply text-2xl font-bold;
+    }
+    .jazznpop-card-title {
+        @apply text-3xl font-bold;
+    }
+    .jazznpop-card-caption {
+        @apply text-2xl font-light;
+    }
+}

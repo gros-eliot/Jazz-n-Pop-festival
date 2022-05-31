@@ -47,21 +47,21 @@
   <div class="my-5 flex flex-col">
     <div>
       <!--GENERALES-->
-      <h1 class="font-abril-fatface text-6xl lg:text-7xl">H1 | Jazz</h1>
+      <h1 class="jazznpop-h1">H1 | Jazz</h1>
       <p class="text-xs">Abril Fatface, regular</p>
-      <h2 class="text-3xl font-bold md:text-4xl lg:text-5xl">H2 | Jazz'n'pop</h2>
+      <h2 class="jazznpop-h2">H2 | Jazz'n'pop</h2>
       <p class="text-xs">Raleway, bold</p>
-      <p class="text-base md:text-lg lg:text-xl">Text | Jazz'n'pop festival</p>
+      <p class="jazznpop-text">Text | Jazz'n'pop festival</p>
       <p class="text-xs">Raleway, regular</p>
       <!--BOUTONS-->
       <hr class="mx-20 my-3 border-black" />
-      <p class="text-2xl font-bold">Texte des boutons</p>
+      <p class="jazznpop-bouton">Texte des boutons</p>
       <p class="text-xs">Raleway, bold</p>
       <!--CARDS-->
       <hr class="mx-20 my-3 border-black" />
-      <h3 class="text-3xl font-bold">Titre des cards</h3>
+      <h3 class="jazznpop-card-title">Titre des cards</h3>
       <p class="text-xs">Raleway, bold</p>
-      <p class="text-2xl font-light">Texte des cards</p>
+      <p class="jazznpop-card-caption">Texte des cards</p>
       <p class="text-xs">Raleway, light</p>
     </div>
   </div>
