@@ -13,7 +13,7 @@
           </div>
           <div class="flex w-full flex-col gap-4">
             <div class="flex flex-col">
-              <span class="input-group-text">Nom/prénom de l'artiste</span>
+              <span class="input-group-text">Nom de l'artiste</span>
               <input class="jazznpop-input bg-red-500 text-white" disabled v-model="artiste.nom" />
             </div>
             <div class="flex flex-col">
