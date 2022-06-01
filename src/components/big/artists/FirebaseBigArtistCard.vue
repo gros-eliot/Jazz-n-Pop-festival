@@ -1,14 +1,11 @@
 <template>
   <div class="my-10 flex items-center gap-5">
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
-    <RouterLink
-      to="/artiste_int_create"
-      class="rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
-    >
+    <RouterLink to="/artiste_int_create" class="jazznpop-add-button">
       <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
     </RouterLink>
   </div>
-  <div class="grid grid-flow-row-dense grid-cols-artiste-international items-center justify-items-center gap-3">
+  <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
     <div v-for="artisteInt in listeArtisteInt" :key="artisteInt.id">
       <!--BG de l'image-->
       <div
