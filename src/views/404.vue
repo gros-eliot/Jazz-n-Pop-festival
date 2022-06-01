@@ -8,8 +8,17 @@
     <div class="my-14 flex flex-col gap-5">
       <h1 class="jazznpop-h1 text-center">Page 404</h1>
       <h2 class="jazznpop-h2 text-center">Page non disponible</h2>
-      <p class="jazznpop-text">La page demandée est momentanément indisponible ou n'existe pas.</p>
     </div>
+
+    <h2 class="jazznpop-h2 my-5">Rechercher ailleurs...</h2>
+    <form class="flex w-fit flex-col gap-3" action="https://duckduckgo.com/" method="GET">
+      <label for="q" class="flex flex-row items-center gap-2"
+        >Rechercher sur <strong>DuckDuckGo</strong><SearchIcon class="h-8 w-8"
+      /></label>
+      <input class="jazznpop-input dark:bg-black dark:bg-opacity-10" type="text" id="q" name="q" x-model="q" />
+
+      <text-bouton type="submit" :redVersion="true" contenuTextBouton="Rechercher" class="ml-auto mr-auto"></text-bouton>
+    </form>
 
     <div class="my-14 flex flex-col gap-5">
       <h2 class="jazznpop-h2 my-5 text-center">Liens principaux du site</h2>
@@ -36,16 +45,6 @@
         </li>
       </ul>
     </div>
-
-    <h2 class="jazznpop-h2 my-5 text-center">Rechercher ailleurs...</h2>
-    <form class="flex flex-col gap-3" action="https://duckduckgo.com/" method="GET">
-      <label for="q" class="flex flex-row items-center gap-2"
-        >Rechercher sur <strong>DuckDuckGo</strong><SearchIcon class="h-8 w-8"
-      /></label>
-      <input class="jazznpop-input dark:bg-black dark:bg-opacity-10" type="text" id="q" name="q" x-model="q" />
-
-      <text-bouton type="submit" :redVersion="true" contenuTextBouton="Rechercher" class="ml-auto mr-auto"></text-bouton>
-    </form>
   </div>
 </template>
 

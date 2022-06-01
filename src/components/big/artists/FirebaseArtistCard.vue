@@ -1,7 +1,10 @@
 <template>
   <div class="my-10 flex items-center gap-5">
     <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
-    <RouterLink to="/artiste_create" class="rounded-full border border-gray-900 p-3 dark:border-white">
+    <RouterLink
+      to="/artiste_create"
+      class="rounded-full border border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
+    >
       <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
     </RouterLink>
   </div>
@@ -16,14 +19,16 @@
           <p class="jazznpop-card-caption">{{ artiste.date }}</p>
           <categorie-name :blueCategory="true" :NameCategory="artiste.cat"></categorie-name>
           <div class="flex flex-row gap-3">
-            <PencilIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Modifier un artiste</span></PencilIcon>
+            <RouterLink to="/artist">
+              <PencilIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Modifier un artiste</span></PencilIcon>
+            </RouterLink>
             <TrashIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Supprimer un artiste</span></TrashIcon>
           </div>
         </div>
       </div>
       <div class="m-5">
         <button
-          class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black"
+          class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
         >
           <PlusIcon class="h-7 w-7" />
           <span class="sr-only">En savoir plus</span>
