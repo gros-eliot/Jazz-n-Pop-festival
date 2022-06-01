@@ -38,7 +38,7 @@
                     </PencilIcon>
                   </RouterLink>
                   <RouterLink :to="{ name: 'DeleteArtiste', params: { id: artiste.id } }" class="h-fit w-fit">
-                    <TrashIcon class="my-3 h-8 w-8 dark:stroke-white">
+                    <TrashIcon class="my-3 h-8 w-8 stroke-red-500">
                       <span class="sr-only">Supprimer un artiste</span>
                     </TrashIcon>
                   </RouterLink>

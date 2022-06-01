@@ -7,7 +7,7 @@
 
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
-          <span class="">Prénom/nom de l'artiste</span>
+          <span class="">Nom de l'artiste</span>
           <input class="jazznpop-input" placeholder="Melody Gardot" v-model="artiste.nom" required />
         </div>
         <div class="flex flex-col">
