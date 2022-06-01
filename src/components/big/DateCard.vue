@@ -20,8 +20,29 @@
 </template>
 
 <script>
+// Bibliothèque Firestore : import des fonctions
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  setDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
 import { ClockIcon, ArrowRightIcon } from "@heroicons/vue/outline";
 export default {
+  data() {
+    return {
+      listeDateConcert: [],
+    };
+  },
   components: {
     ClockIcon,
     ArrowRightIcon,

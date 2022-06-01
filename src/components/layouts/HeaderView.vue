@@ -9,7 +9,7 @@
             <LogoSmall class="fill-white" />
           </div>
           <div class="hidden lg:block">
-            <LogoMediumMonochrome class="h-24 w-24 fill-white" />
+            <LogoMediumMonochrome class="h-16 w-16 fill-white" />
             <span class="sr-only">Logo du festival Jazz'n'Pop</span>
           </div>
         </RouterLink>

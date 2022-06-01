@@ -5,7 +5,7 @@
     <div class="flex max-w-full flex-col">
       <!--DIV contenant le hero de la personne-->
       <div class="mt-5 flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row lg:flex-row-reverse">
-        <img src="../../assets/artistes/jazz/melody_gardot.jpg" alt="Melody Gardot" class="w-56" />
+        <img src="src/assets/artistes/jazz/melody_gardot.jpg" alt="Melody Gardot" class="w-56" />
         <div class="flex flex-wrap gap-5 md:flex-col">
           <categorie-name :blackCategory="true" NameCategory="Internationale"></categorie-name>
           <categorie-name :redCategory="true" NameCategory="Jazz"></categorie-name>
@@ -52,9 +52,9 @@
 </template>
 
 <script>
-import DateCard from "../../components/big/DateCard.vue";
-import CategorieName from "../../components/categories/CategorieName.vue";
-import ArtistCircularCard from "../../components/big/artists/ArtistCircularCard.vue";
+import DateCard from "../../../components/big/DateCard.vue";
+import CategorieName from "../../../components/categories/CategorieName.vue";
+import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
 export default {
   components: { CategorieName, DateCard, ArtistCircularCard },
 };

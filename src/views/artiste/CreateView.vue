@@ -2,7 +2,7 @@
   <div class="jazznpop-text p-page">
     <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
       <div class="py-5">
-        <h2 class="jazznpop-h2">Mise à jour participant</h2>
+        <h2 class="jazznpop-h2">Créer un artiste</h2>
       </div>
 
       <div class="flex w-full flex-col gap-4">

@@ -3,7 +3,7 @@
     <HeaderView class="fixed inset-x-0 top-0 z-[8] w-full"></HeaderView>
   </header>
 
-  <main class="mt-[3.3rem] lg:mt-[5rem]">
+  <main class="mt-[3.3rem] lg:mt-[3.2rem]">
     <RouterView />
   </main>
 

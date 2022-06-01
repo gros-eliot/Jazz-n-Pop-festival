@@ -2,7 +2,7 @@
   <div class="m-10">
     <form enctype="multipart/form-data" @submit.prevent="updateArtiste">
       <div class="py-5">
-        <h2 class="jazznpop-h2">Mise à jour participant</h2>
+        <h2 class="jazznpop-h2">Mise à jour d'un artiste</h2>
       </div>
 
       <div class="flex w-full flex-col gap-4">
