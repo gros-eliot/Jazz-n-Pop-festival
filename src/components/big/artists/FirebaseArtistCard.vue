@@ -37,7 +37,7 @@
                       <span class="sr-only">Modifier un artiste</span>
                     </PencilIcon>
                   </RouterLink>
-                  <RouterLink to="/artiste_custom" class="h-fit w-fit">
+                  <RouterLink :to="{ name: 'DeleteArtiste', params: { id: artiste.id } }" class="h-fit w-fit">
                     <TrashIcon class="my-3 h-8 w-8 dark:stroke-white">
                       <span class="sr-only">Supprimer un artiste</span>
                     </TrashIcon>
