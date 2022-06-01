@@ -8,14 +8,19 @@
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
           <span class="">Nom du concert</span>
-          <input class="jazznpop-input border-0 bg-red-500 text-white" placeholder="Jazzy Stage" v-model="concertArtiste.nom" disabled />
+          <input
+            class="jazznpop-input border-0 bg-red-jazzNpop text-white"
+            placeholder="Jazzy Stage"
+            v-model="concertArtiste.nom"
+            disabled
+          />
         </div>
 
         <div class="flex flex-col">
           <span class="input-group-text">Date de début</span>
           <input
             type="date"
-            class="jazznpop-input border-0 bg-red-500 text-white"
+            class="jazznpop-input border-0 bg-red-jazzNpop text-white"
             placeholder="XX/XX/XXXX"
             format="dd/mm/yyyy"
             required
@@ -27,7 +32,7 @@
           <span class="input-group-text">Date de fin</span>
           <input
             type="date"
-            class="jazznpop-input border-0 bg-red-500 text-white"
+            class="jazznpop-input border-0 bg-red-jazzNpop text-white"
             placeholder="XX/XX/XXXX"
             format="dd/mm/yyyy"
             required

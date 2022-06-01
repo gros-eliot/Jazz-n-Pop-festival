@@ -24,7 +24,7 @@
         </PencilIcon>
       </RouterLink>
       <RouterLink :to="{ name: 'DeleteConcertArtist', params: { id: concertArtiste.id } }" class="h-fit w-fit">
-        <TrashIcon class="my-3 h-8 w-8 stroke-red-500">
+        <TrashIcon class="my-3 h-8 w-8 stroke-red-jazzNpop">
           <span class="sr-only">Supprimer un concert pour cet artiste</span>
         </TrashIcon>
       </RouterLink>

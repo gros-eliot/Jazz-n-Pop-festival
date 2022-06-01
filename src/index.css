@@ -37,7 +37,15 @@
         dark:bg-opacity-50;
     }
     .jazznpop-add-button {
-        @apply rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white;
+        @apply rounded-full 
+        border-2
+        border-gray-900
+        p-3
+        focus-visible:shadow-xl
+        focus-visible:shadow-blue-400
+        dark:border-white
+        active:bg-black active:bg-opacity-50
+        hover:bg-black hover:bg-opacity-50;
     }
 
     /* Pour l'icon calendrier de l'input type=date (darkmode)*/

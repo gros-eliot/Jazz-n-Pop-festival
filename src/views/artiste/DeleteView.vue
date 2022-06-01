@@ -14,15 +14,15 @@
           <div class="flex w-full flex-col gap-4">
             <div class="flex flex-col">
               <span class="input-group-text">Nom de l'artiste</span>
-              <input class="jazznpop-input bg-red-500 text-white" disabled v-model="artiste.nom" />
+              <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.nom" />
             </div>
             <div class="flex flex-col">
               <span class="input-group-text">Date du prochain concert de l'artiste</span>
-              <input class="jazznpop-input bg-red-500 text-white" disabled v-model="artiste.date" />
+              <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.date" />
             </div>
             <div class="flex flex-col">
               <span>Catégorie</span>
-              <input class="jazznpop-input border-0 bg-red-500 text-white" v-model="artiste.cat" disabled />
+              <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="artiste.cat" disabled />
             </div>
           </div>
         </div>
