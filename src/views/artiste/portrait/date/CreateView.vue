@@ -1,6 +1,6 @@
 <template>
   <div class="jazznpop-text p-page">
-    <form enctype="multipart/form-data" @submit.prevent="createConcert()">
+    <form enctype="multipart/form-data" @submit.prevent="createConcertArtiste()">
       <div class="py-5">
         <h2 class="jazznpop-h2">Créer un concert (et ses dates) d'un artiste</h2>
       </div>
@@ -8,16 +8,30 @@
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
           <span class="">Nom du concert</span>
-          <input class="jazznpop-input" placeholder="Jazzy Stage" v-model="concert.nom" required />
+          <input class="jazznpop-input" placeholder="Jazzy Stage" v-model="concertArtiste.nom" required />
         </div>
 
         <div class="flex flex-col">
           <span class="input-group-text">Date de début</span>
-          <input type="date" class="jazznpop-input" placeholder="XX/XX/XXXX" format="dd/mm/yyyy" required v-model="concert.datedebut" />
+          <input
+            type="date"
+            class="jazznpop-input"
+            placeholder="XX/XX/XXXX"
+            format="dd/mm/yyyy"
+            required
+            v-model="concertArtiste.datedebut"
+          />
         </div>
         <div class="flex flex-col">
           <span class="input-group-text">Date de fin</span>
-          <input type="date" class="jazznpop-input" placeholder="XX/XX/XXXX" format="dd/mm/yyyy" required v-model="concert.datefin" />
+          <input
+            type="date"
+            class="jazznpop-input"
+            placeholder="XX/XX/XXXX"
+            format="dd/mm/yyyy"
+            required
+            v-model="concertArtiste.datefin"
+          />
         </div>
       </div>
 
@@ -45,12 +59,12 @@ import {
 import TextBouton from "../../../../components/boutons/TextBouton.vue";
 
 export default {
-  name: "CreateConcertView",
+  name: "CreateConcertArtisteView",
   components: { TextBouton },
   data() {
     return {
-      listeConcert: [], // Liste des pays pour la nationalité du participant
-      concert: {
+      listeConcertArtiste: [], // Liste des pays pour la nationalité du participant
+      concertArtiste: {
         // Le participant à créer
         nom: null, // son nom
         datedebut: null, // son prénom
@@ -66,7 +80,7 @@ export default {
   methods: {
     async getDateConcert() {
       const firestore = getFirestore();
-      const dbConcert = collection(firestore, "concert");
+      const dbConcert = collection(firestore, "concertArtiste");
       // Liste des participants triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
@@ -81,10 +95,10 @@ export default {
       });
     },
 
-    async createConcert() {
+    async createConcertArtiste() {
       // Création du participant sur le Firestore
       const db = getFirestore();
-      const docRef = addDoc(collection(db, "concert"), this.concert);
+      const docRef = addDoc(collection(db, "concertArtiste"), this.concertArtiste);
 
       // redirection sur la liste des participants
       this.$router.push("/artiste_view");
