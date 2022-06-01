@@ -42,9 +42,9 @@ const router = createRouter({
     { path: '/artiste_int_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },
     { path: '/artiste_int_delete', name: 'DeleteConcertArtist', component: DeleteConcertArtist },
     
-    { path: '/concert_create', name: 'CreateConcertArtist', component: CreateConcertArtist },
-    { path: '/concert_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },
-    { path: '/concert_delete', name: 'DeleteConcertArtist', component: DeleteConcertArtist },
+    { path: '/concert_artiste_create', name: 'CreateConcertArtist', component: CreateConcertArtist },
+    { path: '/concert_artiste_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },
+    { path: '/concert_artiste_delete', name: 'DeleteConcertArtist', component: DeleteConcertArtist },
 
 
     { path: '/concerts', name: 'ListeConcert', component: ListeConcert },

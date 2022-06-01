@@ -1,24 +1,33 @@
 <template>
-  <div
-    class="flex flex-row items-center justify-between bg-yellow-400 p-3 text-gray-900 dark:text-gray-900"
-    v-for="concertArtiste in listeConcert"
-    :key="concertArtiste.id"
-  >
-    <div class="flex items-center gap-2">
-      <div class="hidden md:block">
-        <ClockIcon class="h-8 w-8 stroke-gray-900" />
-        <span class="sr-only">Heures du concert</span>
+  <div v-for="concertArtiste in listeConcertArtiste" :key="concertArtiste.id">
+    <div class="flex flex-row items-center justify-between bg-yellow-400 p-3 text-gray-900 dark:text-gray-900">
+      <div class="flex items-center gap-2">
+        <div class="hidden md:block">
+          <ClockIcon class="h-8 w-8 stroke-gray-900" />
+          <span class="sr-only">Heures du concert</span>
+        </div>
+        <h3 class="pr-5 text-base font-bold md:text-lg lg:text-xl">{{ concertArtiste.nom }}</h3>
       </div>
-
-      <h3 class="pr-5 text-base font-bold md:text-lg lg:text-xl">{{ concertArtiste.nom }}</h3>
+      <div class="flex flex-row items-center gap-2">
+        <div class="flex flex-col items-center">
+          <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.datedebut) }}</p>
+          <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.datefin) }}</p>
+        </div>
+        <ArrowRightIcon class="h-10 w-10 stroke-white dark:stroke-zinc-900" />
+        <span class="sr-only">Voir les tarifs</span>
+      </div>
     </div>
-    <div class="flex flex-row items-center gap-2">
-      <div class="flex flex-col items-center">
-        <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.datedebut) }}</p>
-        <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.datefin) }}</p>
-      </div>
-      <ArrowRightIcon class="h-10 w-10 stroke-white dark:stroke-zinc-900" />
-      <span class="sr-only">Voir les tarifs</span>
+    <div class="flex flex-row gap-3">
+      <RouterLink :to="{ name: 'CustomConcertArtist', params: { id: concertArtiste.id } }" class="h-fit w-fit">
+        <PencilIcon class="my-3 h-8 w-8 dark:stroke-white">
+          <span class="sr-only">Modifier un concert pour cet artiste</span>
+        </PencilIcon>
+      </RouterLink>
+      <RouterLink :to="{ name: 'DeleteConcertArtist', params: { id: concertArtiste.id } }" class="h-fit w-fit">
+        <TrashIcon class="my-3 h-8 w-8 stroke-red-500">
+          <span class="sr-only">Supprimer un concert pour cet artiste</span>
+        </TrashIcon>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -44,7 +53,7 @@ import { ClockIcon, ArrowRightIcon, PencilIcon, TrashIcon } from "@heroicons/vue
 export default {
   data() {
     return {
-      listeConcert: [], // Liste des pays pour la nationalité du participant
+      listeConcertArtiste: [], // Liste des
     };
   },
   components: {
@@ -62,18 +71,18 @@ export default {
   methods: {
     async getDateConcert() {
       const firestore = getFirestore();
-      const dbConcert = collection(firestore, "concertArtiste");
+      const dbConcertArtiste = collection(firestore, "concertartiste");
       // Liste des participants triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
       // ici le nom du pays par ordre decroissant
-      const q = query(dbConcert, orderBy("datedebut", "asc"));
+      const q = query(dbConcertArtiste, orderBy("datedebut", "asc"));
       // Récupération de la liste des pays à partir de la query
       // La liste est synchronisée
       await onSnapshot(q, (snapshot) => {
-        this.listeConcert = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        console.log("Liste des concerts", this.listeConcert);
+        this.listeConcertArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        console.log("Liste des concerts", this.listeConcertArtiste);
       });
     },
 

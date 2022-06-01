@@ -85,7 +85,6 @@ export default {
   data() {
     return {
       imageData: null, // Image prévisualisée
-      listeArtiste: [], // Liste des pays pour la nationalité du participant
       listeCat: [], // Liste des pays pour la nationalité du participant
       artiste: {
         // Le participant à créer

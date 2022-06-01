@@ -75,30 +75,30 @@ export default {
   mounted() {
     // Montage de la vue
     // Appel de la liste des pays
-    this.getDateConcert();
+    this.getConcertArtiste();
   },
   methods: {
-    async getDateConcert() {
+    async getConcertArtiste() {
       const firestore = getFirestore();
-      const dbConcert = collection(firestore, "concertArtiste");
+      const dbConcertArtiste = collection(firestore, "concertartiste");
       // Liste des participants triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
       // ici le nom du pays par ordre croissant (asc)
-      const q = query(dbConcert, orderBy("datedebut", "asc"));
+      const q = query(dbConcertArtiste, orderBy("datedebut", "asc"));
       // Récupération de la liste des pays à partir de la query
       // La liste est synchronisée
       await onSnapshot(q, (snapshot) => {
-        this.listeConcert = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        console.log("Liste des concerts", this.listeConcert);
+        this.listeConcertArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        console.log("Liste des concerts", this.listeConcertArtiste);
       });
     },
 
     async createConcertArtiste() {
       // Création du participant sur le Firestore
       const db = getFirestore();
-      const docRef = addDoc(collection(db, "concertArtiste"), this.concertArtiste);
+      const docRef = addDoc(collection(db, "concertartiste"), this.concertArtiste);
 
       // redirection sur la liste des participants
       this.$router.push("/artiste_view");
