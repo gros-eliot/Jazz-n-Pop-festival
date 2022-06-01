@@ -4,7 +4,7 @@
       <div class="py-5">
         <h2 class="jazznpop-h2">Créer un concert (et ses dates) d'un artiste</h2>
       </div>
-
+      {{ listeConcert }}
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
           <span class="">Nom du concert</span>
@@ -13,11 +13,11 @@
 
         <div class="flex flex-col">
           <span class="input-group-text">Date de début</span>
-          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.datedebut" />
+          <input type="date" class="jazznpop-input" placeholder="XX/XX/XXXX" format="dd/mm/yyyy" required v-model="concert.datedebut" />
         </div>
         <div class="flex flex-col">
           <span class="input-group-text">Date de fin</span>
-          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.datefin" />
+          <input type="date" class="jazznpop-input" placeholder="XX/XX/XXXX" format="dd/mm/yyyy" required v-model="concert.datefin" />
         </div>
       </div>
 
@@ -42,9 +42,11 @@ import {
   query, // Permet d'effectuer des requêtes sur Firestore
   orderBy, // Permet de demander le tri d'une requête query
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+import TextBouton from "../../../../components/boutons/TextBouton.vue";
 
 export default {
-  name: "CreateView",
+  name: "CreateConcertView",
+  components: { TextBouton },
   data() {
     return {
       listeConcert: [], // Liste des pays pour la nationalité du participant
@@ -70,12 +72,12 @@ export default {
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
       // ici le nom du pays par ordre croissant (asc)
-      const q = query(dbConcert, orderBy("nom", "asc"));
+      const q = query(dbConcert, orderBy("datedebut", "asc"));
       // Récupération de la liste des pays à partir de la query
       // La liste est synchronisée
       await onSnapshot(q, (snapshot) => {
-        this.listePays = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        console.log("Liste des concerts", this.listePays);
+        this.listeConcert = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        console.log("Liste des concerts", this.listeConcert);
       });
     },
 

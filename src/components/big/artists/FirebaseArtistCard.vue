@@ -104,12 +104,7 @@ export default {
       listeArtiste: [], // Liste des participants
     };
   },
-  props: {
-    artisteDate: {
-      type: String,
-      required: true,
-    },
-  },
+
   mounted() {
     // Montage de la vue
     // Appel de la liste des participants

@@ -32,11 +32,17 @@
     </div>
 
     <div class="mt-10">
-      <h2 class="jazznpop-h2">Dates de l'artiste</h2>
+      <div class="flex flex-row items-center gap-4">
+        <h2 class="jazznpop-h2">Dates de l'artiste</h2>
+        <RouterLink
+          to="/concert_create"
+          class="rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
+        >
+          <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
+        </RouterLink>
+      </div>
       <div class="mt-10 flex flex-col gap-1">
-        <date-card datecardTitre="Jazzy Stage" datecardDate1="07/07/22" datecardDate2="08/07/22"></date-card>
-        <date-card datecardTitre="Jazzy Stage" datecardDate1="10/07/22" datecardDate2="11/07/22"></date-card>
-        <date-card datecardTitre="Jazz’n’pop special concert" datecardDate1="14/07/22" datecardDate2="15/07/22"></date-card>
+        <date-card></date-card>
       </div>
     </div>
     <div class="my-10">
@@ -55,8 +61,9 @@
 import DateCard from "../../../components/big/DateCard.vue";
 import CategorieName from "../../../components/categories/CategorieName.vue";
 import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
+import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";
 export default {
-  components: { CategorieName, DateCard, ArtistCircularCard },
+  components: { CategorieName, DateCard, ArtistCircularCard, PencilIcon, PlusIcon },
 };
 </script>
 
