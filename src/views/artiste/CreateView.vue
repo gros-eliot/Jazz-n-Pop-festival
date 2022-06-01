@@ -1,61 +1,45 @@
 <template>
-  <div class="jazznpop-text m-10">
+  <div class="jazznpop-text p-page">
     <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
       <div class="py-5">
         <h2 class="jazznpop-h2">Mise à jour participant</h2>
       </div>
 
-      <div class="w-full">
+      <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
-          <div class="flex flex-col">
-            <span class="">Nom</span>
+          <span class="">Prénom/nom de l'artiste</span>
+          <input class="jazznpop-input" placeholder="Melody Gardot" v-model="artiste.nom" required />
+        </div>
+        <div class="flex flex-col">
+          <span>Photo</span>
+          <input type="file" class="jazznpop-input flex flex-wrap" ref="file" id="file" @change="previewImage" />
+        </div>
+        <div>
+          <span>Aperçu de la photo choisie</span>
 
-            <input class="jazznpop-input" placeholder="Nom de la personne" v-model="artiste.nom" required />
-          </div>
-          <br />
+          <img class="w-40 bg-center object-cover md:w-48 lg:w-52" :src="imageData" />
+        </div>
 
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Photo</span>
-            </div>
-            <div class="custom-file flex flex-col">
-              <input type="file" class="jazznpop-input flex flex-wrap" ref="file" id="file" @change="previewImage" />
-            </div>
-          </div>
+        <div class="flex flex-col">
+          <span class="input-group-text">Date du prochain concert de l'artiste</span>
+          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="artiste.date" />
+        </div>
 
-          <div class="py-5">
-            <div class="text-center">
-              <img class="w-40 bg-center object-cover" :src="imageData" />
-            </div>
-          </div>
+        <div class="flex flex-col">
+          <span>Catégorie</span>
 
-          <br />
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Date de l'artiste</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Date de l'artiste" required v-model="artiste.date" />
-          </div>
-          <br />
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Catégorie</span>
-            </div>
-            <select class="custom-select" v-model="artiste.cat">
-              <option selected disabled>Sélectionner une catégorie</option>
-
-              <option v-for="categorie in listeCat" :key="categorie.libelle">
-                {{ categorie.libelle }}
-              </option>
-            </select>
-          </div>
-          <br />
+          <select class="jazznpop-input" v-model="artiste.cat">
+            <option class="bg-white text-black dark:bg-black dark:text-white" selected disabled>Sélectionner une catégorie</option>
+            <option class="bg-white text-black dark:bg-black dark:text-white" v-for="categorie in listeCat" :key="categorie.libelle">
+              {{ categorie.libelle }}
+            </option>
+          </select>
         </div>
       </div>
 
-      <div class="card-footer">
-        <button type="submit" class="btn btn-dark float-left">Créer</button>
-        <button class="btn btn-dark float-right">
+      <div class="flex justify-between">
+        <button type="submit" class="btn btn-dark">Créer</button>
+        <button class="btn btn-dark">
           <router-link to="/artiste">Cancel</router-link>
         </button>
       </div>
