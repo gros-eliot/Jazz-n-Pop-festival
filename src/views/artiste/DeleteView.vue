@@ -1,54 +1,43 @@
 <template>
-  <div class="container">
+  <div class="jazznpop-text p-page">
     <form enctype="multipart/form-data" @submit.prevent="deleteArtiste">
-      <div class="card bg-dark">
-        <div class="card-header">
-          <h5 style="color: white">Suppression d'un artiste</h5>
-        </div>
+      <div class="py-5">
+        <h2 class="jazznpop-h2">Mise à jour participant</h2>
+      </div>
 
-        <div class="card-body">
-          <div class="row">
-            <div class="col-6">
-              <div class="text-center">
-                <img class="preview img-fluid" :src="photoActuelle" />
-              </div>
+      <div class="flex w-full flex-col gap-4">
+        <div class="flex flex-col gap-4 md:mr-auto md:ml-auto md:flex-row md:items-center md:gap-16">
+          <div class="flex flex-col">
+            <span>Aperçu de la photo choisie</span>
+            <img class="w-40 bg-center object-cover md:w-48 lg:w-52" :src="photoActuelle" />
+          </div>
+          <div class="flex w-full flex-col gap-4">
+            <div class="flex flex-col">
+              <span class="input-group-text">Nom/prénom de l'artiste</span>
+              <input class="jazznpop-input bg-red-500 text-white" disabled v-model="artiste.nom" />
             </div>
-
-            <div class="col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Nom</span>
-                </div>
-                <input class="form-control" placeholder="Nom de la personne" v-model="artiste.nom" disabled />
-              </div>
-
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Date</span>
-                </div>
-                <input type="date" class="form-control" v-model="artiste.date" format="dd/mm/yyyy" disabled />
-              </div>
-
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Catégorie</span>
-                </div>
-                <input class="form-control" v-model="artiste.cat" disabled />
-              </div>
+            <div class="flex flex-col">
+              <span class="input-group-text">Date du prochain concert de l'artiste</span>
+              <input class="jazznpop-input bg-red-500 text-white" disabled v-model="artiste.date" />
+            </div>
+            <div class="flex flex-col">
+              <span>Catégorie</span>
+              <input class="jazznpop-input border-0 bg-red-500 text-white" v-model="artiste.cat" disabled />
             </div>
           </div>
-
-          <h5 class="alert alert-warning text-center" role="alert">
-            Attention vous allez supprimer cet artiste, cette action est irréversible !!
-          </h5>
         </div>
 
-        <div class="card-footer">
-          <button type="submit" class="btn btn-dark">Supprimer</button>
-          <button class="btn btn-dark">
-            <RouterLink to="/artistes">Cancel</RouterLink>
-          </button>
-        </div>
+        <h3 role="alert" class="text-center">
+          <strong>Attention : vous allez supprimer cet artiste, cette action est irréversible !</strong>
+        </h3>
+      </div>
+
+      <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
+        <text-bouton :redVersion="true" contenuTextBouton="Supprimer" type="submit" class="w-fit"></text-bouton>
+
+        <router-link to="/artistes">
+          <text-bouton :redVersion="true" contenuTextBouton="Annuler" class="w-fit"></text-bouton>
+        </router-link>
       </div>
     </form>
   </div>
@@ -81,9 +70,13 @@ import {
   deleteObject,
   listAll,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+import TextBouton from "../../components/boutons/TextBouton.vue";
 
 export default {
-  name: "DeleteView",
+  name: "DeleteArtisteView",
+  components: {
+    TextBouton,
+  },
   data() {
     return {
       artiste: {
