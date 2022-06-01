@@ -8,32 +8,28 @@
       <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
     </RouterLink>
   </div>
-  <div
-    class="grid grid-flow-row-dense grid-cols-[repeat(3,minmax(300px,1fr))] justify-items-center"
-    v-for="artisteInt in listeArtisteInt"
-    :key="artisteInt.id"
-  >
-    <!--BG de l'image-->
-    <div
-      class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
-      :style="{
-        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artisteInt.photo}')`,
-      }"
-    >
-      <!--INFOS DE LA CARD-->
-      <div class="flex w-full flex-col gap-3">
-        <CategorieName :redCategory="true" :NameCategory="artisteInt.cat" class="ml-auto mr-auto" />
-
-        <h3 class="jazznpop-card-title text-white">{{ artisteInt.nom }}</h3>
-
-        <div class="flex flex-col gap-0">
-          <p class="jazznpop-card-caption text-white">Prochain concert :</p>
-          <p class="jazznpop-card-caption text-white">{{ artisteInt.date }}</p>
+  <div class="grid grid-flow-row-dense grid-cols-artiste-international items-center justify-items-center gap-3">
+    <div v-for="artisteInt in listeArtisteInt" :key="artisteInt.id">
+      <!--BG de l'image-->
+      <div
+        class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
+        :style="{
+          backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artisteInt.photo}')`,
+        }"
+      >
+        <!--INFOS DE LA CARD-->
+        <div class="flex w-full flex-col gap-3">
+          <CategorieName :redCategory="true" :NameCategory="artisteInt.cat" class="ml-auto mr-auto" />
+          <h3 class="jazznpop-card-title text-white">{{ artisteInt.nom }}</h3>
+          <div class="flex flex-col gap-0">
+            <p class="jazznpop-card-caption text-white">Prochain concert :</p>
+            <p class="jazznpop-card-caption text-white">{{ artisteInt.date }}</p>
+          </div>
+          <RouterLink to="/artiste_view">
+            <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+            <span class="sr-only">En savoir plus</span>
+          </RouterLink>
         </div>
-        <RouterLink to="/artiste_view">
-          <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
-          <span class="sr-only">En savoir plus</span>
-        </RouterLink>
       </div>
     </div>
   </div>
@@ -88,7 +84,7 @@ export default {
       const firestore = getFirestore();
       // Base de données (collection)  document participant
       const dbartisteInt = collection(firestore, "artisteInt");
-      // Liste des participants triés sur leur nom
+      // Liste des participants triés sur leur catégorie
       const q = query(dbartisteInt, orderBy("cat", "asc"));
       await onSnapshot(q, (snapshot) => {
         this.listeArtisteInt = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));

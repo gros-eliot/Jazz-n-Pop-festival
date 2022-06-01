@@ -11,7 +11,7 @@
 
   <!--Div contenant TOUTES LES CARDS des artistes-->
 
-  <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(100px,200px))] justify-center gap-5 md:flex md:flex-col md:gap-3">
+  <div class="grid grid-flow-row-dense grid-cols-artiste justify-items-center gap-10 md:grid-cols-artiste-v2">
     <!--Div contenant UNE CARD des artistes-->
     <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
