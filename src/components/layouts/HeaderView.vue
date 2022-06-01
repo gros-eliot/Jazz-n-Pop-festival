@@ -98,7 +98,6 @@ import LogoBigMonochrome from "../icons/JazzNPop_logos/big/Monochrome.vue";
 import LogoBigBichrome from "../icons/JazzNPop_logos/big/Bichrome.vue";
 
 import LogoMediumMonochrome from "../icons/JazzNPop_logos/medium/Monochrome.vue";
-import LogoMediumBichrome from "../icons/JazzNPop_logos/medium/Bichrome.vue";
 
 import LogoSmall from "../icons/JazzNPop_logos/small/Monochrome.vue";
 
@@ -117,7 +116,6 @@ export default {
     LogoBigMonochrome,
     LogoBigBichrome,
     LogoMediumMonochrome,
-    LogoMediumBichrome,
     LogoSmall,
   },
 };

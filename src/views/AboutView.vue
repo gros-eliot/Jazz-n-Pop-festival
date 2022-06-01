@@ -54,7 +54,7 @@
     </div>
   </div>
   <!--Dates -->
-  <div class="my-10 flex flex-col gap-5 bg-yellow-400 p-page py-16 text-gray-900">
+  <div class="my-10 flex flex-col gap-5 bg-yellow-400 p-page py-8 text-gray-900">
     <h2 class="jazznpop-h2">Les dates du festival</h2>
     <p class="jazznpop-text">
       Le festival commencera cet été, et durera du<strong> jeudi 7 juillet au jeudi 21 juillet</strong> (2 semaines), avec une pause entre

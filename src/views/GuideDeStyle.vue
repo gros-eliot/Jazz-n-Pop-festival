@@ -88,7 +88,6 @@
     <!--Logo : moyen format -->
     <div class="my-5 flex flex-col items-center justify-center gap-5">
       <LogoMediumMonochrome />
-      <LogoMediumBichrome />
     </div>
     <!--Logo : petit format -->
     <div class="my-5 flex flex-col items-center justify-center gap-5">
@@ -223,7 +222,6 @@ import LogoBigMonochrome from "../components/icons/JazzNPop_logos/big/Monochrome
 import LogoBigBichrome from "../components/icons/JazzNPop_logos/big/Bichrome.vue";
 
 import LogoMediumMonochrome from "../components/icons/JazzNPop_logos/medium/Monochrome.vue";
-import LogoMediumBichrome from "../components/icons/JazzNPop_logos/medium/Bichrome.vue";
 
 import LogoSmall from "../components/icons/JazzNPop_logos/small/Monochrome.vue";
 
@@ -250,7 +248,7 @@ import ArtistCircularCard from "../components/big/artists/ArtistCircularCard.vue
 //Gros artistes
 import ConcertCard from "../components/big/concert/ConcertCard.vue";
 
-import DateCard from "../components/big/DateCard.vue";
+import DateCard from "../components/big/artists/DateCard.vue";
 import GoogleMapCard from "../components/big/GoogleMapCard.vue";
 import TarifsCard from "../components/big/TarifsCard.vue";
 
@@ -267,7 +265,6 @@ export default {
     LogoBigMonochrome,
     LogoBigBichrome,
     LogoMediumMonochrome,
-    LogoMediumBichrome,
     LogoSmall,
 
     HeaderView,

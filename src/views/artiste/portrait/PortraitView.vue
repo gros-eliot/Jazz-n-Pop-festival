@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import DateCard from "../../../components/big/DateCard.vue";
+import DateCard from "../../../components/big/artists/DateCard.vue";
 import CategorieName from "../../../components/categories/CategorieName.vue";
 import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
 import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";

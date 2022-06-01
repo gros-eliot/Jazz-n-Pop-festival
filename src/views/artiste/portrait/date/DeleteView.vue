@@ -112,7 +112,7 @@ export default {
       await deleteDoc(doc(firestore, "concertartiste", this.$route.params.id));
 
       // redirection sur la liste des artistes
-      this.$router.push("/artistes");
+      this.$router.push("/artiste_view");
     },
   },
 };

@@ -61,7 +61,7 @@
 
 <script>
 import ArtistCircularCard from "../../components/big/artists/ArtistCircularCard.vue";
-import DateCard from "../../components/big/DateCard.vue";
+import DateCard from "../../components/big/concert/DateCard.vue";
 import TextBouton from "../../components/boutons/TextBouton.vue";
 import CategorieName from "../../components/categories/CategorieName.vue";
 export default {
