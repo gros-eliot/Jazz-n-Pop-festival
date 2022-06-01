@@ -15,9 +15,9 @@
           <p class="jazznpop-card-caption">Prochain concert :</p>
           <p class="jazznpop-card-caption">{{ artiste.date }}</p>
           <categorie-name :blueCategory="true" :NameCategory="artiste.cat"></categorie-name>
-          <div class="flex flex-row gap-1">
-            <PencilIcon class="m-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Modifier un artiste</span></PencilIcon>
-            <TrashIcon class="m-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Supprimer un artiste</span></TrashIcon>
+          <div class="flex flex-row gap-3">
+            <PencilIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Modifier un artiste</span></PencilIcon>
+            <TrashIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Supprimer un artiste</span></TrashIcon>
           </div>
         </div>
       </div>
