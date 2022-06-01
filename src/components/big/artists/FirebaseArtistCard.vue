@@ -3,36 +3,68 @@
     <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
     <RouterLink
       to="/artiste_create"
-      class="rounded-full border border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
+      class="rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
     >
       <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
     </RouterLink>
   </div>
 
-  <div class="flex flex-row flex-wrap justify-around">
-    <div class="flex flex-col items-center justify-between p-5 md:flex-row" v-for="artiste in listeArtiste" :key="artiste.id">
-      <div class="grid-rows-[repeat(2,minmax(150px, 200px))] grid grid-cols-1 gap-2 md:grid-cols-2">
-        <img class="h-44 w-44 object-cover object-center" :src="artiste.photo" :alt="artiste.nom" />
-        <div class="flex flex-col gap-1">
-          <h3 class="jazznpop-card-title">{{ artiste.nom }}</h3>
-          <p class="jazznpop-card-caption">Prochain concert :</p>
-          <p class="jazznpop-card-caption">{{ artiste.date }}</p>
-          <categorie-name :blueCategory="true" :NameCategory="artiste.cat"></categorie-name>
-          <div class="flex flex-row gap-3">
-            <RouterLink to="/artist">
-              <PencilIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Modifier un artiste</span></PencilIcon>
-            </RouterLink>
-            <TrashIcon class="my-3 h-8 w-8 dark:stroke-white"><span class="sr-only">Supprimer un artiste</span></TrashIcon>
+  <!--Div contenant TOUTES LES CARDS des artistes-->
+  <!-- grid grid-flow-row-dense lg:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-3 -->
+
+  <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(100px,200px))] justify-center gap-5 md:flex md:flex-col md:gap-10">
+    <!--Div contenant UNE CARD des artistes-->
+    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="artiste.id">
+      <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
+      <div class="flex w-full flex-col items-center justify-center gap-1 md:flex-row md:justify-between">
+        <!--Div contenant image + description de l'artiste-->
+        <div class="grid grid-cols-1 justify-items-center gap-2 md:grid-cols-2">
+          <img class="h-48 w-48 object-cover object-center" :src="artiste.photo" :alt="artiste.nom" />
+
+          <!--Div contenant description de l'artiste-->
+          <div class="flex flex-col gap-1">
+            <h3 class="jazznpop-card-title">{{ artiste.nom }}</h3>
+            <p class="jazznpop-card-caption">Prochain concert&nbsp;:</p>
+            <p class="jazznpop-card-caption">{{ artiste.date }}</p>
+
+            <div class="grid grid-cols-2">
+              <div>
+                <categorie-name :blueCategory="true" :NameCategory="artiste.cat" class="my-2"></categorie-name>
+                <!--Div contenant boutons de modifications-->
+                <div class="flex flex-row gap-3">
+                  <RouterLink :to="{ name: 'CustomArtiste', params: { id: artiste.id } }" class="h-fit w-fit">
+                    <PencilIcon class="my-3 h-8 w-8 dark:stroke-white">
+                      <span class="sr-only">Modifier un artiste</span>
+                    </PencilIcon>
+                  </RouterLink>
+                  <RouterLink to="/artiste_custom" class="h-fit w-fit">
+                    <TrashIcon class="my-3 h-8 w-8 dark:stroke-white">
+                      <span class="sr-only">Supprimer un artiste</span>
+                    </TrashIcon>
+                  </RouterLink>
+                </div>
+              </div>
+
+              <div class="block md:hidden">
+                <button
+                  class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
+                >
+                  <PlusIcon class="h-7 w-7" />
+                  <span class="sr-only">En savoir plus</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="m-5">
-        <button
-          class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
-        >
-          <PlusIcon class="h-7 w-7" />
-          <span class="sr-only">En savoir plus</span>
-        </button>
+
+        <div class="m-5 hidden md:block">
+          <button
+            class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
+          >
+            <PlusIcon class="h-7 w-7" />
+            <span class="sr-only">En savoir plus</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
