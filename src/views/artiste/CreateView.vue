@@ -22,6 +22,13 @@
                 <input class="form-control" placeholder="Nom de la personne" v-model="artiste.nom" required />
               </div>
               <br />
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Date</span>
+                </div>
+                <input class="form-control" placeholder="Date du concert" v-model="artiste.date" required />
+              </div>
+              <br />
 
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -92,6 +99,7 @@ export default {
         nom: null, // son nom
         photo: null, // sa photo (nom du fichier)
         cat: null, // sa catégorie
+        date: null, // sa date
       },
     };
   },
