@@ -1,7 +1,9 @@
 <template>
   <div class="ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover p-5">
     <div class="flex flex-row justify-end gap-5">
-      <CategorieName :blueCategory="true" :blackCategory="false" :redCategory="false" :orangeCategory="false" NameCategory="Concert" />
+      <CategorieName NameCategory="Concert" />
+      <CategorieName NameCategory="Spécial" />
+      <!-- v-for="concert in listeConcert" :key="(concert.id = 'Salut')" -->
     </div>
     <div class="flex flex-col gap-2 text-white">
       <h3 class="jazznpop-card-title">{{ concertNom }}</h3>

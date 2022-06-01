@@ -72,15 +72,15 @@
       <!--LISTE DES LIENS (sans bouton)-->
       <nav class="mx-5 hidden flex-row gap-5 fill-white text-white lg:flex">
         <RouterLink to="/concerts" class="flex flex-row items-center justify-center gap-1">
-          <ClockIcon class="h-8 w-8" />Programmes
+          <ClockIcon class="h-4 w-4" />Programmes
         </RouterLink>
 
         <RouterLink to="/artistes" class="flex flex-row items-center justify-center gap-1">
-          <UsersIcon class="h-8 w-8" />Artistes
+          <UsersIcon class="h-4 w-4" />Artistes
         </RouterLink>
 
         <RouterLink to="/about" class="flex flex-row items-center justify-center gap-1">
-          <PartyIcon class="h-8 w-8 fill-white" />Festival
+          <PartyIcon class="h-4 w-4 fill-white" />Festival
         </RouterLink>
       </nav>
     </div>
