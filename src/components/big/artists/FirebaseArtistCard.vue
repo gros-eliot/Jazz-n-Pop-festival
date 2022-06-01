@@ -10,7 +10,6 @@
   </div>
 
   <!--Div contenant TOUTES LES CARDS des artistes-->
-  <!-- grid grid-flow-row-dense lg:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-3 -->
 
   <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(100px,200px))] justify-center gap-5 md:flex md:flex-col md:gap-3">
     <!--Div contenant UNE CARD des artistes-->

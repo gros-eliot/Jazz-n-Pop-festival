@@ -38,9 +38,9 @@ const router = createRouter({
     { path: '/artiste_custom', name: 'CustomArtiste', component: CustomArtiste },
     { path: '/artiste_delete', name: 'DeleteArtiste', component: DeleteArtiste },
     
-    { path: '/artiste_int_create', name: 'CreateConcertArtist', component: CreateConcertArtist },
-    { path: '/artiste_int_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },
-    { path: '/artiste_int_delete', name: 'DeleteConcertArtist', component: DeleteConcertArtist },
+    { path: '/artiste_int_create', name: 'CreateArtisteInternational', component: CreateArtisteInternational },
+    { path: '/artiste_int_custom', name: 'CustomArtisteInternational', component: CustomArtisteInternational },
+    { path: '/artiste_int_delete', name: 'DeleteArtisteInternational', component: DeleteArtisteInternational },
     
     { path: '/concert_artiste_create', name: 'CreateConcertArtist', component: CreateConcertArtist },
     { path: '/concert_artiste_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },

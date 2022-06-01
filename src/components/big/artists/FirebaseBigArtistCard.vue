@@ -1,25 +1,40 @@
 <template>
+  <div class="my-10 flex items-center gap-5">
+    <h2 class="jazznpop-h2">Nos figures internationales</h2>
+    <RouterLink
+      to="/artiste_int_create"
+      class="rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
+    >
+      <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
+    </RouterLink>
+  </div>
   <div
-    class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
-    v-for="artisteIntInt in listeartisteInt"
-    :key="artisteIntInt.id"
-    :style="{
-      backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artisteInt.photo}')`,
-    }"
+    class="grid grid-flow-row-dense grid-cols-[repeat(3,minmax(300px,1fr))] justify-items-center"
+    v-for="artisteInt in listeArtisteInt"
+    :key="artisteInt.id"
   >
-    <div class="flex w-full flex-col gap-3">
-      <CategorieName :redCategory="true" :NameCategory="artisteInt.cat" class="ml-auto mr-auto" />
+    <!--BG de l'image-->
+    <div
+      class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
+      :style="{
+        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artisteInt.photo}')`,
+      }"
+    >
+      <!--INFOS DE LA CARD-->
+      <div class="flex w-full flex-col gap-3">
+        <CategorieName :redCategory="true" :NameCategory="artisteInt.cat" class="ml-auto mr-auto" />
 
-      <h3 class="jazznpop-card-title text-white">{{ artisteInt.nom }}</h3>
+        <h3 class="jazznpop-card-title text-white">{{ artisteInt.nom }}</h3>
 
-      <div class="flex flex-col gap-0">
-        <p class="jazznpop-card-caption text-white">Prochain concert :</p>
-        <p class="jazznpop-card-caption text-white">{{ artisteInt.date }}</p>
+        <div class="flex flex-col gap-0">
+          <p class="jazznpop-card-caption text-white">Prochain concert :</p>
+          <p class="jazznpop-card-caption text-white">{{ artisteInt.date }}</p>
+        </div>
+        <RouterLink to="/artiste_view">
+          <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+          <span class="sr-only">En savoir plus</span>
+        </RouterLink>
       </div>
-      <RouterLink to="/artiste_view">
-        <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
-        <span class="sr-only">En savoir plus</span>
-      </RouterLink>
     </div>
   </div>
 </template>
@@ -49,14 +64,16 @@ import {
 
 import CategorieName from "../../categories/CategorieName.vue";
 import PlusBouton from "../../boutons/PlusBouton.vue";
+import { PlusIcon } from "@heroicons/vue/outline";
 export default {
   components: {
     CategorieName,
     PlusBouton,
+    PlusIcon,
   },
   data() {
     return {
-      listeartisteInt: [], // Liste des participants
+      listeArtisteInt: [], // Liste des participants
     };
   },
 
@@ -74,10 +91,10 @@ export default {
       // Liste des participants triés sur leur nom
       const q = query(dbartisteInt, orderBy("cat", "asc"));
       await onSnapshot(q, (snapshot) => {
-        this.listeartisteInt = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        this.listeArtisteInt = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
         // Récupération des images de chaque participant
         // parcours de la liste
-        this.listeartisteInt.forEach(function (personne) {
+        this.listeArtisteInt.forEach(function (personne) {
           // Obtenir le Cloud Storage
           const storage = getStorage();
           // Récupération de l'image par son nom de fichier
