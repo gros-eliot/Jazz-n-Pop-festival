@@ -43,14 +43,9 @@ Belfort (90)"
           propos du Jazz’n’Pop Festival.
         </p>
         <form class="my-10 flex flex-col gap-5">
-          <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Nom*" required />
-          <input type="text" class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50" placeholder="Prénom*" required />
-          <input
-            type="email"
-            class="jazznpop-input dark:bg-transparent dark:bg-black dark:bg-opacity-50"
-            placeholder="Adresse e-mail*"
-            required
-          />
+          <input type="text" class="jazznpop-input" placeholder="Nom*" required />
+          <input type="text" class="jazznpop-input" placeholder="Prénom*" required />
+          <input type="email" class="jazznpop-input" placeholder="Adresse e-mail*" required />
           <textarea class="jazznpop-input h-32 dark:bg-black dark:bg-opacity-50" placeholder="Message" />
 
           <div class="flex flex-row items-center gap-2">

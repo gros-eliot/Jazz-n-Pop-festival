@@ -1,68 +1,13 @@
 <template>
   <div class="m-10">
     <form enctype="multipart/form-data" @submit.prevent="updateArtiste">
-      <div class="card bg-dark">
-        <div class="card-header">
-          <h5 style="color: white">Mise à jour participant</h5>
-        </div>
+      <!--COLLER ICI LE CONTENU DU FORM -->
 
-        <div class="card-body">
-          <div class="row">
-            <div class="col-6">
-              <div class="text-center">
-                <img class="w-40 bg-center object-cover" :src="imageData" />
-              </div>
-            </div>
-
-            <div class="col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Nom</span>
-                </div>
-                <input class="form-control" placeholder="Nom de la personne" v-model="artiste.nom" required />
-              </div>
-              <br />
-
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Photo</span>
-                </div>
-                <div class="custom-file flex flex-col">
-                  <input type="file" class="custom-file-input" ref="file" id="file" @change="previewImage" />
-                  <label class="custom-file-label" for="file">Sélectionner l'image</label>
-                </div>
-              </div>
-              <br />
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Date de l'artiste</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Date de l'artiste" required v-model="artiste.date" />
-              </div>
-              <br />
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Catégorie</span>
-                </div>
-                <select class="custom-select" v-model="artiste.cat">
-                  <option selected disabled>Sélectionner une catégorie</option>
-
-                  <option v-for="categorie in listeCat" :key="categorie.libelle">
-                    {{ categorie.libelle }}
-                  </option>
-                </select>
-              </div>
-              <br />
-            </div>
-          </div>
-        </div>
-
-        <div class="card-footer">
-          <button type="submit" class="btn btn-dark float-left">Modifier</button>
-          <button class="btn btn-dark float-right">
-            <RouterLink to="/artistes">Cancel</RouterLink>
-          </button>
-        </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-dark float-left">Modifier</button>
+        <button class="btn btn-dark float-right">
+          <RouterLink to="/artistes">Cancel</RouterLink>
+        </button>
       </div>
     </form>
   </div>

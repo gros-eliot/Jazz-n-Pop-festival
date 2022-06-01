@@ -1,66 +1,63 @@
 <template>
-  <div class="p-11 pt-32">
+  <div class="jazznpop-text m-10">
     <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
-      <div class="card bg-dark">
-        <div class="card-header">
-          <h5 style="color: white">Création participant</h5>
-        </div>
+      <div class="py-5">
+        <h2 class="jazznpop-h2">Mise à jour participant</h2>
+      </div>
 
-        <div class="card-body">
-          <div class="row">
-            <div class="col-6">
-              <div>
-                <img class="preview img-fluid" :src="imageData" />
-              </div>
+      <div class="w-full">
+        <div class="flex flex-col">
+          <div class="flex flex-col">
+            <span class="">Nom</span>
+
+            <input class="jazznpop-input" placeholder="Nom de la personne" v-model="artiste.nom" required />
+          </div>
+          <br />
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Photo</span>
             </div>
-
-            <div class="col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Nom</span>
-                </div>
-                <input class="form-control" placeholder="Nom de la personne" v-model="artiste.nom" required />
-              </div>
-              <br />
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Date</span>
-                </div>
-                <input class="form-control" placeholder="Date du concert" v-model="artiste.date" required />
-              </div>
-              <br />
-
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Photo</span>
-                </div>
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" ref="file" id="file" @change="previewImage" />
-                  <label class="custom-file-label" for="file">Sélectionner l'image</label>
-                </div>
-              </div>
-              <br />
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">catégorie</span>
-                </div>
-                <select class="custom-select" v-model="artiste.cat">
-                  <option selected disabled>Sélectionner une catégorie</option>
-                  <option v-for="categorie in listeCat" :key="categorie.libelle">
-                    {{ categorie.libelle }}
-                  </option>
-                </select>
-              </div>
+            <div class="custom-file flex flex-col">
+              <input type="file" class="jazznpop-input flex flex-wrap" ref="file" id="file" @change="previewImage" />
             </div>
           </div>
-        </div>
 
-        <div class="card-footer">
-          <button type="submit" class="btn btn-dark float-left">Créer</button>
-          <button class="btn btn-dark float-right">
-            <router-link to="/artiste">Cancel</router-link>
-          </button>
+          <div class="py-5">
+            <div class="text-center">
+              <img class="w-40 bg-center object-cover" :src="imageData" />
+            </div>
+          </div>
+
+          <br />
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Date de l'artiste</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Date de l'artiste" required v-model="artiste.date" />
+          </div>
+          <br />
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Catégorie</span>
+            </div>
+            <select class="custom-select" v-model="artiste.cat">
+              <option selected disabled>Sélectionner une catégorie</option>
+
+              <option v-for="categorie in listeCat" :key="categorie.libelle">
+                {{ categorie.libelle }}
+              </option>
+            </select>
+          </div>
+          <br />
         </div>
+      </div>
+
+      <div class="card-footer">
+        <button type="submit" class="btn btn-dark float-left">Créer</button>
+        <button class="btn btn-dark float-right">
+          <router-link to="/artiste">Cancel</router-link>
+        </button>
       </div>
     </form>
   </div>

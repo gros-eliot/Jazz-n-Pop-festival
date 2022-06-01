@@ -24,6 +24,16 @@
         @apply text-2xl font-light;
     }
     .jazznpop-input {
-        @apply jazznpop-text max-w-2xl rounded-xl border-2 border-red-jazzNpop bg-white p-2 focus-visible:ring-4 focus-visible:ring-gray-900;
+        @apply jazznpop-text 
+        max-w-2xl 
+        rounded-xl 
+        border-2 
+        border-red-jazzNpop 
+        bg-white p-2 
+        focus-visible:ring-4 
+        focus-visible:ring-gray-900 
+        dark:bg-transparent 
+        dark:bg-black 
+        dark:bg-opacity-50;
     }
 }
