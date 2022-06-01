@@ -34,10 +34,7 @@
     <div class="mt-10">
       <div class="flex flex-row items-center gap-4">
         <h2 class="jazznpop-h2">Dates de l'artiste</h2>
-        <RouterLink
-          to="/concert_artiste_create"
-          class="rounded-full border-2 border-gray-900 p-3 focus-visible:shadow-xl focus-visible:shadow-blue-400 dark:border-white"
-        >
+        <RouterLink to="/concert_artiste_create" class="jazznpop-add-button">
           <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
         </RouterLink>
       </div>
