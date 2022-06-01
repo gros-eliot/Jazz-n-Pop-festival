@@ -4,7 +4,7 @@
       <div class="py-5">
         <h2 class="jazznpop-h2">Créer un concert (et ses dates) d'un artiste</h2>
       </div>
-      {{ listeConcert }}
+
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
           <span class="">Nom du concert</span>

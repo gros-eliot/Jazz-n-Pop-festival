@@ -1,5 +1,9 @@
 <template>
-  <div class="flex flex-row items-center justify-between bg-yellow-400 p-3" v-for="concert in listeConcert" :key="concert.id">
+  <div
+    class="flex flex-row items-center justify-between bg-yellow-400 p-3 text-gray-900 dark:text-gray-900"
+    v-for="concert in listeConcert"
+    :key="concert.id"
+  >
     <div class="flex items-center gap-2">
       <div class="hidden md:block">
         <ClockIcon class="h-8 w-8 stroke-gray-900" />
@@ -13,7 +17,7 @@
         <p class="jazznpop-text font-bold">{{ dateFr(concert.datedebut) }}</p>
         <p class="jazznpop-text font-bold">{{ dateFr(concert.datefin) }}</p>
       </div>
-      <ArrowRightIcon class="h-10 w-10 stroke-white" />
+      <ArrowRightIcon class="h-10 w-10 stroke-white dark:stroke-zinc-900" />
       <span class="sr-only">Voir les tarifs</span>
     </div>
   </div>
@@ -36,7 +40,7 @@ import {
   orderBy,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
-import { ClockIcon, ArrowRightIcon } from "@heroicons/vue/outline";
+import { ClockIcon, ArrowRightIcon, PencilIcon, TrashIcon } from "@heroicons/vue/outline";
 export default {
   data() {
     return {
@@ -46,6 +50,8 @@ export default {
   components: {
     ClockIcon,
     ArrowRightIcon,
+    PencilIcon,
+    TrashIcon,
   },
 
   mounted() {

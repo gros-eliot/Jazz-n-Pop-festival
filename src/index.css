@@ -36,4 +36,10 @@
         dark:bg-black 
         dark:bg-opacity-50;
     }
+
+    /* Pour l'icon calendrier de l'input type=date (darkmode)*/
+    ::-webkit-calendar-picker-indicator {
+        @apply dark:invert;
+    }
+
 }
