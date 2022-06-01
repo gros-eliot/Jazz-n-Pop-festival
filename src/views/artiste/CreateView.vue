@@ -29,7 +29,7 @@
           <span>Catégorie</span>
 
           <select class="jazznpop-input" v-model="artiste.cat">
-            <option class="bg-white text-black dark:bg-black dark:text-white" selected disabled>Sélectionner une catégorie</option>
+            <option class="bg-white dark:bg-black" selected disabled>Sélectionner une catégorie</option>
             <option class="bg-white text-black dark:bg-black dark:text-white" v-for="categorie in listeCat" :key="categorie.libelle">
               {{ categorie.libelle }}
             </option>
@@ -37,11 +37,12 @@
         </div>
       </div>
 
-      <div class="flex justify-between">
-        <button type="submit" class="btn btn-dark">Créer</button>
-        <button class="btn btn-dark">
-          <router-link to="/artiste">Cancel</router-link>
-        </button>
+      <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
+        <text-bouton :redVersion="true" contenuTextBouton="Créer" type="submit" class="w-fit"></text-bouton>
+
+        <router-link to="/artistes">
+          <text-bouton :redVersion="true" contenuTextBouton="Annuler" class="w-fit"></text-bouton>
+        </router-link>
       </div>
     </form>
   </div>
@@ -69,8 +70,11 @@ import {
   uploadString, // Permet d'uploader sur le Cloud Storage une image en Base64
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
+import TextBouton from "../../components/boutons/TextBouton.vue";
+
 export default {
-  name: "CreateartisteView",
+  name: "CreateArtisteView",
+  components: { TextBouton },
   data() {
     return {
       imageData: null, // Image prévisualisée
