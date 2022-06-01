@@ -2,7 +2,7 @@
   <div class="jazznpop-text p-page">
     <form enctype="multipart/form-data" @submit.prevent="updateConcertArtiste()">
       <div class="py-5">
-        <h2 class="jazznpop-h2">Créer un concert (et ses dates) d'un artiste</h2>
+        <h2 class="jazznpop-h2">Modifier un concert (et ses dates) d'un artiste</h2>
       </div>
 
       <div class="flex w-full flex-col gap-4">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
-        <text-bouton :redVersion="true" contenuTextBouton="Créer" type="submit" class="w-fit"></text-bouton>
+        <text-bouton :redVersion="true" contenuTextBouton="Modifier" type="submit" class="w-fit"></text-bouton>
 
         <router-link to="/artiste_view">
           <text-bouton :redVersion="true" contenuTextBouton="Annuler" class="w-fit"></text-bouton>
