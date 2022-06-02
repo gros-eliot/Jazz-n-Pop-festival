@@ -1,5 +1,5 @@
 <template>
-  <div class="ml-auto mr-auto flex h-[20rem] w-11/12 max-w-2xl rounded-xl bg-[url('../../assets/pictos/map.jpg')] bg-cover bg-center">
+  <div class="ml-auto mr-auto flex h-[20rem] w-11/12 max-w-2xl rounded-xl bg-[url('src/assets/pictos/map.jpg')] bg-cover bg-center">
     <span class="sr-only">Carte google map</span>
     <div class="flex w-full items-end">
       <div
