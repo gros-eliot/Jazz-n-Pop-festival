@@ -9,7 +9,7 @@
         <p class="jazznpop-text">
           Le paiement de billet pour pass ou concert sur notre site est totalement sécurisé et accessible grâce à Paypal.
         </p>
-        <img src="src/assets/pictos/paypal.png" alt="Logo paypal" class="ml-auto mr-auto h-32 w-32" />
+        <img src="../assets/pictos/paypal.png" alt="Logo paypal" class="ml-auto mr-auto h-32 w-32" />
         <h3 class="jazznpop-text font-bold">Remboursements</h3>
         <p class="jazznpop-text">
           Il est possible de se faire rembourser son billet, si le remboursement est demandé

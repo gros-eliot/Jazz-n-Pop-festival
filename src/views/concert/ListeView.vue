@@ -12,9 +12,9 @@
           class="bg-concert1 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
-          <ArtistCircularCard artisteNom="Daïda" artisteImageSrc="public/artistes/jazz/daida.jpg" />
+          <ArtistCircularCard artisteNom="Daïda" artisteImageSrc="/artistes/jazz/daida.jpg" />
           <RouterLink to="artiste_view">
-            <ArtistCircularCard artisteNom="Melody Gardot" artisteImageSrc="public/artistes/jazz/melody_gardot.jpg" />
+            <ArtistCircularCard artisteNom="Melody Gardot" artisteImageSrc="/artistes/jazz/melody_gardot.jpg" />
           </RouterLink>
         </div>
         <hr class="m-5 mt-10 border-2 border-black p-0 dark:border-white" />
@@ -28,9 +28,9 @@
           class="bg-concert2 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
-          <ArtistCircularCard artisteNom="Coldplay" artisteImageSrc="public/artistes/pop/coldplay.jpg" />
+          <ArtistCircularCard artisteNom="Coldplay" artisteImageSrc="/artistes/pop/coldplay.jpg" />
 
-          <ArtistCircularCard artisteNom="Kungs" artisteImageSrc="public/artistes/pop/kungs.jpg" />
+          <ArtistCircularCard artisteNom="Kungs" artisteImageSrc="/artistes/pop/kungs.jpg" />
         </div>
         <hr class="m-5 mt-10 border-2 border-black p-0 dark:border-white" />
       </div>
@@ -43,10 +43,10 @@
           class="bg-concert3 bg-center"
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
-          <ArtistCircularCard artisteNom="James Blunt" artisteImageSrc="public/artistes/pop/james_blunt.webp" />
-          <ArtistCircularCard artisteNom="Alicia Moffet" artisteImageSrc="public/artistes/pop/alicia_moffet.jpg" />
-          <ArtistCircularCard artisteNom="Bastille" artisteImageSrc="public/artistes/pop/bastille.jpg" />
-          <ArtistCircularCard artisteNom="Stacey Ryan" artisteImageSrc="public/artistes/jazz/stacey_ryan.jpg" />
+          <ArtistCircularCard artisteNom="James Blunt" artisteImageSrc="/artistes/pop/james_blunt.webp" />
+          <ArtistCircularCard artisteNom="Alicia Moffet" artisteImageSrc="/artistes/pop/alicia_moffet.jpg" />
+          <ArtistCircularCard artisteNom="Bastille" artisteImageSrc="/artistes/pop/bastille.jpg" />
+          <ArtistCircularCard artisteNom="Stacey Ryan" artisteImageSrc="/artistes/jazz/stacey_ryan.jpg" />
         </div>
       </div>
     </div>

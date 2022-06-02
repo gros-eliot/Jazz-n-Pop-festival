@@ -46,10 +46,10 @@
         Le Jazz’n’Pop Festival possède au total 3 scènes. Nous possédons 2 salles de concert, et une scène sur la place extérieure.
       </p>
       <div class="grid grid-cols-1 grid-rows-gallery md:grid-cols-gallery lg:h-[30rem]">
-        <img src="src/assets/festival/festival1.jpg" alt="Photo 1 du festival" class="h-full w-full object-cover" />
-        <img src="src/assets/festival/festival2.jpg" alt="Photo 2 du festival" class="h-full w-full object-cover" />
-        <img src="src/assets/festival/festival3.jpg" alt="Photo 3 du festival" class="h-full w-full object-cover" />
-        <img src="src/assets/festival/festival4.jpg" alt="Photo 4 du festival" class="h-full w-full object-cover" />
+        <img src="../assets/festival/festival1.jpg" alt="Photo 1 du festival" class="h-full w-full object-cover" />
+        <img src="../assets/festival/festival2.jpg" alt="Photo 2 du festival" class="h-full w-full object-cover" />
+        <img src="../assets/festival/festival3.jpg" alt="Photo 3 du festival" class="h-full w-full object-cover" />
+        <img src="../assets/festival/festival4.jpg" alt="Photo 4 du festival" class="h-full w-full object-cover" />
       </div>
     </div>
   </div>
