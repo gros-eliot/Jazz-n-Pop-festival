@@ -29,7 +29,9 @@
       </div>
       <p class="jazznpop-text">Les tarifs peuvent changer selon certaines conditions.</p>
       <p class="jazznpop-text font-bold">JAZZ’PASS valide pour ce concert !</p>
-      <text-bouton :redVersion="true" contenuTextBouton="Voir les tarifs" class="ml-auto mr-auto"></text-bouton>
+      <RouterLink to="/about">
+        <text-bouton :redVersion="true" contenuTextBouton="Voir les tarifs" class="ml-auto mr-auto"></text-bouton>
+      </RouterLink>
     </div>
     <!-- Artistes du concert : div -->
     <div class="jazznpop-text my-10 flex flex-col gap-10">
@@ -45,7 +47,9 @@
         <artist-circular-card artisteNom="Asaf Avidan" artisteImageSrc="/artistes/jazz/asaf_avidan.jpg"></artist-circular-card>
         <artist-circular-card artisteNom="Trio Viret" artisteImageSrc="/artistes/jazz/trio_viret.jpg"></artist-circular-card>
       </div>
-      <text-bouton :blueVersion="true" contenuTextBouton="Voir les artistes" class="ml-auto mr-auto"></text-bouton>
+      <RouterLink to="/artistes">
+        <text-bouton :blueVersion="true" contenuTextBouton="Voir les artistes" class="ml-auto mr-auto"></text-bouton>
+      </RouterLink>
     </div>
   </div>
 </template>

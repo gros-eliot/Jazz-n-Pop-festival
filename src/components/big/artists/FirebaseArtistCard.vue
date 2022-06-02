@@ -1,5 +1,5 @@
 <template>
-  <div class="md:my-10">
+  <div class="my-2 md:my-10">
     <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
   </div>
 

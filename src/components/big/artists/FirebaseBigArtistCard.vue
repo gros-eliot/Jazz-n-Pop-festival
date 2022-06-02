@@ -3,7 +3,7 @@
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
   </div>
   <div>
-    <div class="flex flex-col items-center justify-center gap-10 md:flex-row md:flex-wrap lg:justify-start">
+    <div class="grid grid-cols-1 justify-items-center gap-10 md:grid md:grid-cols-artiste-international md:flex-row">
       <section v-for="artiste in listeArtiste" :key="artiste.id">
         <!--BG de l'image-->
         <div
@@ -11,7 +11,7 @@
           :style="{
             backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artiste.photo}')`,
           }"
-          v-if="artiste.international === true"
+          v-if="artiste.international"
         >
           <!--INFOS DE LA CARD-->
           <div class="flex w-full flex-col gap-3">

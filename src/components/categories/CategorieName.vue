@@ -10,6 +10,7 @@
       'bg-blue-400 text-black': NameCategory === 'Concert',
       'bg-gray-900 text-orange-500 dark:bg-white': NameCategory === 'Spécial',
       'bg-gray-900 text-orange-400 dark:bg-white': NameCategory === 'Internationale',
+      'bg-blue-400 text-zinc-900 dark:bg-white': NameCategory === 'Intérieur',
     }"
   >
     <p class="text-center">{{ NameCategory }}</p>

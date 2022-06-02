@@ -43,6 +43,7 @@ Belfort (90)"
           propos du Jazz’n’Pop Festival.
         </p>
         <form class="my-10 flex flex-col gap-5">
+          <p class="jazznpop-text text-sm">(*obligatoire)</p>
           <input type="text" class="jazznpop-input" placeholder="Nom*" required />
           <input type="text" class="jazznpop-input" placeholder="Prénom*" required />
           <input type="email" class="jazznpop-input" placeholder="Adresse e-mail*" required />
@@ -54,8 +55,6 @@ Belfort (90)"
               >J’accepte d’être possiblement recontacté par mail par l’équipe de communication du Jazz’n’Pop Festival.*</label
             >
           </div>
-
-          <p class="jazznpop-text">(*obligatoire)</p>
 
           <text-bouton type="submit" :redVersion="true" contenuTextBouton="Envoyer" class="ml-auto mr-auto"></text-bouton>
         </form>
