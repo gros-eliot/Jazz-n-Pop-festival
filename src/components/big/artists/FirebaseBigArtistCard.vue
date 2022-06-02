@@ -1,9 +1,9 @@
 <template>
-  <div class="my-5">
+  <div class="my-2 md:my-10">
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
   </div>
   <div>
-    <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
+    <div class="flex flex-col items-center justify-center gap-10 md:flex-row md:flex-wrap lg:justify-start">
       <div v-for="artiste in listeArtiste" :key="artiste.id">
         <!--BG de l'image-->
         <div
@@ -16,15 +16,31 @@
           <!--INFOS DE LA CARD-->
           <div class="flex w-full flex-col gap-3">
             <CategorieName :redCategory="true" :NameCategory="artiste.cat" class="ml-auto mr-auto" />
-            <h3 class="jazznpop-card-title text-white">{{ artiste.nom }}</h3>
-            <div class="flex flex-col gap-0">
-              <p class="jazznpop-card-caption text-white">Prochain concert :</p>
-              <p class="jazznpop-card-caption text-white">{{ artiste.date }}</p>
+            <div class="flex flex-col items-center justify-center md:flex-row md:justify-between">
+              <div>
+                <h3 class="jazznpop-card-title text-white">{{ artiste.nom }}</h3>
+                <div class="flex flex-col gap-0">
+                  <p class="jazznpop-card-caption text-white">Prochain concert :</p>
+                  <p class="jazznpop-card-caption text-white">{{ artiste.date }}</p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-3">
+                <RouterLink :to="{ name: 'CustomArtiste', params: { id: artiste.id } }" class="h-fit w-fit">
+                  <PencilIcon class="my-3 h-8 w-8 stroke-white">
+                    <span class="sr-only">Modifier un artiste</span>
+                  </PencilIcon>
+                </RouterLink>
+                <RouterLink :to="{ name: 'DeleteArtiste', params: { id: artiste.id } }" class="h-fit w-fit">
+                  <TrashIcon class="my-3 h-8 w-8 stroke-red-jazzNpop">
+                    <span class="sr-only">Supprimer un artiste</span>
+                  </TrashIcon>
+                </RouterLink>
+              </div>
             </div>
-            <!--<RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">-->
-            <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
-            <span class="sr-only">En savoir plus</span>
-            <!--</RouterLink>-->
+            <RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">
+              <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+              <span class="sr-only">En savoir plus</span>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -57,12 +73,14 @@ import {
 
 import CategorieName from "../../categories/CategorieName.vue";
 import PlusBouton from "../../boutons/PlusBouton.vue";
-import { PlusIcon } from "@heroicons/vue/outline";
+import { PlusIcon, PencilIcon, TrashIcon } from "@heroicons/vue/outline";
 export default {
   components: {
     CategorieName,
     PlusBouton,
     PlusIcon,
+    PencilIcon,
+    TrashIcon,
   },
   data() {
     return {

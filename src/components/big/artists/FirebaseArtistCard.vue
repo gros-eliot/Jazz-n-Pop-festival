@@ -1,11 +1,11 @@
 <template>
-  <div class="my-5">
-    <h2 class="jazznpop-h2">Tous les artistes</h2>
+  <div class="md:my-10">
+    <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
   </div>
 
   <!--Div contenant TOUTES LES CARDS des artistes-->
 
-  <div class="grid grid-flow-row-dense grid-cols-artiste justify-items-center gap-10 md:grid-cols-artiste-v2">
+  <div class="flex flex-col items-center justify-start md:flex-row md:flex-wrap">
     <!--Div contenant UNE CARD des artistes-->
     <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="!artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->

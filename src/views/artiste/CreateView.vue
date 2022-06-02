@@ -44,8 +44,7 @@
           :checked="artiste.international"
           v-model="artiste.international"
         />
-        <label>Cet artiste est <strong>international</strong></label>
-        {{ artiste.international }}
+        <label>Cet artiste est <strong>international</strong> (affichage spécial)</label>
       </div>
 
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
