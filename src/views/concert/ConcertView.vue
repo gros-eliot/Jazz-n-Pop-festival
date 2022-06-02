@@ -1,7 +1,7 @@
 <template>
   <div class="p-page">
     <h1 class="jazznpop-h1 text-center">Jazzy Stage</h1>
-    <img src="src/assets/concerts/concert1.jpg" alt="Concert Jazzy Stage" class="my-10 h-72 w-full object-cover" />
+    <img src="public/concerts/concert1.jpg" alt="Concert Jazzy Stage" class="my-10 h-72 w-full object-cover" />
 
     <!-- Description du concert : div -->
     <div class="jazznpop-text my-10 flex flex-col gap-5">
@@ -35,24 +35,18 @@
     <div class="jazznpop-text my-10 flex flex-col gap-10">
       <h2 class="jazznpop-h2">Artistes présents au concert</h2>
       <div class="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-4">
-        <artist-circular-card
-          artisteNom="Melody Gardot"
-          artisteImageSrc="src/assets/artistes/jazz/melody_gardot.jpg"
-        ></artist-circular-card>
-        <artist-circular-card
-          artisteNom="Peter Cincotti"
-          artisteImageSrc="src/assets/artistes/jazz/peter_cincotti.jpg"
-        ></artist-circular-card>
+        <artist-circular-card artisteNom="Melody Gardot" artisteImageSrc="public/artistes/jazz/melody_gardot.jpg"></artist-circular-card>
+        <artist-circular-card artisteNom="Peter Cincotti" artisteImageSrc="public/artistes/jazz/peter_cincotti.jpg"></artist-circular-card>
         <artist-circular-card
           artisteNom="Jean-Michel Blais"
-          artisteImageSrc="src/assets/artistes/jazz/jean_michel_blais.jpg"
+          artisteImageSrc="public/artistes/jazz/jean_michel_blais.jpg"
         ></artist-circular-card>
-        <artist-circular-card artisteNom="Daïda" artisteImageSrc="src/assets/artistes/jazz/daida.jpg"></artist-circular-card>
+        <artist-circular-card artisteNom="Daïda" artisteImageSrc="public/artistes/jazz/daida.jpg"></artist-circular-card>
       </div>
       <div class="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
-        <artist-circular-card artisteNom="Stacey Ryan" artisteImageSrc="src/assets/artistes/jazz/stacey_ryan.jpg"></artist-circular-card>
-        <artist-circular-card artisteNom="Asaf Avidan" artisteImageSrc="src/assets/artistes/jazz/asaf_avidan.jpg"></artist-circular-card>
-        <artist-circular-card artisteNom="Trio Viret" artisteImageSrc="src/assets/artistes/jazz/trio_viret.jpg"></artist-circular-card>
+        <artist-circular-card artisteNom="Stacey Ryan" artisteImageSrc="public/artistes/jazz/stacey_ryan.jpg"></artist-circular-card>
+        <artist-circular-card artisteNom="Asaf Avidan" artisteImageSrc="public/artistes/jazz/asaf_avidan.jpg"></artist-circular-card>
+        <artist-circular-card artisteNom="Trio Viret" artisteImageSrc="public/artistes/jazz/trio_viret.jpg"></artist-circular-card>
       </div>
       <text-bouton :blueVersion="true" contenuTextBouton="Voir les artistes" class="ml-auto mr-auto"></text-bouton>
     </div>

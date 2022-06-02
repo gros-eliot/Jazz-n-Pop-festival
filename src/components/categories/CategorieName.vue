@@ -4,8 +4,11 @@
     :class="{
       'bg-red-jazzNpop text-white': NameCategory === 'Pop',
       'bg-yellow-400 text-black': NameCategory === 'Jazz',
+      'bg-yellow-400 text-black': NameCategory === 'Soul',
+      'bg-yellow-400 text-black': NameCategory === 'Folk',
       'bg-blue-400 text-black': NameCategory === 'Concert',
       'bg-gray-900 text-orange-400 dark:bg-white': NameCategory === 'Spécial',
+      'bg-gray-900 text-orange-400 dark:bg-white': NameCategory === 'Internationale',
     }"
   >
     <p class="text-center">{{ NameCategory }}</p>

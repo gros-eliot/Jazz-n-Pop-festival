@@ -170,7 +170,7 @@
 
     <!--Artiste : card circulaire-->
 
-    <ArtistCircularCard artisteNom="Asaf Avidan" artisteImageSrc="src/assets/artistes/jazz/asaf_avidan.jpg" />
+    <ArtistCircularCard artisteNom="Asaf Avidan" artisteImageSrc="public/artistes/jazz/asaf_avidan.jpg" />
 
     <!--Concert : large card-->
 
