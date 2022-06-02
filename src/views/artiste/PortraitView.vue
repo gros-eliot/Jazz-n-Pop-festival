@@ -15,14 +15,12 @@
         <h2 class="jazznpop-h2">Description de l'artiste...</h2>
         <div class="my-6 flex flex-col gap-0">
           <p class="jazznpop-text font-bold">Site officiel</p>
-          <a href="https://melodygardot.co.uk/" class="jazznpop-text underline">https://melodygardot.co.uk/</a>
+          <a :href="artiste.site" class="jazznpop-text underline">{{ artiste.site }}</a>
         </div>
         <div class="my-6 flex flex-col gap-0">
           <p class="jazznpop-text font-bold">Généralités</p>
           <p class="jazznpop-text lg:p-ordinateur">
-            Après la sortie de son nouvel album “Entre eux deux” avec Philippe Powell, nous avons le plaisir d’accueillir Melody Gardot au
-            Jazz’n’Pop Festival. Avec l’orchestre présent sur place, cette auteure-compositrice-interprète interprètera ses plus grands
-            titres!
+            {{ artiste.description }}
           </p>
         </div>
       </div>
@@ -102,6 +100,8 @@ export default {
         photo: "", // sa photo (nom du fichier)
         date: null, // sa date de date
         international: "", // nationalité
+        site: null, // site
+        description: null, // desc
       },
 
       refArtiste: null, // Référence du artiste à modifier
