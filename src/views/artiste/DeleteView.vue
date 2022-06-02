@@ -8,20 +8,20 @@
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col gap-4 md:mr-auto md:ml-auto md:flex-row md:items-center md:gap-16">
           <div class="flex flex-col">
-            <span>Aperçu de la photo choisie</span>
+            <span class="font-medium">Aperçu de la photo choisie</span>
             <img class="w-40 bg-center object-cover md:w-48 lg:w-52" :src="photoActuelle" />
           </div>
           <div class="flex w-full flex-col gap-4">
             <div class="flex flex-col">
-              <span>Nom de l'artiste</span>
+              <span class="font-medium">Nom de l'artiste</span>
               <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.nom" />
             </div>
             <div class="flex flex-col">
-              <span>Date du prochain concert de l'artiste</span>
+              <span class="font-medium">Date du prochain concert de l'artiste</span>
               <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.date" />
             </div>
             <div class="flex flex-col">
-              <span>Catégorie</span>
+              <span class="font-medium">Catégorie</span>
               <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="artiste.cat" disabled />
             </div>
           </div>

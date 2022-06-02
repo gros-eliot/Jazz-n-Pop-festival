@@ -6,7 +6,7 @@
     </RouterLink>
   </div>
   <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
-    <div v-for="artiste in listeArtiste" :key="artiste.international === true">
+    <div v-for="artiste in listeArtiste" :key="artiste.id">
       <!--BG de l'image-->
       <div
         class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
@@ -77,6 +77,7 @@ export default {
     this.getartisteInt();
     this.getArtiste();
   },
+
   methods: {
     async getartisteInt() {
       // Obtenir Firestore

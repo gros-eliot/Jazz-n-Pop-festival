@@ -7,26 +7,26 @@
 
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
-          <span class="">Nom de l'artiste</span>
+          <span class="font-medium">Nom de l'artiste</span>
           <input class="jazznpop-input" placeholder="Melody Gardot" v-model="artiste.nom" required />
         </div>
         <div class="flex flex-col">
-          <span>Photo</span>
+          <span class="font-medium">Photo</span>
           <input type="file" class="jazznpop-input flex flex-wrap" ref="file" id="file" @change="previewImage" />
         </div>
         <div>
-          <span>Aperçu de la photo choisie</span>
+          <span class="font-medium">Aperçu de la photo choisie</span>
 
           <img class="w-40 bg-center object-cover md:w-48 lg:w-52" :src="imageData" />
         </div>
 
         <div class="flex flex-col">
-          <span>Date du prochain concert de l'artiste</span>
+          <span class="font-medium">Date du prochain concert de l'artiste</span>
           <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="artiste.date" />
         </div>
 
         <div class="flex flex-col">
-          <span>Catégorie</span>
+          <span class="font-medium">Catégorie</span>
 
           <select class="jazznpop-input" v-model="artiste.cat">
             <option class="bg-white dark:bg-black" selected disabled>Sélectionner une catégorie</option>

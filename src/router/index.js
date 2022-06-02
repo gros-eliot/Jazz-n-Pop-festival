@@ -55,11 +55,7 @@ const router = createRouter({
     { path: '/contact', name: 'ContactView', component: ContactView },
     { path: '/mentions_legales', name: 'MentionslegView', component: MentionslegView },
 
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'page404',
-      component: Page404
-    },
+    { path: '/:pathMatch(.*)*', name: 'page404', component: Page404 },
     // ici les autre routes
   ]
 })
