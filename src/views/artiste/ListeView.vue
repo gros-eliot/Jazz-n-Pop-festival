@@ -18,17 +18,12 @@
 </template>
 
 <script>
-import ArtistCardJazz from "../../components/big/artists/ArtistCardJazz.vue";
-import ArtistCardPop from "../../components/big/artists/ArtistCardPop.vue";
 import FirebaseArtistCard from "../../components/big/artists/FirebaseArtistCard.vue";
 import FirebaseBigArtistCard from "../../components/big/artists/FirebaseBigArtistCard.vue";
-import CategorieName from "../../components/categories/CategorieName.vue";
+
 import { PlusIcon } from "@heroicons/vue/outline";
 export default {
   components: {
-    ArtistCardPop,
-    ArtistCardJazz,
-    CategorieName,
     FirebaseArtistCard,
     FirebaseBigArtistCard,
     PlusIcon,

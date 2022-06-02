@@ -7,7 +7,7 @@
 
   <div class="flex flex-col items-center justify-start md:flex-row md:flex-wrap">
     <!--Div contenant UNE CARD des artistes-->
-    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="!artiste.id">
+    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
       <div class="flex w-full flex-col items-center justify-center gap-1 md:flex-row md:justify-between" v-if="!artiste.international">
         <!--Div contenant image + description de l'artiste-->
@@ -39,14 +39,13 @@
               </div>
 
               <div class="block md:hidden">
-                <button
+                <RouterLink
+                  :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }"
                   class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
                 >
-                  <RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">
-                    <PlusIcon class="h-7 w-7" />
-                    <span class="sr-only">En savoir plus</span>
-                  </RouterLink>
-                </button>
+                  <PlusIcon class="h-7 w-7" />
+                  <span class="sr-only">En savoir plus</span>
+                </RouterLink>
               </div>
             </div>
           </div>

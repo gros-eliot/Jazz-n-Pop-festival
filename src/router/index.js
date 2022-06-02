@@ -3,7 +3,7 @@ import AccueilView from '../views/AccueilView.vue'
 import GuideDeStyle from '../views/GuideDeStyle.vue'
 
 import ListeArtiste from '../views/artiste/ListeView.vue'
-import PortraitArtiste from '../views/artiste/portrait/PortraitView.vue'
+import PortraitArtiste from '../views/artiste/PortraitView.vue'
 import CreateArtiste from '../views/artiste/CreateView.vue'
 import CustomArtiste from '../views/artiste/CustomView.vue'
 import DeleteArtiste from '../views/artiste/DeleteView.vue'

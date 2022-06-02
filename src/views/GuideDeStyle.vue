@@ -162,12 +162,6 @@
   <!--Composants (GROS COMPOSANTS) -->
   <h1 class="bg-yellow-400 p-2 text-center font-abril-fatface text-xl text-black">Composants des pages (gros composants)</h1>
   <div class="flex h-full flex-col gap-10 bg-gray-400 py-4">
-    <!-- Artiste : large card-->
-    <div class="grid grid-cols-1 justify-items-center gap-3 lg:grid-cols-2">
-      <ArtistCardJazz artisteNom="Melody Gardot" artisteDate="10/07/2022" class="bg-acj1 bg-center" />
-      <ArtistCardPop artisteNom="Alan Walker" artisteDate="10/07/2022" class="bg-acp1 bg-center" />
-    </div>
-
     <!--Artiste : card circulaire-->
 
     <ArtistCircularCard artisteNom="Asaf Avidan" artisteImageSrc="/artistes/jazz/asaf_avidan.jpg" />
@@ -241,11 +235,7 @@ import TextBouton from "../components/boutons/TextBouton.vue";
 import CategorieName from "../components/categories/CategorieName.vue";
 
 //Gros composants
-import ArtistCardJazz from "../components/big/artists/ArtistCardJazz.vue";
-import ArtistCardPop from "../components/big/artists/ArtistCardPop.vue";
 import ArtistCircularCard from "../components/big/artists/ArtistCircularCard.vue";
-
-//Gros artistes
 import ConcertCard from "../components/big/concert/ConcertCard.vue";
 
 import DateCard from "../components/big/artists/DateCard.vue";
@@ -279,8 +269,6 @@ export default {
     Disque,
     Saxophone,
 
-    ArtistCardJazz,
-    ArtistCardPop,
     ArtistCircularCard,
 
     ConcertCard,

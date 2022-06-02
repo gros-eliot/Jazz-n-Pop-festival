@@ -5,7 +5,7 @@
     <div class="flex max-w-full flex-col">
       <!--DIV contenant le hero de la personne-->
       <div class="mt-5 flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row lg:flex-row-reverse">
-        <img :src="artiste.photo" :alt="artiste.nom" class="w-56" />
+        <img class="w-40 bg-center object-cover md:w-48 lg:w-64" :src="photoActuelle" :alt="artiste.nom" />
         <div class="flex flex-wrap gap-5 md:flex-col">
           <categorie-name :NameCategory="artiste.cat"></categorie-name>
         </div>
@@ -49,7 +49,21 @@
   </div>
 </template>
 
+<!--
+import DateCard from "../../../components/big/artists/DateCard.vue";
+import CategorieName from "../../../components/categories/CategorieName.vue";
+import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
+import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";
+export default {
+  name: "PortraitView",
+  components: { CategorieName, DateCard, ArtistCircularCard, PencilIcon, PlusIcon },-->
+
 <script>
+import DateCard from "../../components/big/artists/DateCard.vue";
+import CategorieName from "../../components/categories/CategorieName.vue";
+import ArtistCircularCard from "../../components/big/artists/ArtistCircularCard.vue";
+import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";
+
 // Bibliothèque Firestore : import des fonctions
 import {
   getFirestore,
@@ -77,30 +91,28 @@ import {
   listAll,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
-import DateCard from "../../../components/big/artists/DateCard.vue";
-import CategorieName from "../../../components/categories/CategorieName.vue";
-import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
-import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";
 export default {
+  name: "DeleteArtisteView",
   components: { CategorieName, DateCard, ArtistCircularCard, PencilIcon, PlusIcon },
   data() {
     return {
-      imageData: null, // Image prévisualisée
-      listeCat: [], // Liste des catégories
       artiste: {
-        nom: "", // son nom
-        cat: "", // sa catégorie
-        date: "", // son prénom
+        nom: null, // son nom
+        cat: null, // son nom
         photo: "", // sa photo (nom du fichier)
+        date: null, // sa date de date
         international: "", // nationalité
       },
 
       refArtiste: null, // Référence du artiste à modifier
-      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
       photoActuelle: null, // Photo actuelle du artiste
     };
   },
   mounted() {
+    // Montage de la vue
+    // Récupération du id passé en paramètre
+    // On utilise le id passé par la route
+    // via la variable système $route de la vue
     console.log("id artiste", this.$route.params.id);
     // Recherche artiste concerné
     this.getArtiste(this.$route.params.id);
@@ -123,7 +135,7 @@ export default {
         this.photoActuelle = this.artiste.photo;
       } else {
         // Sinon simple message d'erreur
-        this.console.log("Artiste inexistant");
+        this.console.log("artiste inexistant");
       }
       // Obtenir le Storage
       const storage = getStorage();
@@ -133,7 +145,7 @@ export default {
       getDownloadURL(spaceRef)
         .then((url) => {
           // Mise à jour de l'image prévisualisée
-          this.imageData = url;
+          this.photoActuelle = url;
         })
         .catch((error) => {
           console.log("erreur downloadUrl", error);
@@ -142,5 +154,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

@@ -82,7 +82,7 @@ export default {
       artiste: {
         nom: null, // son nom
         cat: null, // son nom
-        photo: null, // sa photo (nom du fichier)
+        photo: "", // sa photo (nom du fichier)
         date: null, // sa date de date
         international: "", // nationalité
       },
