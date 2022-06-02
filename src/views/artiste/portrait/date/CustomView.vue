@@ -81,7 +81,7 @@ export default {
   },
   mounted() {
     // Montage de la vue
-    // Appel de la liste des pays
+    // Appel de la liste des concerts artistes
     console.log("id concert de l'artiste", this.$route.params.id);
     this.getConcertArtiste(this.$route.params.id);
   },
@@ -90,7 +90,7 @@ export default {
       const firestore = getFirestore();
       const docRef = doc(firestore, "concertartiste", id);
       this.refConcertArtiste = await getDoc(docRef);
-      // Test si le participant demandé existe
+      // Test si l'artiste demandé existe
       if (this.refConcertArtiste.exists()) {
         // Si oui on récupère ses données
         this.concertArtiste = this.refConcertArtiste.data();
@@ -101,11 +101,11 @@ export default {
     },
 
     async updateConcertArtiste() {
-      // Dans tous les cas on met à jour le participant dans Firestore
+      // Dans tous les cas on met à jour l'artiste dans Firestore
       const firestore = getFirestore();
-      // Modification du participant à partir de son id
+      // Modification du artiste à partir de son id
       await updateDoc(doc(firestore, "concertartiste", this.$route.params.id), this.concertArtiste);
-      // redirection sur la liste des participants
+      // redirection sur la liste des artistes
       this.$router.push("/artiste_view");
     },
   },

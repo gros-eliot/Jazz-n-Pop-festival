@@ -96,26 +96,26 @@ export default {
   components: { CategorieName, PlusIcon, PencilIcon, TrashIcon },
   data() {
     return {
-      listeArtiste: [], // Liste des participants
+      listeArtiste: [], // Liste des artistes
     };
   },
 
   mounted() {
     // Montage de la vue
-    // Appel de la liste des participants
+    // Appel de la liste des artistes
     this.getArtiste();
   },
   methods: {
     async getArtiste() {
       // Obtenir Firestore
       const firestore = getFirestore();
-      // Base de données (collection)  document participant
+      // Base de données (collection)  document artiste
       const dbArtiste = collection(firestore, "artiste");
-      // Liste des participants triés sur leur nom
+      // Liste des artistes triés sur leur nom
       const q = query(dbArtiste, orderBy("cat", "asc"));
       await onSnapshot(q, (snapshot) => {
         this.listeArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        // Récupération des images de chaque participant
+        // Récupération des images de chaque artiste
         // parcours de la liste
         this.listeArtiste.forEach(function (personne) {
           // Obtenir le Cloud Storage

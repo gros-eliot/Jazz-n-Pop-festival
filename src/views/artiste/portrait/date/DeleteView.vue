@@ -92,7 +92,7 @@ export default {
   },
   mounted() {
     // Montage de la vue
-    // Appel de la liste des pays
+    // Appel de la liste des concerts artistes
     console.log("id concert de l'artiste", this.$route.params.id);
     this.getConcertArtiste(this.$route.params.id);
   },
@@ -101,7 +101,7 @@ export default {
       const firestore = getFirestore();
       const docRef = doc(firestore, "concertartiste", id);
       this.refConcertArtiste = await getDoc(docRef);
-      // Test si le participant demandé existe
+      // Test si l'artiste demandé existe
       if (this.refConcertArtiste.exists()) {
         // Si oui on récupère ses données
         this.concertArtiste = this.refConcertArtiste.data();

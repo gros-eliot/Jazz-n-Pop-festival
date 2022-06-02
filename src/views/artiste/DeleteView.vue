@@ -80,7 +80,7 @@ export default {
   data() {
     return {
       artiste: {
-        // Le artiste à créer
+        // l'artiste à créer
         nom: null, // son nom
         cat: null, // son nom
         photo: null, // sa photo (nom du fichier)
@@ -110,7 +110,7 @@ export default {
       const docRef = doc(firestore, "artiste", id);
       // Référence du artiste concerné
       this.refArtiste = await getDoc(docRef);
-      // Test si le artiste demandé existe
+      // Test si l'artiste demandé existe
       if (this.refArtiste.exists()) {
         // Si oui on récupère ses données
         this.artiste = this.refArtiste.data();

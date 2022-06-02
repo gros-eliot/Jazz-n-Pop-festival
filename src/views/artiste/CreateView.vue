@@ -110,7 +110,7 @@ export default {
       const firestore = getFirestore();
       // Base de données (collection)  document categorie
       const dbCat = collection(firestore, "categorie");
-      // Liste des participants triés
+      // Liste des artistes triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre

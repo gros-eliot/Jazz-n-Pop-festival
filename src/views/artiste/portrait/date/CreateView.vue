@@ -63,9 +63,9 @@ export default {
   components: { TextBouton },
   data() {
     return {
-      listeConcertArtiste: [], // Liste des pays pour la nationalité du participant
+      listeConcertArtiste: [], // Liste des concerts artistes
       concertArtiste: {
-        // Le participant à créer
+        // Le concert artiste à créer
         nom: null, // son nom
         datedebut: null, // son prénom
         datefin: null, // sa date de naissance
@@ -74,20 +74,20 @@ export default {
   },
   mounted() {
     // Montage de la vue
-    // Appel de la liste des pays
+    // Appel de la liste des concert artiste
     this.getConcertArtiste();
   },
   methods: {
     async getConcertArtiste() {
       const firestore = getFirestore();
       const dbConcertArtiste = collection(firestore, "concertartiste");
-      // Liste des participants triés
+      // Liste des artistes triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
-      // ici le nom du pays par ordre croissant (asc)
+      // ici tri par date début par ordre croissant (asc)
       const q = query(dbConcertArtiste, orderBy("datedebut", "asc"));
-      // Récupération de la liste des pays à partir de la query
+      // Récupération de la liste des concerts artistes à partir de la query
       // La liste est synchronisée
       await onSnapshot(q, (snapshot) => {
         this.listeConcertArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -96,11 +96,11 @@ export default {
     },
 
     async createConcertArtiste() {
-      // Création du participant sur le Firestore
+      // Création du artiste sur le Firestore
       const db = getFirestore();
       const docRef = addDoc(collection(db, "concertartiste"), this.concertArtiste);
 
-      // redirection sur la liste des participants
+      // redirection sur la liste des artistes
       this.$router.push("/artiste_view");
     },
   },

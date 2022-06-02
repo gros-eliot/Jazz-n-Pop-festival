@@ -65,20 +65,20 @@ export default {
 
   mounted() {
     // Montage de la vue
-    // Appel de la liste des participants
+    // Appel de la liste des artistes
     this.getDateConcert();
   },
   methods: {
     async getDateConcert() {
       const firestore = getFirestore();
       const dbConcertArtiste = collection(firestore, "concertartiste");
-      // Liste des participants triés
+      // Liste des artistes de concert triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
-      // ici le nom du pays par ordre decroissant
+      // ici date par ordre croissant
       const q = query(dbConcertArtiste, orderBy("datedebut", "asc"));
-      // Récupération de la liste des pays à partir de la query
+      // Récupération de la liste des concert artiste à partir de la query
       // La liste est synchronisée
       await onSnapshot(q, (snapshot) => {
         this.listeConcertArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));

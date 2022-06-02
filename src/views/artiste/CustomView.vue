@@ -85,18 +85,18 @@ export default {
   data() {
     return {
       imageData: null, // Image prévisualisée
-      listeCat: [], // Liste des pays pour la nationalité du participant
+      listeCat: [], // Liste des catégories
       artiste: {
-        // Le participant à créer
+        // l'artiste à créer
         nom: "", // son nom
         cat: "", // sa catégorie
         date: "", // son prénom
         photo: "", // sa photo (nom du fichier)
       },
 
-      refArtiste: null, // Référence du participant à modifier
-      imgModifiee: false, // Indique si l'image du participant a été modifiée, par défaut : non
-      photoActuelle: null, // Photo actuelle du participant
+      refArtiste: null, // Référence du artiste à modifier
+      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du artiste
     };
   },
   mounted() {
@@ -105,9 +105,9 @@ export default {
     // On utilise le id passé par la route
     // via la variable système $route de la vue
     console.log("id artiste", this.$route.params.id);
-    // Recherche participant concerné
+    // Recherche artiste concerné
     this.getArtiste(this.$route.params.id);
-    // Appel de la liste des pays
+    // Appel de la liste des artistes
     this.getCat();
   },
 
@@ -129,11 +129,11 @@ export default {
       // Obtenir Firestore
       const firestore = getFirestore();
       // Base de données (collection)  document artiste
-      // Récupération sur Firestore du participant via son id
+      // Récupération sur Firestore du artiste via son id
       const docRef = doc(firestore, "artiste", id);
-      // Référence du participant concerné
+      // Référence du artiste concerné
       this.refArtiste = await getDoc(docRef);
-      // Test si le participant demandé existe
+      // Test si l'artiste demandé existe
       if (this.refArtiste.exists()) {
         // Si oui on récupère ses données
         this.artiste = this.refArtiste.data();
@@ -145,7 +145,7 @@ export default {
       }
       // Obtenir le Storage
       const storage = getStorage();
-      // Référence de l'image du participant
+      // Référence de l'image du artiste
       const spaceRef = ref(storage, "artiste/" + this.artiste.photo);
       // Récupération de l'url complète de l'image
       getDownloadURL(spaceRef)
@@ -159,9 +159,9 @@ export default {
     },
 
     previewImage: function (event) {
-      // Mise à jour de la photo du participant
+      // Mise à jour de la photo du artiste
       this.file = this.$refs.file.files[0];
-      // Récupérer le nom du fichier pour la photo du participant
+      // Récupérer le nom du fichier pour la photo du artiste
       this.artiste.photo = this.file.name;
       // Si cette fonction s'exécute, c'est que l'image est modifiée
       this.imgModifiee = true;
@@ -201,11 +201,11 @@ export default {
           console.log("Uploaded a base64 string", this.artiste.photo);
         });
       }
-      // Dans tous les cas on met à jour le participant dans Firestore
+      // Dans tous les cas on met à jour l'artiste dans Firestore
       const firestore = getFirestore();
-      // Modification du participant à partir de son id
+      // Modification du artiste à partir de son id
       await updateDoc(doc(firestore, "artiste", this.$route.params.id), this.artiste);
-      // redirection sur la liste des participants
+      // redirection sur la liste des artistes
       this.$router.push("/artistes");
     },
   },
