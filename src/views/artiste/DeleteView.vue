@@ -24,6 +24,15 @@
               <span class="font-medium">Catégorie</span>
               <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="artiste.cat" disabled />
             </div>
+            <div class="flex flex-col">
+              <span class="font-medium">Site de l'artiste</span>
+              <input class="jazznpop-input bg-red-jazzNpop text-white" v-model="artiste.site" disabled />
+            </div>
+
+            <div class="flex flex-col">
+              <span class="font-medium">Description de l'artiste</span>
+              <textarea class="jazznpop-input h-32 bg-red-jazzNpop text-white" v-model="artiste.description" disabled />
+            </div>
           </div>
         </div>
 
@@ -85,6 +94,8 @@ export default {
         photo: "", // sa photo (nom du fichier)
         date: null, // sa date de date
         international: "", // nationalité
+        site: "", // site
+        description: "", // desc
       },
 
       refArtiste: null, // Référence du artiste à modifier

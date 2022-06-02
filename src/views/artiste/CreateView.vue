@@ -35,6 +35,16 @@
             </option>
           </select>
         </div>
+
+        <div class="flex flex-col">
+          <span class="font-medium">Site de l'artiste</span>
+          <input class="jazznpop-input" placeholder="www.melodygardot.com" v-model="artiste.site" required />
+        </div>
+
+        <div class="flex flex-col">
+          <span class="font-medium">Description de l'artiste</span>
+          <textarea class="jazznpop-input h-32" placeholder="Saisissez une description ici..." v-model="artiste.description" required />
+        </div>
       </div>
 
       <div class="my-5 flex flex-row items-center gap-3">
@@ -96,6 +106,8 @@ export default {
         cat: null, // sa catégorie
         date: null, // sa date
         international: false, // international ou pas ?
+        site: null, // lien (URL) du site de l'artiste
+        description: null, // description artiste
       },
     };
   },
