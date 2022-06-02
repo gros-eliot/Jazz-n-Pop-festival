@@ -45,8 +45,10 @@
                 <button
                   class="m-3 flex flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400"
                 >
-                  <PlusIcon class="h-7 w-7" />
-                  <span class="sr-only">En savoir plus</span>
+                  <RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">
+                    <PlusIcon class="h-7 w-7" />
+                    <span class="sr-only">En savoir plus</span>
+                  </RouterLink>
                 </button>
               </div>
             </div>

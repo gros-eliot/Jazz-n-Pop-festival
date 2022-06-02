@@ -6,26 +6,26 @@
     </RouterLink>
   </div>
   <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
-    <div v-for="artisteInt in listeArtisteInt" :key="artisteInt.id">
+    <div v-for="artiste in listeArtiste" :key="artiste.international === true">
       <!--BG de l'image-->
       <div
         class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
         :style="{
-          backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artisteInt.photo}')`,
+          backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artiste.photo}')`,
         }"
       >
         <!--INFOS DE LA CARD-->
         <div class="flex w-full flex-col gap-3">
-          <CategorieName :redCategory="true" :NameCategory="artisteInt.cat" class="ml-auto mr-auto" />
-          <h3 class="jazznpop-card-title text-white">{{ artisteInt.nom }}</h3>
+          <CategorieName :redCategory="true" :NameCategory="artiste.cat" class="ml-auto mr-auto" />
+          <h3 class="jazznpop-card-title text-white">{{ artiste.nom }}</h3>
           <div class="flex flex-col gap-0">
             <p class="jazznpop-card-caption text-white">Prochain concert :</p>
-            <p class="jazznpop-card-caption text-white">{{ artisteInt.date }}</p>
+            <p class="jazznpop-card-caption text-white">{{ artiste.date }}</p>
           </div>
-          <RouterLink to="/artiste_view">
-            <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
-            <span class="sr-only">En savoir plus</span>
-          </RouterLink>
+          <!--<RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">-->
+          <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+          <span class="sr-only">En savoir plus</span>
+          <!--</RouterLink>-->
         </div>
       </div>
     </div>
@@ -67,6 +67,7 @@ export default {
   data() {
     return {
       listeArtisteInt: [], // Liste des participants
+      listeArtiste: [], // Liste des participants
     };
   },
 
@@ -74,6 +75,7 @@ export default {
     // Montage de la vue
     // Appel de la liste des participants
     this.getartisteInt();
+    this.getArtiste();
   },
   methods: {
     async getartisteInt() {
@@ -92,6 +94,35 @@ export default {
           const storage = getStorage();
           // Récupération de l'image par son nom de fichier
           const spaceRef = ref(storage, "artisteInt/" + personne.photo);
+          // Récupération de l'url complète de l'image
+          getDownloadURL(spaceRef)
+            .then((url) => {
+              // On remplace le nom du fichier
+              // Par l'url complète de la photo
+              personne.photo = url;
+            })
+            .catch((error) => {
+              console.log("erreur downloadUrl", error);
+            });
+        });
+      });
+    },
+    async getArtiste() {
+      // Obtenir Firestore
+      const firestore = getFirestore();
+      // Base de données (collection)  document participant
+      const dbArtiste = collection(firestore, "artiste");
+      // Liste des participants triés sur leur nom
+      const q = query(dbArtiste, orderBy("cat", "asc"));
+      await onSnapshot(q, (snapshot) => {
+        this.listeArtiste = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        // Récupération des images de chaque participant
+        // parcours de la liste
+        this.listeArtiste.forEach(function (personne) {
+          // Obtenir le Cloud Storage
+          const storage = getStorage();
+          // Récupération de l'image par son nom de fichier
+          const spaceRef = ref(storage, "artiste/" + personne.photo);
           // Récupération de l'url complète de l'image
           getDownloadURL(spaceRef)
             .then((url) => {
