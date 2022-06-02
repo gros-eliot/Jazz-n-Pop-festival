@@ -32,19 +32,19 @@ export default {
     blackCategory: { type: Boolean, default: false },
     NameCategory: {
       type: String,
-      required: true,
+      required: false,
     },
     concertNom: {
       type: String,
-      required: true,
+      required: false,
     },
     concertDate: {
       type: String,
-      required: true,
+      required: false,
     },
     concertLink: {
       type: String,
-      required: true,
+      required: false,
     },
   },
 };

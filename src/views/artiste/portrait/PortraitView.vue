@@ -1,16 +1,13 @@
 <template>
   <div class="p-page">
-    <h1 class="jazznpop-h1 text-center">Melody Gardot</h1>
+    <h1 class="jazznpop-h1 text-center">{{ artiste.nom }}</h1>
     <!--DIV contenant le hero de la personne + sa description-->
     <div class="flex max-w-full flex-col">
       <!--DIV contenant le hero de la personne-->
       <div class="mt-5 flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row lg:flex-row-reverse">
-        <img src="/artistes/jazz/melody_gardot.jpg" alt="Melody Gardot" class="w-56" />
+        <img :src="artiste.photo" :alt="artiste.nom" class="w-56" />
         <div class="flex flex-wrap gap-5 md:flex-col">
-          <categorie-name :blackCategory="true" NameCategory="Internationale"></categorie-name>
-          <categorie-name :redCategory="true" NameCategory="Jazz"></categorie-name>
-          <categorie-name :orangeCategory="true" NameCategory="Soul"></categorie-name>
-          <categorie-name :orangeCategory="true" NameCategory="Folk"></categorie-name>
+          <categorie-name :NameCategory="artiste.cat"></categorie-name>
         </div>
       </div>
       <!--DIV contenant  sa description-->
@@ -45,20 +42,104 @@
     <div class="my-10">
       <h2 class="jazznpop-h2">Voir aussi</h2>
       <div class="mt-10 flex flex-col items-center justify-center gap-5 md:flex-row md:justify-around md:gap-1">
-        <artist-circular-card artisteNom="Peter Cincotti" artisteImageSrc="/artistes/jazz/peter_cincotti.jpg"> </artist-circular-card>
-        <artist-circular-card artisteNom="Jean-Michel Blais" artisteImageSrc="/artistes/jazz/jean_michel_blais.jpg"> </artist-circular-card>
+        <ArtistCircularCard artisteNom="Peter Cincotti" artisteImageSrc="/artistes/jazz/peter_cincotti.jpg" />
+        <ArtistCircularCard artisteNom="Jean-Michel Blais" artisteImageSrc="/artistes/jazz/jean_michel_blais.jpg" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// Bibliothèque Firestore : import des fonctions
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  setDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
+// Storage
+import {
+  getStorage,
+  ref,
+  getDownloadURL,
+  uploadBytes,
+  uploadString,
+  deleteObject,
+  listAll,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+
 import DateCard from "../../../components/big/artists/DateCard.vue";
 import CategorieName from "../../../components/categories/CategorieName.vue";
 import ArtistCircularCard from "../../../components/big/artists/ArtistCircularCard.vue";
 import { PencilIcon, PlusIcon } from "@heroicons/vue/outline";
 export default {
   components: { CategorieName, DateCard, ArtistCircularCard, PencilIcon, PlusIcon },
+  data() {
+    return {
+      imageData: null, // Image prévisualisée
+      listeCat: [], // Liste des catégories
+      artiste: {
+        nom: "", // son nom
+        cat: "", // sa catégorie
+        date: "", // son prénom
+        photo: "", // sa photo (nom du fichier)
+        international: "", // nationalité
+      },
+
+      refArtiste: null, // Référence du artiste à modifier
+      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du artiste
+    };
+  },
+  mounted() {
+    console.log("id artiste", this.$route.params.id);
+    // Recherche artiste concerné
+    this.getArtiste(this.$route.params.id);
+  },
+
+  methods: {
+    async getArtiste(id) {
+      // Obtenir Firestore
+      const firestore = getFirestore();
+      // Base de données (collection)  document artiste
+      // Récupération sur Firestore du artiste via son id
+      const docRef = doc(firestore, "artiste", id);
+      // Référence du artiste concerné
+      this.refArtiste = await getDoc(docRef);
+      // Test si l'artiste demandé existe
+      if (this.refArtiste.exists()) {
+        // Si oui on récupère ses données
+        this.artiste = this.refArtiste.data();
+        // Mémorisation photoActuelle
+        this.photoActuelle = this.artiste.photo;
+      } else {
+        // Sinon simple message d'erreur
+        this.console.log("Artiste inexistant");
+      }
+      // Obtenir le Storage
+      const storage = getStorage();
+      // Référence de l'image du artiste
+      const spaceRef = ref(storage, "artiste/" + this.artiste.photo);
+      // Récupération de l'url complète de l'image
+      getDownloadURL(spaceRef)
+        .then((url) => {
+          // Mise à jour de l'image prévisualisée
+          this.imageData = url;
+        })
+        .catch((error) => {
+          console.log("erreur downloadUrl", error);
+        });
+    },
+  },
 };
 </script>
 

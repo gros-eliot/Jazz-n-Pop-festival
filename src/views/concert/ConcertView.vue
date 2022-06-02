@@ -22,9 +22,9 @@
       <div class="flex flex-col gap-3">
         <date-card datecardTitre="De 20h à 2h" datecardDate1="07/07/22" datecardDate2="08/07/22"></date-card>
         <date-card datecardTitre="De 20h à 2h" datecardDate1="10/07/22" datecardDate2="11/07/22"></date-card>
-        <date-card datecardTitre="De 17h à 20h" datecardDate1="11/07/22"></date-card>
+        <date-card datecardTitre="De 17h à 20h" datecardDate1="11/07/22" datecardDate2="12/07/22"></date-card>
         <date-card datecardTitre="De 20h à 2h" datecardDate1="12/07/22" datecardDate2="13/07/22"></date-card>
-        <date-card datecardTitre="De 17h à 20h" datecardDate1="17/07/22"></date-card>
+        <date-card datecardTitre="De 17h à 20h" datecardDate1="17/07/22" datecardDate2="18/07/22"></date-card>
         <date-card datecardTitre="De 20h à 1h" datecardDate1="20/07/22" datecardDate2="21/07/22"></date-card>
       </div>
       <p class="jazznpop-text">Les tarifs peuvent changer selon certaines conditions.</p>

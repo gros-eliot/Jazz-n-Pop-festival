@@ -89,7 +89,6 @@ export default {
   },
 
   mounted() {
-    // Montage de la vue
     // Appel de la liste des artistes
     this.getArtiste();
   },

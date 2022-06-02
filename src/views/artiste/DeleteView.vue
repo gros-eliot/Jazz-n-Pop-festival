@@ -80,11 +80,11 @@ export default {
   data() {
     return {
       artiste: {
-        // l'artiste à créer
         nom: null, // son nom
         cat: null, // son nom
         photo: null, // sa photo (nom du fichier)
         date: null, // sa date de date
+        international: "", // nationalité
       },
 
       refArtiste: null, // Référence du artiste à modifier

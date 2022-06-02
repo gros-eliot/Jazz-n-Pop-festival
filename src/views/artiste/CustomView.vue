@@ -37,6 +37,16 @@
         </div>
       </div>
 
+      <div class="my-5 flex flex-row items-center gap-3">
+        <input
+          type="checkbox"
+          @click="artiste.international = !artiste.international"
+          :checked="artiste.international"
+          v-model="artiste.international"
+        />
+        <label>Cet artiste est <strong>international</strong> (affichage spécial)</label>
+      </div>
+
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
         <text-bouton :redVersion="true" contenuTextBouton="Modifier" type="submit" class="w-fit"></text-bouton>
 
@@ -87,11 +97,11 @@ export default {
       imageData: null, // Image prévisualisée
       listeCat: [], // Liste des catégories
       artiste: {
-        // l'artiste à créer
         nom: "", // son nom
         cat: "", // sa catégorie
         date: "", // son prénom
         photo: "", // sa photo (nom du fichier)
+        international: "", // nationalité
       },
 
       refArtiste: null, // Référence du artiste à modifier
