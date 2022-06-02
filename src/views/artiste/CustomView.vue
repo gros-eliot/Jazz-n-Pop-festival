@@ -38,7 +38,7 @@
 
         <div class="flex flex-col">
           <span class="font-medium">Site de l'artiste</span>
-          <input class="jazznpop-input" placeholder="www.melodygardot.com" v-model="artiste.site" required />
+          <input class="jazznpop-input" placeholder="https://melodygardot.co.uk/" v-model="artiste.site" required />
         </div>
 
         <div class="flex flex-col">
