@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex flex-col">
-          <span class="input-group-text">Date du prochain concert de l'artiste</span>
+          <span>Date du prochain concert de l'artiste</span>
           <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="artiste.date" />
         </div>
 

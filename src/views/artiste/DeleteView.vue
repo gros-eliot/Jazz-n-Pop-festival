@@ -13,11 +13,11 @@
           </div>
           <div class="flex w-full flex-col gap-4">
             <div class="flex flex-col">
-              <span class="input-group-text">Nom de l'artiste</span>
+              <span>Nom de l'artiste</span>
               <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.nom" />
             </div>
             <div class="flex flex-col">
-              <span class="input-group-text">Date du prochain concert de l'artiste</span>
+              <span>Date du prochain concert de l'artiste</span>
               <input class="jazznpop-input bg-red-jazzNpop text-white" disabled v-model="artiste.date" />
             </div>
             <div class="flex flex-col">

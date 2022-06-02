@@ -21,7 +21,7 @@
         </div>
 
         <div class="flex flex-col">
-          <span class="input-group-text">Date du prochain concert de l'artiste</span>
+          <span>Date du prochain concert de l'artiste</span>
           <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="artiste.date" />
         </div>
 
@@ -35,6 +35,9 @@
             </option>
           </select>
         </div>
+
+        <input type="checkbox" id="international_box" />
+        <label for="international_box"></label>
       </div>
 
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">

@@ -12,7 +12,7 @@
         </div>
 
         <div class="flex flex-col">
-          <span class="input-group-text">Date de début</span>
+          <span>Date de début</span>
           <input
             type="date"
             class="jazznpop-input"
@@ -23,7 +23,7 @@
           />
         </div>
         <div class="flex flex-col">
-          <span class="input-group-text">Date de fin</span>
+          <span>Date de fin</span>
           <input
             type="date"
             class="jazznpop-input"
