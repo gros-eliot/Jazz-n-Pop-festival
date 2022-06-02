@@ -1,5 +1,5 @@
 <template>
-  <div v-for="concertArtiste in listeConcertArtiste" :key="concertArtiste.id">
+  <section v-for="concertArtiste in listeConcertArtiste" :key="concertArtiste.id">
     <div class="flex flex-row items-center justify-between bg-yellow-400 p-3 text-gray-900 dark:text-gray-900">
       <div class="flex items-center gap-2">
         <div class="hidden md:block">
@@ -29,7 +29,7 @@
         </TrashIcon>
       </RouterLink>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

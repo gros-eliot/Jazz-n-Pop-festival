@@ -4,7 +4,7 @@
   </div>
   <div>
     <div class="flex flex-col items-center justify-center gap-10 md:flex-row md:flex-wrap lg:justify-start">
-      <div v-for="artiste in listeArtiste" :key="artiste.id">
+      <section v-for="artiste in listeArtiste" :key="artiste.id">
         <!--BG de l'image-->
         <div
           class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
@@ -43,7 +43,7 @@
             </RouterLink>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
