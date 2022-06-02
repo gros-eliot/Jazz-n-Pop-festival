@@ -35,9 +35,16 @@
             </option>
           </select>
         </div>
+      </div>
 
-        <input type="checkbox" id="international_box" />
-        <label for="international_box"></label>
+      <div class="my-5 flex flex-row items-center gap-3">
+        <input
+          type="checkbox"
+          id="international_box"
+          :checked="(artiste.international = !artiste.international)"
+          v-model="artiste.international"
+        />
+        <label for="international_box">Cet artiste est <strong>international</strong></label>
       </div>
 
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
