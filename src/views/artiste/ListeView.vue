@@ -1,11 +1,14 @@
 <template>
   <div class="p-page">
-    <h1 class="jazznpop-h1 text-center">Artistes du festival</h1>
+    <div class="flex items-center justify-center gap-10">
+      <h1 class="jazznpop-h1 text-center">Artistes du festival</h1>
+      <RouterLink to="/artiste_create" class="jazznpop-add-button">
+        <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
+      </RouterLink>
+    </div>
     <div class="my-10">
       <firebase-big-artist-card></firebase-big-artist-card>
-    </div>
 
-    <div class="my-5">
       <firebase-artist-card></firebase-artist-card>
     </div>
   </div>
@@ -17,6 +20,7 @@ import ArtistCardPop from "../../components/big/artists/ArtistCardPop.vue";
 import FirebaseArtistCard from "../../components/big/artists/FirebaseArtistCard.vue";
 import FirebaseBigArtistCard from "../../components/big/artists/FirebaseBigArtistCard.vue";
 import CategorieName from "../../components/categories/CategorieName.vue";
+import { PlusIcon } from "@heroicons/vue/outline";
 export default {
   components: {
     ArtistCardPop,
@@ -24,6 +28,7 @@ export default {
     CategorieName,
     FirebaseArtistCard,
     FirebaseBigArtistCard,
+    PlusIcon,
   },
 };
 </script>

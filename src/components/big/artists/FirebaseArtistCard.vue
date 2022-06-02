@@ -1,18 +1,15 @@
 <template>
-  <div class="my-10 flex items-center gap-5">
-    <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
-    <RouterLink to="/artiste_create" class="jazznpop-add-button">
-      <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
-    </RouterLink>
+  <div class="my-5">
+    <h2 class="jazznpop-h2">Tous les artistes</h2>
   </div>
 
   <!--Div contenant TOUTES LES CARDS des artistes-->
 
   <div class="grid grid-flow-row-dense grid-cols-artiste justify-items-center gap-10 md:grid-cols-artiste-v2">
     <!--Div contenant UNE CARD des artistes-->
-    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="artiste.id">
+    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="!artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
-      <div class="flex w-full flex-col items-center justify-center gap-1 md:flex-row md:justify-between">
+      <div class="flex w-full flex-col items-center justify-center gap-1 md:flex-row md:justify-between" v-if="!artiste.international">
         <!--Div contenant image + description de l'artiste-->
         <div class="grid grid-cols-1 justify-items-center gap-2 md:grid-cols-2">
           <img class="h-48 w-48 object-cover object-center" :src="artiste.photo" :alt="artiste.nom" />

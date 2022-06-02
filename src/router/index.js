@@ -8,9 +8,6 @@ import CreateArtiste from '../views/artiste/CreateView.vue'
 import CustomArtiste from '../views/artiste/CustomView.vue'
 import DeleteArtiste from '../views/artiste/DeleteView.vue'
 
-import CreateArtisteInternational from '../views/artiste/international/CreateView.vue'
-import CustomArtisteInternational from '../views/artiste/international/CustomView.vue'
-import DeleteArtisteInternational from '../views/artiste/international/DeleteView.vue'
 
 import CreateConcertArtist from '../views/artiste/portrait/date/CreateView.vue'
 import CustomConcertArtist from '../views/artiste/portrait/date/CustomView.vue'
@@ -37,10 +34,7 @@ const router = createRouter({
     { path: '/artiste_create', name: 'CreateArtiste', component: CreateArtiste },
     { path: '/artiste_custom', name: 'CustomArtiste', component: CustomArtiste },
     { path: '/artiste_delete', name: 'DeleteArtiste', component: DeleteArtiste },
-    
-    { path: '/artiste_int_create', name: 'CreateArtisteInternational', component: CreateArtisteInternational },
-    { path: '/artiste_int_custom', name: 'CustomArtisteInternational', component: CustomArtisteInternational },
-    { path: '/artiste_int_delete', name: 'DeleteArtisteInternational', component: DeleteArtisteInternational },
+
     
     { path: '/concert_artiste_create', name: 'CreateConcertArtist', component: CreateConcertArtist },
     { path: '/concert_artiste_custom', name: 'CustomConcertArtist', component: CustomConcertArtist },

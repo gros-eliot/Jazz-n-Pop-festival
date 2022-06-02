@@ -1,31 +1,31 @@
 <template>
-  <div class="my-10 flex items-center gap-5">
+  <div class="my-5">
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
-    <RouterLink to="/artiste_int_create" class="jazznpop-add-button">
-      <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
-    </RouterLink>
   </div>
-  <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
-    <div v-for="artiste in listeArtiste" :key="artiste.id">
-      <!--BG de l'image-->
-      <div
-        class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
-        :style="{
-          backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artiste.photo}')`,
-        }"
-      >
-        <!--INFOS DE LA CARD-->
-        <div class="flex w-full flex-col gap-3">
-          <CategorieName :redCategory="true" :NameCategory="artiste.cat" class="ml-auto mr-auto" />
-          <h3 class="jazznpop-card-title text-white">{{ artiste.nom }}</h3>
-          <div class="flex flex-col gap-0">
-            <p class="jazznpop-card-caption text-white">Prochain concert :</p>
-            <p class="jazznpop-card-caption text-white">{{ artiste.date }}</p>
+  <div>
+    <div class="grid grid-flow-row-dense grid-cols-1 items-center justify-items-center gap-3 md:grid-cols-artiste-international">
+      <div v-for="artiste in listeArtiste" :key="artiste.id">
+        <!--BG de l'image-->
+        <div
+          class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
+          :style="{
+            backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),url('${artiste.photo}')`,
+          }"
+          v-if="artiste.international === true"
+        >
+          <!--INFOS DE LA CARD-->
+          <div class="flex w-full flex-col gap-3">
+            <CategorieName :redCategory="true" :NameCategory="artiste.cat" class="ml-auto mr-auto" />
+            <h3 class="jazznpop-card-title text-white">{{ artiste.nom }}</h3>
+            <div class="flex flex-col gap-0">
+              <p class="jazznpop-card-caption text-white">Prochain concert :</p>
+              <p class="jazznpop-card-caption text-white">{{ artiste.date }}</p>
+            </div>
+            <!--<RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">-->
+            <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
+            <span class="sr-only">En savoir plus</span>
+            <!--</RouterLink>-->
           </div>
-          <!--<RouterLink :to="{ name: 'PortraitArtiste', params: { id: artiste.id } }">-->
-          <PlusBouton :orangeVersion="true" contenuTextBouton="En savoir" class="ml-auto mr-auto w-fit" />
-          <span class="sr-only">En savoir plus</span>
-          <!--</RouterLink>-->
         </div>
       </div>
     </div>
@@ -66,7 +66,6 @@ export default {
   },
   data() {
     return {
-      listeArtisteInt: [], // Liste des participants
       listeArtiste: [], // Liste des participants
     };
   },
@@ -74,40 +73,10 @@ export default {
   mounted() {
     // Montage de la vue
     // Appel de la liste des participants
-    this.getartisteInt();
     this.getArtiste();
   },
 
   methods: {
-    async getartisteInt() {
-      // Obtenir Firestore
-      const firestore = getFirestore();
-      // Base de données (collection)  document participant
-      const dbartisteInt = collection(firestore, "artisteInt");
-      // Liste des participants triés sur leur catégorie
-      const q = query(dbartisteInt, orderBy("cat", "asc"));
-      await onSnapshot(q, (snapshot) => {
-        this.listeArtisteInt = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        // Récupération des images de chaque participant
-        // parcours de la liste
-        this.listeArtisteInt.forEach(function (personne) {
-          // Obtenir le Cloud Storage
-          const storage = getStorage();
-          // Récupération de l'image par son nom de fichier
-          const spaceRef = ref(storage, "artisteInt/" + personne.photo);
-          // Récupération de l'url complète de l'image
-          getDownloadURL(spaceRef)
-            .then((url) => {
-              // On remplace le nom du fichier
-              // Par l'url complète de la photo
-              personne.photo = url;
-            })
-            .catch((error) => {
-              console.log("erreur downloadUrl", error);
-            });
-        });
-      });
-    },
     async getArtiste() {
       // Obtenir Firestore
       const firestore = getFirestore();
