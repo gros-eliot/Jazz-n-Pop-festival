@@ -85,6 +85,7 @@ export default {
         photo: null, // sa photo (nom du fichier)
         cat: null, // sa catégorie
         date: null, // sa date
+        international: false, // international ou pas ?
       },
     };
   },
