@@ -27,7 +27,7 @@
         <div
           id="menu"
           aria-labelledby="btnMenu"
-          class="fixed inset-0 z-[11] h-full translate-x-full bg-black fill-yellow-400 text-yellow-400 motion-safe:transition-transform motion-safe:duration-1000"
+          class="fixed inset-0 z-[11] h-full translate-x-full bg-black fill-yellow-400 text-yellow-400 motion-safe:transition-transform motion-safe:duration-500"
           :class="{ 'translate-x-[5rem]': menuOuvert }"
         >
           <!--CONTAINER CROIX + LOGO DE L'APP-->
