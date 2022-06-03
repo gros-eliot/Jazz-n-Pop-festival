@@ -104,7 +104,7 @@ export default {
   data() {
     return {
       imageData: "", // Image prévisualisée
-      listeCat: [], // Liste des categorie pour l'artiste
+      listeCat: [], // Liste des categorie pour le concert
       concert: {
         // Concert à créer
         nom: "", // son nom
@@ -116,9 +116,9 @@ export default {
         photo: "", // sa photo (nom du fichier)
         description: "", // sa description
       },
-      refConcert: null, // Référence du artiste à modifier
-      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
-      photoActuelle: null, // Photo actuelle du artiste
+      refConcert: null, // Référence du concert à modifier
+      imgModifiee: false, // Indique si l'image du concert a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du concert
     };
   },
   mounted() {
@@ -126,10 +126,10 @@ export default {
     // Récupération du id passé en paramètre
     // On utilise le id passé par la route
     // via la variable système $route de la vue
-    console.log("id artiste", this.$route.params.id);
-    // Recherche artiste concerné
+    console.log("id concert", this.$route.params.id);
+    // Recherche concert concerné
     this.getConcert(this.$route.params.id);
-    // Appel de la liste des artistes
+    // Appel de la liste des concerts
     this.getCat();
   },
 
@@ -150,12 +150,12 @@ export default {
     async getConcert(id) {
       // Obtenir Firestore
       const firestore = getFirestore();
-      // Base de données (collection)  document artiste
-      // Récupération sur Firestore du artiste via son id
+      // Base de données (collection)  document concert
+      // Récupération sur Firestore du concert via son id
       const docRef = doc(firestore, "concert", id);
-      // Référence du artiste concerné
+      // Référence du concert concerné
       this.refConcert = await getDoc(docRef);
-      // Test si l'artiste demandé existe
+      // Test si le concert demandé existe
       if (this.refConcert.exists()) {
         // Si oui on récupère ses données
         this.concert = this.refConcert.data();
@@ -167,7 +167,7 @@ export default {
       }
       // Obtenir le Storage
       const storage = getStorage();
-      // Référence de l'image du artiste
+      // Référence de l'image du concert
       const spaceRef = ref(storage, "concert/" + this.concert.photo);
       // Récupération de l'url complète de l'image
       getDownloadURL(spaceRef)
@@ -181,9 +181,9 @@ export default {
     },
 
     previewImage: function (event) {
-      // Mise à jour de la photo du artiste
+      // Mise à jour de la photo du concert
       this.file = this.$refs.file.files[0];
-      // Récupérer le nom du fichier pour la photo du artiste
+      // Récupérer le nom du fichier pour la photo du concert
       this.concert.photo = this.file.name;
       // Si cette fonction s'exécute, c'est que l'image est modifiée
       this.imgModifiee = true;
@@ -223,11 +223,11 @@ export default {
           console.log("Uploaded a base64 string", this.concert.photo);
         });
       }
-      // Dans tous les cas on met à jour l'artiste dans Firestore
+      // Dans tous les cas on met à jour le concert dans Firestore
       const firestore = getFirestore();
-      // Modification du artiste à partir de son id
+      // Modification du concert à partir de son id
       await updateDoc(doc(firestore, "concert", this.$route.params.id), this.concert);
-      // redirection sur la liste des artistes
+      // redirection sur la liste des concerts
       this.$router.push("/concerts");
     },
   },

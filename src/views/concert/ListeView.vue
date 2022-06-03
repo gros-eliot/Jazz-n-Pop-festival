@@ -3,7 +3,7 @@
     <div class="flex flex-col items-center justify-center gap-3 md:flex-row md:gap-10">
       <h1 class="text-center font-abril-fatface text-5xl lg:text-6xl">Programmes</h1>
       <RouterLink to="/concert_create" class="jazznpop-add-button">
-        <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
+        <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un concert</span></PlusIcon>
       </RouterLink>
     </div>
     <h2 class="jazznpop-h2 my-5">Les concerts disponibles</h2>

@@ -89,12 +89,12 @@ import {
 import TextBouton from "../../components/boutons/TextBouton.vue";
 import { PlusIcon } from "@heroicons/vue/outline";
 export default {
-  name: "CreateArtisteView",
+  name: "CreateConcertView",
   components: { TextBouton, PlusIcon },
   data() {
     return {
       imageData: null, // Image prévisualisée
-      listeCat: [], // Liste des categorie pour l'artiste
+      listeCat: [], // Liste des categorie pour le concert
       concert: {
         // Concert à créer
         nom: null, // son nom
@@ -119,7 +119,7 @@ export default {
       const firestore = getFirestore();
       // Base de données (collection)  document categorie
       const dbCat = collection(firestore, "categorie");
-      // Liste des artistes triés
+      // Liste des concerts triés
       // query permet de faire une requête sur Firebase
       // notement pour filtrer, trier ... des données
       //orderBy permet de préciser sur quel élément trier, et dans quel ordre
@@ -134,9 +134,9 @@ export default {
     },
 
     previewImage: function (event) {
-      // Mise à jour de la photo de l'artiste
+      // Mise à jour de la photo de le concert
       this.file = this.$refs.file.files[0];
-      // Récupérer le nom du fichier pour la photo de l'artiste
+      // Récupérer le nom du fichier pour la photo de le concert
       this.concert.photo = this.file.name;
       // Reference to the DOM input element
       // Reference du fichier à prévisualiser
@@ -167,11 +167,11 @@ export default {
       await uploadString(refStorage, this.imageData, "data_url").then((snapshot) => {
         console.log("Uploaded a base64 string");
 
-        // Création de l'artiste sur le Firestore
+        // Création de le concert sur le Firestore
         const db = getFirestore();
         const docRef = addDoc(collection(db, "concert"), this.concert);
       });
-      // redirection sur la liste des  artistes
+      // redirection sur la liste des  concerts
       this.$router.push("/concerts");
     },
   },

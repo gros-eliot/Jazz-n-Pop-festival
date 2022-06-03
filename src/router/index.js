@@ -2,17 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AccueilView from '../views/AccueilView.vue'
 import GuideDeStyle from '../views/GuideDeStyle.vue'
 
+// Pages des artistes
+
 import ListeArtiste from '../views/artiste/ListeView.vue'
 import PortraitArtiste from '../views/artiste/PortraitView.vue'
 import CreateArtiste from '../views/artiste/CreateView.vue'
 import CustomArtiste from '../views/artiste/CustomView.vue'
 import DeleteArtiste from '../views/artiste/DeleteView.vue'
 
+// Pages des concerts
+
 import ListeConcert from '../views/concert/ListeView.vue'
 import ConcertView from '../views/concert/ConcertView.vue'
 import CreateConcert from '../views/concert/CreateView.vue'
 import CustomConcert from '../views/concert/CustomView.vue'
 import DeleteConcert from '../views/concert/DeleteView.vue'
+
+// Autres pages
 
 import AboutView from '../views/AboutView.vue'
 
@@ -24,8 +30,13 @@ import Page404 from '../views/404.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+
+    // Pages des premières pages
+
     { path: '/', name: 'Accueil', component: AccueilView },
     { path: '/style-guide', name: 'GuideDeStyle', component: GuideDeStyle },
+
+    // Pages des artistes
 
     { path: '/artistes', name: 'ListeArtiste', component: ListeArtiste },
     { path: '/artiste_view/:id', name: 'PortraitArtiste', component: PortraitArtiste },
@@ -34,12 +45,17 @@ const router = createRouter({
     { path: '/artiste_delete/:id', name: 'DeleteArtiste', component: DeleteArtiste },
 
     
+    // Pages des concerts
+
+
     { path: '/concerts', name: 'ListeConcert', component: ListeConcert },
     { path: '/concert_view/:id', name: 'ConcertView', component: ConcertView },
 
     { path: '/concert_create', name: 'CreateConcert', component: CreateConcert },
     { path: '/concert_custom/:id', name: 'CustomConcert', component: CustomConcert },
     { path: '/concert_delete/:id', name: 'DeleteConcert', component: DeleteConcert },
+
+    // Autres pages + page 404
 
 
     { path: '/about', name: 'AboutView', component: AboutView },

@@ -32,7 +32,7 @@
         <text-bouton :redVersion="true" contenuTextBouton="Voir les tarifs" class="ml-auto mr-auto"></text-bouton>
       </RouterLink>
     </div>
-    <!-- Artistes du concert : div -->
+    <!-- Concerts du concert : div -->
     <div class="jazznpop-text my-10 flex flex-col gap-10">
       <h2 class="jazznpop-h2">Artistes présents au concert</h2>
       <div class="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -106,9 +106,9 @@ export default {
         photo: "", // sa photo (nom du fichier)
         description: "", // sa description
       },
-      refConcert: null, // Référence du artiste à modifier
-      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
-      photoActuelle: null, // Photo actuelle du artiste
+      refConcert: null, // Référence du concert à modifier
+      imgModifiee: false, // Indique si l'image du concert a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du concert
     };
   },
   mounted() {
@@ -116,21 +116,21 @@ export default {
     // Récupération du id passé en paramètre
     // On utilise le id passé par la route
     // via la variable système $route de la vue
-    console.log("id artiste", this.$route.params.id);
-    // Recherche artiste concerné
+    console.log("id concert", this.$route.params.id);
+    // Recherche concert concerné
     this.getConcert(this.$route.params.id);
-    // Appel de la liste des artistes
+    // Appel de la liste des concerts
   },
   methods: {
     async getConcert(id) {
       // Obtenir Firestore
       const firestore = getFirestore();
-      // Base de données (collection)  document artiste
-      // Récupération sur Firestore du artiste via son id
+      // Base de données (collection)  document concert
+      // Récupération sur Firestore du concert via son id
       const docRef = doc(firestore, "concert", id);
-      // Référence du artiste concerné
+      // Référence du concert concerné
       this.refConcert = await getDoc(docRef);
-      // Test si l'artiste demandé existe
+      // Test si le concert demandé existe
       if (this.refConcert.exists()) {
         // Si oui on récupère ses données
         this.concert = this.refConcert.data();
@@ -142,7 +142,7 @@ export default {
       }
       // Obtenir le Storage
       const storage = getStorage();
-      // Référence de l'image du artiste
+      // Référence de l'image du concert
       const spaceRef = ref(storage, "concert/" + this.concert.photo);
       // Récupération de l'url complète de l'image
       getDownloadURL(spaceRef)
