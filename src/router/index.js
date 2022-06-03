@@ -28,18 +28,18 @@ const router = createRouter({
     { path: '/style-guide', name: 'GuideDeStyle', component: GuideDeStyle },
 
     { path: '/artistes', name: 'ListeArtiste', component: ListeArtiste },
-    { path: '/artiste_view', name: 'PortraitArtiste', component: PortraitArtiste },
+    { path: '/artiste_view/:id', name: 'PortraitArtiste', component: PortraitArtiste },
     { path: '/artiste_create', name: 'CreateArtiste', component: CreateArtiste },
-    { path: '/artiste_custom', name: 'CustomArtiste', component: CustomArtiste },
-    { path: '/artiste_delete', name: 'DeleteArtiste', component: DeleteArtiste },
+    { path: '/artiste_custom/:id', name: 'CustomArtiste', component: CustomArtiste },
+    { path: '/artiste_delete/:id', name: 'DeleteArtiste', component: DeleteArtiste },
 
     
     { path: '/concerts', name: 'ListeConcert', component: ListeConcert },
-    { path: '/concert_view', name: 'ConcertView', component: ConcertView },
+    { path: '/concert_view/:id', name: 'ConcertView', component: ConcertView },
 
     { path: '/concert_create', name: 'CreateConcert', component: CreateConcert },
-    { path: '/concert_custom', name: 'CustomConcert', component: CustomConcert },
-    { path: '/concert_delete', name: 'DeleteConcert', component: DeleteConcert },
+    { path: '/concert_custom/:id', name: 'CustomConcert', component: CustomConcert },
+    { path: '/concert_delete/:id', name: 'DeleteConcert', component: DeleteConcert },
 
 
     { path: '/about', name: 'AboutView', component: AboutView },

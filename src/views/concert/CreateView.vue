@@ -28,6 +28,10 @@
           <span class="font-medium">Date de fin du concert</span>
           <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.date2" />
         </div>
+        <div class="flex flex-col">
+          <span class="font-medium">Horaires du concert (en heure)</span>
+          <input type="text" class="jazznpop-input w-40" placeholder="XXh à XXh" required v-model="concert.time" />
+        </div>
 
         <div class="flex flex-col">
           <span class="font-medium">Catégorie</span>
@@ -94,6 +98,7 @@ export default {
         cat: null,
         date1: null, // sa date
         date2: null, // sa date (fin)
+        time: null, // sa date (fin)
         photo: "", // sa photo (nom du fichier)
       },
     };

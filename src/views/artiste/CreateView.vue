@@ -1,8 +1,8 @@
 <template>
   <div class="jazznpop-text p-page">
-    <form enctype="multipart/form-data" @submit.prevent="createArtiste()">
+    <form enctype="multipart/form-data" @submit.prevent="updateArtiste">
       <div class="py-5">
-        <h2 class="jazznpop-h2">Créer un artiste</h2>
+        <h2 class="jazznpop-h2">Mise à jour d'un concert</h2>
       </div>
 
       <div class="flex w-full flex-col gap-4">
@@ -40,8 +40,7 @@
           <div>
             <span class="font-medium">Concerts de l'artiste </span>
             <span class="text-xs"
-              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue" de Stacey
-              Ryan&nbsp;!)</span
+              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue"&nbsp;!)</span
             >
           </div>
           <div class="flex flex-col md:flex-row">
@@ -81,7 +80,7 @@
       </div>
 
       <div class="my-5 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-around">
-        <text-bouton :redVersion="true" contenuTextBouton="Créer" type="submit" class="w-fit"></text-bouton>
+        <text-bouton :redVersion="true" contenuTextBouton="Modifier" type="submit" class="w-fit"></text-bouton>
 
         <router-link to="/artistes">
           <text-bouton :redVersion="true" contenuTextBouton="Annuler" class="w-fit"></text-bouton>
