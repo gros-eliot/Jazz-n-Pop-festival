@@ -7,7 +7,7 @@
     <span class="jazznpop-text">Rechercher un artiste (international)</span>
     <div class="flex flex-row gap-3">
       <input v-model="filter" class="jazznpop-input dark:border-white" />
-      <button class="rounded-xl bg-red-500 py-2 px-4" type="button" title="Filtrage">
+      <button class="rounded-xl bg-red-jazzNpop py-2 px-4" type="button" title="Filtrage">
         <SearchIcon class="h-8 w-8 stroke-white" />
       </button>
     </div>

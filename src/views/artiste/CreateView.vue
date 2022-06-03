@@ -40,14 +40,15 @@
           <div>
             <span class="font-medium">Concerts de l'artiste </span>
             <span class="text-xs"
-              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue"&nbsp;!)</span
+              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue" de Stacey
+              Ryan&nbsp;!)</span
             >
           </div>
           <div class="flex flex-col md:flex-row">
             <div class="flex flex-col gap-2">
-              <input class="jazznpop-input max-w-md" placeholder="Nom du concert" v-model="artiste.concertsArtistes.nom" disabled />
-              <input class="jazznpop-input max-w-md" placeholder="Date début" v-model="artiste.concertsArtistes.dateDebut" disabled />
-              <input class="jazznpop-input max-w-md" placeholder="Date fin" v-model="artiste.concertsArtistes.dateFin" disabled />
+              <input class="jazznpop-input max-w-md" placeholder="Nom du concert" disabled />
+              <input class="jazznpop-input max-w-md" placeholder="Date début" disabled />
+              <input class="jazznpop-input max-w-md" placeholder="Date fin" disabled />
             </div>
             <div
               class="my-3 ml-auto mr-auto flex h-fit w-fit flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400 md:mx-3 md:mb-auto md:mt-auto"
@@ -130,7 +131,6 @@ export default {
         international: false, // international ou pas ?
         site: null, // lien (URL) du site de l'artiste
         description: null, // description artiste
-        concertsArtistes: [],
       },
     };
   },

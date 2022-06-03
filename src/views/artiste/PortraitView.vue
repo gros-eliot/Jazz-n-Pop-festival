@@ -28,7 +28,7 @@
 
     <div class="mt-10">
       <div class="flex flex-row items-center gap-4">
-        <h2 class="jazznpop-h2">Dates de l'artiste</h2>
+        <h2 class="jazznpop-h2">Dates de l'artiste (voir le portrait de Stacey Ryan)</h2>
       </div>
       <div class="mt-10 flex flex-col gap-1">
         <date-card :listeConcertsArtisteCompo="artiste.concertsArtistes" />

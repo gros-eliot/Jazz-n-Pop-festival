@@ -10,8 +10,8 @@
       </div>
       <div class="flex flex-row items-center gap-2">
         <div class="flex flex-col items-center">
-          <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.dateDebut) }}</p>
-          <p class="jazznpop-text font-bold">{{ dateFr(concertArtiste.dateFin) }}</p>
+          <p class="jazznpop-text font-bold">{{ concertArtiste.dateDebut }}</p>
+          <p class="jazznpop-text font-bold">{{ concertArtiste.dateFin }}</p>
         </div>
         <ArrowRightIcon class="h-10 w-10 stroke-white dark:stroke-zinc-900" />
         <span class="sr-only">Voir les tarifs</span>
@@ -55,13 +55,6 @@ export default {
     // Appel de la liste des artistes
 
     console.log(this.listeConcertsArtisteCompo);
-  },
-  methods: {
-    // Format date en français
-    dateFr(d) {
-      let date = d.split("-");
-      return date[2] + "/" + date[1] + "/" + date[0];
-    },
   },
 };
 </script>
