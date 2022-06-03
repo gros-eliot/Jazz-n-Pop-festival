@@ -14,7 +14,7 @@
   </div>
 
   <div>
-    <div class="grid grid-cols-1 justify-items-center gap-10 md:grid md:grid-cols-artiste-international md:flex-row">
+    <div class="grid grid-cols-1 justify-items-center gap-10 md:grid md:grid-cols-artiste-international">
       <section v-for="artiste in filterByName" :key="artiste.id">
         <!--BG de l'image-->
         <div

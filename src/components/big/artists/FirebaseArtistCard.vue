@@ -15,7 +15,7 @@
 
   <!--Div contenant TOUTES LES CARDS des artistes-->
 
-  <div class="flex flex-col items-center justify-start md:flex-row md:flex-wrap">
+  <div class="grid grid-cols-artiste justify-items-center gap-10 md:grid-cols-artiste-v2">
     <!--Div contenant UNE CARD des artistes-->
     <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in filterByName" :key="artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
