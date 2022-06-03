@@ -193,9 +193,7 @@
   <div class="grid grid-cols-3">
     <!--Exemples d'images-->
 
-    <img src="/concerts/concert1.jpg" alt="Concert de jazz" class="w-full" />
     <img src="/concerts/concert2.jpg" alt="Concert de pop" class="w-full" />
-    <img src="/concerts/concert3.jpg" alt="Concert spécial" class="w-full" />
     <!--
     <img src="/festival/festival1.jpg" alt="Photos du lieu du festival" class="w-full" />
     <img src="/festival/festival2.jpg" alt="Photos du lieu du festival" class="w-full" />
