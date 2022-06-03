@@ -110,7 +110,11 @@ export default {
         date2: "", // sa date (fin)
         time: "", // sa date (fin)
         photo: "", // sa photo (nom du fichier)
+        description: "", // sa description
       },
+      refConcert: null, // Référence du artiste à modifier
+      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du artiste
     };
   },
   mounted() {

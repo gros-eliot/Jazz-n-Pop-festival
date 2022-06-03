@@ -9,7 +9,7 @@
         <div class="flex flex-col gap-4 md:mr-auto md:ml-auto md:flex-row md:items-center md:gap-16">
           <div class="flex flex-col">
             <span class="font-medium">Aperçu de la photo choisie</span>
-            <img class="w-40 bg-center object-cover md:w-48 lg:w-52" :src="photoActuelle" />
+            <img class="w-40 object-cover object-center md:w-48 lg:w-52" :src="photoActuelle" />
           </div>
           <div class="flex w-full flex-col gap-4">
             <div class="flex flex-col">
