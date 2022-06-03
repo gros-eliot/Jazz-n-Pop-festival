@@ -13,7 +13,7 @@
         ></concert-card>
         <div class="m-5 flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around">
           <ArtistCircularCard artisteNom="Daïda" artisteImageSrc="/artistes/jazz/daida.jpg" />
-          <RouterLink to="artiste_view">
+          <RouterLink to="/">
             <ArtistCircularCard artisteNom="Melody Gardot" artisteImageSrc="/artistes/jazz/melody_gardot.jpg" />
           </RouterLink>
         </div>

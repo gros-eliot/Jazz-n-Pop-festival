@@ -1,10 +1,21 @@
 <template>
+  <div class="justifys-start flex flex-col gap-5">
+    <span class="jazznpop-text">Rechercher un artiste (international)</span>
+    <div class="flex flex-row gap-3">
+      <input v-model="filter" class="jazznpop-input" />
+      <button class="rounded-xl bg-red-500 py-2 px-4" type="button" title="Filtrage">
+        <SearchIcon class="h-8 w-8" />
+      </button>
+    </div>
+  </div>
+
   <div class="my-2 md:my-10">
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
   </div>
+
   <div>
     <div class="grid grid-cols-1 justify-items-center gap-10 md:grid md:grid-cols-artiste-international md:flex-row">
-      <section v-for="artiste in listeArtiste" :key="artiste.id">
+      <section v-for="artiste in filterByName" :key="artiste.id">
         <!--BG de l'image-->
         <div
           class="flex h-[30rem] w-72 items-end justify-center rounded-3xl bg-cover bg-center p-3 md:w-[20rem] lg:w-[24rem]"
@@ -73,7 +84,7 @@ import {
 
 import CategorieName from "../../categories/CategorieName.vue";
 import PlusBouton from "../../boutons/PlusBouton.vue";
-import { PlusIcon, PencilIcon, TrashIcon } from "@heroicons/vue/outline";
+import { PlusIcon, PencilIcon, TrashIcon, SearchIcon } from "@heroicons/vue/outline";
 export default {
   components: {
     CategorieName,
@@ -81,11 +92,43 @@ export default {
     PlusIcon,
     PencilIcon,
     TrashIcon,
+    SearchIcon,
   },
   data() {
     return {
       listeArtiste: [], // Liste des artistes
+      filter: "",
     };
+  },
+  computed: {
+    // Tri des artiste par nom en ordre croissant
+    orderByName: function () {
+      // Parcours et tri des artiste 2 à 2
+      return this.listeArtiste.sort(function (artiste) {
+        // Si le nom du artiste est avant on retourne -1
+        if (artiste.international === true) return -1;
+        // Sinon ni avant ni après (homonyme) on retourne 0
+        return 0;
+      });
+    },
+    // Filtrage de la propriété calculée de tri
+    filterByName: function () {
+      // On effectue le fitrage seulement si le filtre est rnseigné
+      if (this.filter.length > 0) {
+        // On récupère le filtre saisi en minuscule (on évite les majuscules)
+        let filter = this.filter.toLowerCase();
+        // Filtrage de la propriété calculée de tri
+        return this.orderByName.filter(function (artiste) {
+          // On ne renvoie que les artiste dont le nom contient
+          // la chaine de caractère du filtre
+          return artiste.nom.toLowerCase().includes(filter);
+        });
+      } else {
+        // Si le filtre n'est pas saisi
+        // On renvoie l'intégralité de la liste triée
+        return this.orderByName;
+      }
+    },
   },
 
   mounted() {
