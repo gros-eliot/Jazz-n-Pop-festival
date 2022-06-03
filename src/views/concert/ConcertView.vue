@@ -20,6 +20,7 @@
     <div class="jazznpop-text my-10 flex flex-col gap-5">
       <h2 class="jazznpop-h2">Dates du concert</h2>
       <div class="flex flex-col gap-3">
+        <!--DateCard du dossier concert (=/= dossier artiste)-->
         <date-card datecardTitre="De 20h à 2h" datecardDate1="07/07/22" datecardDate2="08/07/22"></date-card>
         <date-card datecardTitre="De 20h à 2h" datecardDate1="10/07/22" datecardDate2="11/07/22"></date-card>
         <date-card datecardTitre="De 17h à 20h" datecardDate1="11/07/22" datecardDate2="12/07/22"></date-card>

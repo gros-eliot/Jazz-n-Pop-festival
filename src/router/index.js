@@ -10,6 +10,9 @@ import DeleteArtiste from '../views/artiste/DeleteView.vue'
 
 import ListeConcert from '../views/concert/ListeView.vue'
 import ConcertView from '../views/concert/ConcertView.vue'
+import CreateConcert from '../views/concert/CreateView.vue'
+import CustomConcert from '../views/concert/CustomView.vue'
+import DeleteConcert from '../views/concert/DeleteView.vue'
 
 import AboutView from '../views/AboutView.vue'
 
@@ -30,10 +33,14 @@ const router = createRouter({
     { path: '/artiste_custom', name: 'CustomArtiste', component: CustomArtiste },
     { path: '/artiste_delete', name: 'DeleteArtiste', component: DeleteArtiste },
 
-
-
+    
     { path: '/concerts', name: 'ListeConcert', component: ListeConcert },
     { path: '/concert_view', name: 'ConcertView', component: ConcertView },
+
+    { path: '/concert_create', name: 'CreateConcert', component: CreateConcert },
+    { path: '/concert_custom', name: 'CustomConcert', component: CustomConcert },
+    { path: '/concert_delete', name: 'DeleteConcert', component: DeleteConcert },
+
 
     { path: '/about', name: 'AboutView', component: AboutView },
 
