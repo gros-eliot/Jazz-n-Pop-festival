@@ -3,11 +3,21 @@
     <h2 class="jazznpop-h2">Nos autres grands partenaires</h2>
   </div>
 
+  <div class="justifys-start my-5 flex flex-col gap-5">
+    <span class="jazznpop-text">Rechercher un artiste (international)</span>
+    <div class="flex flex-row gap-3">
+      <input v-model="filter" class="jazznpop-input dark:border-white" />
+      <button class="rounded-xl bg-red-500 py-2 px-4" type="button" title="Filtrage">
+        <SearchIcon class="h-8 w-8 stroke-white" />
+      </button>
+    </div>
+  </div>
+
   <!--Div contenant TOUTES LES CARDS des artistes-->
 
   <div class="flex flex-col items-center justify-start md:flex-row md:flex-wrap">
     <!--Div contenant UNE CARD des artistes-->
-    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in listeArtiste" :key="artiste.id">
+    <div class="flex flex-col items-center justify-between p-1 py-5 md:flex-row md:py-2" v-for="artiste in filterByName" :key="artiste.id">
       <!--Div contenant la div(image+desc) + BOUTON en savoir plus-->
       <div class="flex w-full flex-col items-center justify-center gap-1 md:flex-row md:justify-between" v-if="!artiste.international">
         <!--Div contenant image + description de l'artiste-->
@@ -89,15 +99,46 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
 import CategorieName from "../../categories/CategorieName.vue";
-import { PlusIcon, PencilIcon, TrashIcon } from "@heroicons/vue/outline";
+import { PlusIcon, PencilIcon, TrashIcon, SearchIcon } from "@heroicons/vue/outline";
 
 export default {
   name: "ListeView",
-  components: { CategorieName, PlusIcon, PencilIcon, TrashIcon },
+  components: { CategorieName, PlusIcon, PencilIcon, TrashIcon, SearchIcon },
   data() {
     return {
       listeArtiste: [], // Liste des artistes
+      filter: "",
     };
+  },
+  computed: {
+    // Tri des artiste par nom en ordre croissant
+    orderByNat: function () {
+      // Parcours et tri des artiste 2 à 2
+      return this.listeArtiste.sort(function (artiste) {
+        // Si le nom du artiste est avant on retourne -1
+        if (artiste.international === false) return -1;
+        // Sinon ni avant ni après (homonyme) on retourne 0
+        return 0;
+      });
+    },
+    // Filtrage de la propriété calculée de tri
+    filterByName: function () {
+      // On effectue le fitrage seulement si le filtre est rnseigné
+      if (this.filter.length > 0) {
+        // On récupère le filtre saisi en minuscule (on évite les majuscules)
+        let filter = this.filter.toLowerCase();
+        // Filtrage de la propriété calculée de tri
+        return this.orderByNat.filter(function (artiste) {
+          // On ne renvoie que les artiste dont le nom contient
+          // la chaine de caractère du filtre
+          return artiste.nom.toLowerCase().includes(filter);
+        });
+      } else {
+        // Si le filtre n'est pas saisi
+        // On renvoie l'intégralité de la liste triée
+        return this.orderByNat;
+      }
+    },
   },
 
   mounted() {

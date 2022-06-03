@@ -29,12 +29,9 @@
     <div class="mt-10">
       <div class="flex flex-row items-center gap-4">
         <h2 class="jazznpop-h2">Dates de l'artiste</h2>
-        <RouterLink to="/concert_artiste_create" class="jazznpop-add-button">
-          <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
-        </RouterLink>
       </div>
       <div class="mt-10 flex flex-col gap-1">
-        <date-card></date-card>
+        <date-card :listeConcertsArtisteCompo="artiste.concertsArtistes" />
       </div>
     </div>
     <div class="my-10">
@@ -102,6 +99,7 @@ export default {
         international: "", // nationalité
         site: null, // site
         description: null, // desc
+        concertsArtistes: [],
       },
 
       refArtiste: null, // Référence du artiste à modifier

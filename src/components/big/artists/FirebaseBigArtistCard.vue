@@ -1,16 +1,16 @@
 <template>
-  <div class="justifys-start flex flex-col gap-5">
-    <span class="jazznpop-text">Rechercher un artiste (international)</span>
-    <div class="flex flex-row gap-3">
-      <input v-model="filter" class="jazznpop-input" />
-      <button class="rounded-xl bg-red-500 py-2 px-4" type="button" title="Filtrage">
-        <SearchIcon class="h-8 w-8" />
-      </button>
-    </div>
-  </div>
-
   <div class="my-2 md:my-10">
     <h2 class="jazznpop-h2">Nos figures internationales</h2>
+  </div>
+
+  <div class="justifys-start my-5 flex flex-col gap-5">
+    <span class="jazznpop-text">Rechercher un artiste (international)</span>
+    <div class="flex flex-row gap-3">
+      <input v-model="filter" class="jazznpop-input dark:border-white" />
+      <button class="rounded-xl bg-red-500 py-2 px-4" type="button" title="Filtrage">
+        <SearchIcon class="h-8 w-8 stroke-white" />
+      </button>
+    </div>
   </div>
 
   <div>
@@ -102,7 +102,7 @@ export default {
   },
   computed: {
     // Tri des artiste par nom en ordre croissant
-    orderByName: function () {
+    orderByNat: function () {
       // Parcours et tri des artiste 2 à 2
       return this.listeArtiste.sort(function (artiste) {
         // Si le nom du artiste est avant on retourne -1
@@ -118,7 +118,7 @@ export default {
         // On récupère le filtre saisi en minuscule (on évite les majuscules)
         let filter = this.filter.toLowerCase();
         // Filtrage de la propriété calculée de tri
-        return this.orderByName.filter(function (artiste) {
+        return this.orderByNat.filter(function (artiste) {
           // On ne renvoie que les artiste dont le nom contient
           // la chaine de caractère du filtre
           return artiste.nom.toLowerCase().includes(filter);
@@ -126,7 +126,7 @@ export default {
       } else {
         // Si le filtre n'est pas saisi
         // On renvoie l'intégralité de la liste triée
-        return this.orderByName;
+        return this.orderByNat;
       }
     },
   },

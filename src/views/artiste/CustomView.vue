@@ -37,6 +37,28 @@
         </div>
 
         <div class="flex flex-col">
+          <div>
+            <span class="font-medium">Concerts de l'artiste </span>
+            <span class="text-xs"
+              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue"&nbsp;!)</span
+            >
+          </div>
+          <div class="flex flex-col md:flex-row">
+            <div class="flex flex-col gap-2">
+              <input class="jazznpop-input max-w-md" placeholder="Nom du concert" v-model="artiste.concertsArtistes.nom" disabled />
+              <input class="jazznpop-input max-w-md" placeholder="Date début" v-model="artiste.concertsArtistes.dateDebut" disabled />
+              <input class="jazznpop-input max-w-md" placeholder="Date fin" v-model="artiste.concertsArtistes.dateFin" disabled />
+            </div>
+            <div
+              class="my-3 ml-auto mr-auto flex h-fit w-fit flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400 md:mx-3 md:mb-auto md:mt-auto"
+            >
+              <PlusIcon class="h-7 w-7" />
+              <span class="sr-only">Ajouter un concert</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
           <span class="font-medium">Site de l'artiste</span>
           <input class="jazznpop-input" placeholder="https://melodygardot.co.uk/" v-model="artiste.site" required />
         </div>
@@ -96,12 +118,15 @@ import {
   listAll,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 import TextBouton from "../../components/boutons/TextBouton.vue";
+import { PlusIcon } from "@heroicons/vue/outline";
 
 export default {
   name: "CustomArtistView",
   components: {
     TextBouton,
+    PlusIcon,
   },
+
   data() {
     return {
       imageData: null, // Image prévisualisée
@@ -114,6 +139,7 @@ export default {
         international: "", // nationalité
         site: "", // site
         description: "", // desc
+        concertsArtistes: [],
       },
 
       refArtiste: null, // Référence du artiste à modifier
@@ -229,6 +255,11 @@ export default {
       await updateDoc(doc(firestore, "artiste", this.$route.params.id), this.artiste);
       // redirection sur la liste des artistes
       this.$router.push("/artistes");
+    },
+
+    dateFr(d) {
+      let date = d.split("-");
+      return date[2] + "/" + date[1] + "/" + date[0];
     },
   },
 };
