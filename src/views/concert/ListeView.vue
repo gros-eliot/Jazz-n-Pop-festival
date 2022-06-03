@@ -6,7 +6,7 @@
         <PlusIcon class="h-10 w-10 dark:stroke-white"><span class="sr-only">Ajouter un artiste</span></PlusIcon>
       </RouterLink>
     </div>
-    <h2 class="jazznpop-h2">Les concerts disponibles</h2>
+    <h2 class="jazznpop-h2 my-5">Les concerts disponibles</h2>
     <!--Une div par concert-->
     <div class="my-10">
       <concert-card></concert-card>

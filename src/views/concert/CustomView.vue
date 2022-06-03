@@ -1,5 +1,5 @@
 <template>
-  <div class="m-10">
+  <div class="jazznpop-text p-page">
     <form enctype="multipart/form-data" @submit.prevent="updateConcert()">
       <div class="py-5">
         <h2 class="jazznpop-h2">Modifier un concert</h2>
@@ -7,8 +7,8 @@
 
       <div class="flex w-full flex-col gap-4">
         <div class="flex flex-col">
-          <span class="font-medium">Nom de l'artiste</span>
-          <input class="jazznpop-input" placeholder="Melody Gardot" v-model="artiste.nom" required />
+          <span class="font-medium">Nom du concert</span>
+          <input class="jazznpop-input" placeholder="Jazzy stage" v-model="concert.nom" required />
         </div>
         <div class="flex flex-col">
           <span class="font-medium">Photo</span>
@@ -21,14 +21,22 @@
         </div>
 
         <div class="flex flex-col">
-          <span class="font-medium">Date du prochain concert de l'artiste</span>
-          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="artiste.date" />
+          <span class="font-medium">Date de début du concert</span>
+          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.date1" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-medium">Date de fin du concert</span>
+          <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.date2" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-medium">Horaires du concert (en heure)</span>
+          <input type="text" class="jazznpop-input w-40" placeholder="XXh à XXh" required v-model="concert.time" />
         </div>
 
         <div class="flex flex-col">
           <span class="font-medium">Catégorie</span>
 
-          <select class="jazznpop-input" v-model="artiste.cat">
+          <select class="jazznpop-input" v-model="concert.cat">
             <option class="bg-white dark:bg-black" selected disabled>Sélectionner une catégorie</option>
             <option class="bg-white text-black dark:bg-black dark:text-white" v-for="categorie in listeCat" :key="categorie.libelle">
               {{ categorie.libelle }}
@@ -37,36 +45,8 @@
         </div>
 
         <div class="flex flex-col">
-          <div>
-            <span class="font-medium">Concerts de l'artiste </span>
-            <span class="text-xs"
-              >(pas encore fonctionnel, mais création possible sur Firebase et visualisation sur la vue "PortraitView.vue" de Stacey
-              Ryan&nbsp;!)</span
-            >
-          </div>
-          <div class="flex flex-col md:flex-row">
-            <div class="flex flex-col gap-2">
-              <input class="jazznpop-input max-w-md" placeholder="Nom du concert" disabled />
-              <input class="jazznpop-input max-w-md" placeholder="Date début" disabled />
-              <input class="jazznpop-input max-w-md" placeholder="Date fin" disabled />
-            </div>
-            <div
-              class="my-3 ml-auto mr-auto flex h-fit w-fit flex-row items-center justify-center gap-3 rounded-full bg-yellow-400 fill-black stroke-black px-5 py-5 text-black focus-visible:shadow-xl focus-visible:shadow-blue-400 md:mx-3 md:mb-auto md:mt-auto"
-            >
-              <PlusIcon class="h-7 w-7" />
-              <span class="sr-only">Ajouter un concert</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col">
-          <span class="font-medium">Site de l'artiste</span>
-          <input class="jazznpop-input" placeholder="https://melodygardot.co.uk/" v-model="artiste.site" required />
-        </div>
-
-        <div class="flex flex-col">
-          <span class="font-medium">Description de l'artiste</span>
-          <textarea class="jazznpop-input h-32" placeholder="Saisissez une description ici..." v-model="artiste.description" required />
+          <span class="font-medium">Description du concert</span>
+          <textarea class="jazznpop-input h-32" placeholder="Saisissez une description ici..." v-model="concert.description" required />
         </div>
       </div>
 
@@ -120,21 +100,17 @@ export default {
 
   data() {
     return {
-      imageData: null, // Image prévisualisée
-      listeCat: [], // Liste des catégories
-      artiste: {
+      imageData: "", // Image prévisualisée
+      listeCat: [], // Liste des categorie pour l'artiste
+      concert: {
+        // Concert à créer
         nom: "", // son nom
-        cat: "", // sa catégorie
-        date: "", // son prénom
+        cat: "",
+        date1: "", // sa date
+        date2: "", // sa date (fin)
+        time: "", // sa date (fin)
         photo: "", // sa photo (nom du fichier)
-        international: "", // nationalité
-        site: "", // site
-        description: "", // desc
       },
-
-      refArtiste: null, // Référence du artiste à modifier
-      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
-      photoActuelle: null, // Photo actuelle du artiste
     };
   },
   mounted() {
@@ -144,7 +120,7 @@ export default {
     // via la variable système $route de la vue
     console.log("id artiste", this.$route.params.id);
     // Recherche artiste concerné
-    this.getArtiste(this.$route.params.id);
+    this.getConcert(this.$route.params.id);
     // Appel de la liste des artistes
     this.getCat();
   },
@@ -163,28 +139,28 @@ export default {
       });
     },
 
-    async getArtiste(id) {
+    async getConcert(id) {
       // Obtenir Firestore
       const firestore = getFirestore();
       // Base de données (collection)  document artiste
       // Récupération sur Firestore du artiste via son id
-      const docRef = doc(firestore, "artiste", id);
+      const docRef = doc(firestore, "concert", id);
       // Référence du artiste concerné
-      this.refArtiste = await getDoc(docRef);
+      this.refConcert = await getDoc(docRef);
       // Test si l'artiste demandé existe
-      if (this.refArtiste.exists()) {
+      if (this.refConcert.exists()) {
         // Si oui on récupère ses données
-        this.artiste = this.refArtiste.data();
+        this.concert = this.refConcert.data();
         // Mémorisation photoActuelle
-        this.photoActuelle = this.artiste.photo;
+        this.photoActuelle = this.concert.photo;
       } else {
         // Sinon simple message d'erreur
-        this.console.log("Artiste inexistant");
+        this.console.log("Concert inexistant");
       }
       // Obtenir le Storage
       const storage = getStorage();
       // Référence de l'image du artiste
-      const spaceRef = ref(storage, "artiste/" + this.artiste.photo);
+      const spaceRef = ref(storage, "concert/" + this.concert.photo);
       // Récupération de l'url complète de l'image
       getDownloadURL(spaceRef)
         .then((url) => {
@@ -200,7 +176,7 @@ export default {
       // Mise à jour de la photo du artiste
       this.file = this.$refs.file.files[0];
       // Récupérer le nom du fichier pour la photo du artiste
-      this.artiste.photo = this.file.name;
+      this.concert.photo = this.file.name;
       // Si cette fonction s'exécute, c'est que l'image est modifiée
       this.imgModifiee = true;
       // Reference to the DOM input element
@@ -223,28 +199,28 @@ export default {
       }
     },
 
-    async updateArtiste() {
+    async updateConcert() {
       // Si l'image a été modifiée
       if (this.imgModifiee) {
         // On supprime l'ancienne
         const storage = getStorage();
         // Référence du fichier
-        let docRef = ref(storage, "artiste/" + this.photoActuelle);
+        let docRef = ref(storage, "concert/" + this.photoActuelle);
         // Suppression photo actuelle
         deleteObject(docRef);
         // création nouvelle photo
         // Référence de l'image à uploader
-        docRef = ref(storage, "artiste/" + this.artiste.photo);
+        docRef = ref(storage, "concert/" + this.concert.photo);
         await uploadString(docRef, this.imageData, "data_url").then((snapshot) => {
-          console.log("Uploaded a base64 string", this.artiste.photo);
+          console.log("Uploaded a base64 string", this.concert.photo);
         });
       }
       // Dans tous les cas on met à jour l'artiste dans Firestore
       const firestore = getFirestore();
       // Modification du artiste à partir de son id
-      await updateDoc(doc(firestore, "artiste", this.$route.params.id), this.artiste);
+      await updateDoc(doc(firestore, "concert", this.$route.params.id), this.concert);
       // redirection sur la liste des artistes
-      this.$router.push("/artistes");
+      this.$router.push("/concerts");
     },
   },
 };

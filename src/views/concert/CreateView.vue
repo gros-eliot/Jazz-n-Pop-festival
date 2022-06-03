@@ -29,7 +29,7 @@
           <input type="text" class="jazznpop-input" placeholder="jour(XX) mois année(XXXX)" required v-model="concert.date2" />
         </div>
         <div class="flex flex-col">
-          <span class="font-medium">Horaires du concert (en heure)</span>
+          <span class="font-medium">Horaires du concert (en</span>
           <input type="text" class="jazznpop-input w-40" placeholder="XXh à XXh" required v-model="concert.time" />
         </div>
 

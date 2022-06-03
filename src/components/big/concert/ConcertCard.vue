@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover p-5"
+    class="my-5 ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover p-5"
     v-for="concert in listeConcert"
     :key="concert.id"
     :style="{
