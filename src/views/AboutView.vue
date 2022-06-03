@@ -75,8 +75,20 @@
   <div class="my-10 flex flex-col gap-5 p-page">
     <h2 class="jazznpop-h2">Les tarifs</h2>
     <p class="jazznpop-text">Les tarifs d’accès aux concerts peuvent changer selon certaines conditions.</p>
-    <div class="flex w-full justify-center">
-      <tarifs-card class="w-full"></tarifs-card>
+    <div class="flex w-full flex-col items-center justify-center">
+      <TarifsCard
+        :tarif1="true"
+        cond1="-18 ans"
+        cond2="Étudiants"
+        cond3="Adultes"
+        cond4="Concert spécial"
+        prix1="15€"
+        prix2="16€"
+        prix3="18€"
+        prix4="20€"
+        class="w-full"
+      />
+      <TarifsCard :tarif2="true" cond1="Jazz’pass" cond2="Po’pass" cond3="All’pass" prix1="20€" prix2="20€" prix3="25€" class="w-full" />
     </div>
     <p class="jazznpop-text">Les pass ci-dessus permettent un accès à plusieurs concerts.</p>
     <p class="jazznpop-text"><strong>Leur durée est valable sur une durée de 3 jours.</strong></p>
