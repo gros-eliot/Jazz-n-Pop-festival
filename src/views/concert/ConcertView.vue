@@ -1,19 +1,17 @@
 <template>
   <div class="p-page">
-    <h1 class="jazznpop-h1 text-center">Jazzy Stage</h1>
-    <img src="/concerts/concert1.jpg" alt="Concert Jazzy Stage" class="my-10 h-72 w-full object-cover" />
+    <h1 class="jazznpop-h1 text-center">{{ concert.nom }}</h1>
+    <img :src="imageData" :alt="concert.nom" class="my-10 h-72 w-full object-cover object-center" />
 
     <!-- Description du concert : div -->
     <div class="jazznpop-text my-10 flex flex-col gap-5">
       <h2 class="jazznpop-h2">Description du concert</h2>
       <p class="lg:p-ordinateur">
-        Rejoignez le Jazzy Stage afin de découvrir les nouveautés musicales du <strong>jazz</strong> et de réécouter les grands classiques
-        du genre.
+        {{ concert.description }}
       </p>
-      <p class="lg:p-ordinateur">Le concert se passe généralement en intérieur, et le soir. Il peut également se passer en après-midi.</p>
       <div class="flex flex-row flex-wrap gap-5">
-        <CategorieName :blueCategory="true" NameCategory="Intérieur" />
-        <CategorieName :orangeCategory="true" NameCategory="Jazz" />
+        <CategorieName :NameCategory="concert.cat" />
+        <CategorieName :NameCategory="concert.cat2" />
       </div>
     </div>
     <!-- Dates du concert : div -->
@@ -56,6 +54,33 @@
 </template>
 
 <script>
+// Bibliothèque Firestore : import des fonctions
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  setDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
+// Storage
+import {
+  getStorage,
+  ref,
+  getDownloadURL,
+  uploadBytes,
+  uploadString,
+  deleteObject,
+  listAll,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+
 import ArtistCircularCard from "../../components/big/artists/ArtistCircularCard.vue";
 import DateCard from "../../components/big/concert/DateCard.vue";
 import TextBouton from "../../components/boutons/TextBouton.vue";
@@ -66,6 +91,69 @@ export default {
     DateCard,
     TextBouton,
     ArtistCircularCard,
+  },
+  data() {
+    return {
+      imageData: "", // Image prévisualisée
+      concert: {
+        // Concert à créer
+        nom: "", // son nom
+        cat: "",
+        cat2: "",
+        date1: "", // sa date
+        date2: "", // sa date (fin)
+        time: "", // sa date (fin)
+        photo: "", // sa photo (nom du fichier)
+        description: "", // sa description
+      },
+      refConcert: null, // Référence du artiste à modifier
+      imgModifiee: false, // Indique si l'image du artiste a été modifiée, par défaut : non
+      photoActuelle: null, // Photo actuelle du artiste
+    };
+  },
+  mounted() {
+    // Montage de la vue
+    // Récupération du id passé en paramètre
+    // On utilise le id passé par la route
+    // via la variable système $route de la vue
+    console.log("id artiste", this.$route.params.id);
+    // Recherche artiste concerné
+    this.getConcert(this.$route.params.id);
+    // Appel de la liste des artistes
+  },
+  methods: {
+    async getConcert(id) {
+      // Obtenir Firestore
+      const firestore = getFirestore();
+      // Base de données (collection)  document artiste
+      // Récupération sur Firestore du artiste via son id
+      const docRef = doc(firestore, "concert", id);
+      // Référence du artiste concerné
+      this.refConcert = await getDoc(docRef);
+      // Test si l'artiste demandé existe
+      if (this.refConcert.exists()) {
+        // Si oui on récupère ses données
+        this.concert = this.refConcert.data();
+        // Mémorisation photoActuelle
+        this.photoActuelle = this.concert.photo;
+      } else {
+        // Sinon simple message d'erreur
+        this.console.log("Concert inexistant");
+      }
+      // Obtenir le Storage
+      const storage = getStorage();
+      // Référence de l'image du artiste
+      const spaceRef = ref(storage, "concert/" + this.concert.photo);
+      // Récupération de l'url complète de l'image
+      getDownloadURL(spaceRef)
+        .then((url) => {
+          // Mise à jour de l'image prévisualisée
+          this.imageData = url;
+        })
+        .catch((error) => {
+          console.log("erreur downloadUrl", error);
+        });
+    },
   },
 };
 </script>

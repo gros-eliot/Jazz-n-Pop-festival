@@ -23,13 +23,6 @@ module.exports = {
         
         //bg image du hero de la vue "about"
         'about': "linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('/festival/festival_hero.jpg');",
-
-        //Images des card des concerts
-        'concert1': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('/concerts/concert1.jpg')",
-        'concert2': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('/concerts/concert2.jpg')",
-        'concert3': "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 61.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)),url('/concerts/concert3.jpg')",
-        
-    
       },
       /* MARGES PREDEFINIES POUR LES PAGES (autre que celle d'accueil)*/
       padding: {

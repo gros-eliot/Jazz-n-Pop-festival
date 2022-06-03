@@ -1,6 +1,6 @@
 <template>
   <div
-    class="my-5 ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover p-5"
+    class="my-5 ml-auto mr-auto flex flex-col gap-5 rounded-3xl bg-cover bg-center p-5"
     v-for="concert in listeConcert"
     :key="concert.id"
     :style="{
@@ -9,6 +9,7 @@
   >
     <div class="flex flex-row justify-end gap-5 bg-cover bg-center">
       <CategorieName :NameCategory="concert.cat" />
+      <CategorieName :NameCategory="concert.cat2" />
       <!-- v-for="concert in listeConcert" :key="concert.id" -->
     </div>
     <div class="flex flex-col gap-2 text-white">
@@ -31,7 +32,7 @@
         </RouterLink>
       </div>
 
-      <RouterLink to="/concert_view">
+      <RouterLink :to="{ name: 'ConcertView', params: { id: concert.id } }">
         <ArrowBouton :whiteVersion="true" contenuTextBouton="Voir" />
       </RouterLink>
     </div>

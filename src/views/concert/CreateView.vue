@@ -36,12 +36,15 @@
         <div class="flex flex-col">
           <span class="font-medium">Catégorie</span>
 
-          <select class="jazznpop-input" v-model="concert.cat">
-            <option class="bg-white dark:bg-black" selected disabled>Sélectionner une catégorie</option>
-            <option class="bg-white text-black dark:bg-black dark:text-white" v-for="categorie in listeCat" :key="categorie.libelle">
-              {{ categorie.libelle }}
-            </option>
-          </select>
+          <div class="flex flex-col gap-5">
+            <select class="jazznpop-input" v-model="concert.cat">
+              <option class="bg-white dark:bg-black" selected disabled>Sélectionner une catégorie</option>
+              <option class="bg-white text-black dark:bg-black dark:text-white" v-for="categorie in listeCat" :key="categorie.libelle">
+                {{ categorie.libelle }}
+              </option>
+            </select>
+            <input type="text" class="jazznpop-input" placeholder="Catégorie secondaire" v-model="concert.cat2" />
+          </div>
         </div>
 
         <div class="flex flex-col">
@@ -96,6 +99,7 @@ export default {
         // Concert à créer
         nom: null, // son nom
         cat: null,
+        cat2: null,
         date1: null, // sa date
         date2: null, // sa date (fin)
         time: null, // sa date (fin)

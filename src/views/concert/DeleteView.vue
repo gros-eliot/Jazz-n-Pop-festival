@@ -31,7 +31,10 @@
             </div>
             <div class="flex flex-col">
               <span class="font-medium">Catégorie</span>
-              <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="concert.cat" disabled />
+              <div class="flex flex-col gap-1">
+                <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="concert.cat" disabled />
+                <input class="jazznpop-input border-0 bg-red-jazzNpop text-white" v-model="concert.cat2" disabled />
+              </div>
             </div>
 
             <div class="flex flex-col">
@@ -98,6 +101,7 @@ export default {
         // Concert à créer
         nom: "", // son nom
         cat: "",
+        cat2: "",
         date1: "", // sa date
         date2: "", // sa date (fin)
         time: "", // sa date (fin)

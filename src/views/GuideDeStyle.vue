@@ -139,10 +139,10 @@
 
     <!--Catégories des card-->
     <div class="flex flex-col gap-3">
-      <CategorieName :blackCategory="true" NameCategory="Catégorie" />
-      <CategorieName :blueCategory="true" NameCategory="Catégorie" />
-      <CategorieName :redCategory="true" NameCategory="Catégorie" />
-      <CategorieName :orangeCategory="true" NameCategory="Catégorie" />
+      <CategorieName :blackCategory="true" NameCategory="Jazz" />
+      <CategorieName :blueCategory="true" NameCategory="Pop" />
+      <CategorieName :redCategory="true" NameCategory="Spécial" />
+      <CategorieName :orangeCategory="true" NameCategory="Intérieur" />
     </div>
 
     <!--Composants des formulaires-->
@@ -168,9 +168,7 @@
 
     <!--Concert : large card-->
 
-    <ConcertCard class="bg-concert1" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
-    <ConcertCard class="bg-concert2" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
-    <ConcertCard class="bg-concert3" concertNom="Jazz'n'Pop Festival" concertDate="11/07/2022"></ConcertCard>
+    <ConcertCard></ConcertCard>
 
     <!--Horaire-->
     <DateCard datecardTitre="Concert n°1" datecardDate1="11/07/2022" datecardDate2="12/07/2022" />
